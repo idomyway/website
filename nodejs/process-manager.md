@@ -19,8 +19,11 @@ pm2 start [id | AppName | all | CMD] --name [AppName] -i max --watch -- [args]
 # 停止，all表示全部app
 pm2 stop [id | AppName | all]
 
-# 重启，all表示全部app
+# 重启，相当于先 stop 再 start，会导致服务短时间内无法使用，all表示全部app
 pm2 restart [id | AppName | all]
+
+# 热重载，多用于cluster模式，逐个重新启动所有进程，始终保持至少一个进程在运行，实现不停机重载
+pm2 reload [AppName]
 
 # 删除，all表示全部app
 pm2 delete [id | AppName | all]
