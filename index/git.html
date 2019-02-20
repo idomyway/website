@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>PM2 · jekorx's blog</title>
+        <title>Git · jekorx's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="http-server.html" />
+    <link rel="next" href="../git/git.html" />
     
     
-    <link rel="prev" href="../index/nodejs.html" />
+    <link rel="prev" href="../frontend/editorconfig.html" />
     
 
     </head>
@@ -114,9 +114,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../index/nodejs.html">
+        <li class="chapter " data-level="1.2" data-path="nodejs.html">
             
-                <a href="../index/nodejs.html">
+                <a href="nodejs.html">
             
                     
                     Nodejs
@@ -128,9 +128,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="process-manager.html">
+        <li class="chapter " data-level="1.2.1" data-path="../nodejs/process-manager.html">
             
-                <a href="process-manager.html">
+                <a href="../nodejs/process-manager.html">
             
                     
                     PM2
@@ -141,9 +141,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="http-server.html">
+        <li class="chapter " data-level="1.2.2" data-path="../nodejs/http-server.html">
             
-                <a href="http-server.html">
+                <a href="../nodejs/http-server.html">
             
                     
                     Http-Server
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../index/frontend.html">
+        <li class="chapter " data-level="1.3" data-path="frontend.html">
             
-                <a href="../index/frontend.html">
+                <a href="frontend.html">
             
                     
                     前端
@@ -204,9 +204,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../index/git.html">
+        <li class="chapter active" data-level="1.4" data-path="git.html">
             
-                <a href="../index/git.html">
+                <a href="git.html">
             
                     
                     Git
@@ -236,9 +236,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../index/linux.html">
+        <li class="chapter " data-level="1.5" data-path="linux.html">
             
-                <a href="../index/linux.html">
+                <a href="linux.html">
             
                     
                     Linux
@@ -307,9 +307,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../index/springboot.html">
+        <li class="chapter " data-level="1.6" data-path="springboot.html">
             
-                <a href="../index/springboot.html">
+                <a href="springboot.html">
             
                     
                     SpringBoot
@@ -395,7 +395,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >PM2</a>
+        <a href=".." >Git</a>
     </h1>
 </div>
 
@@ -410,67 +410,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pm2&#xFF08;process-manager-2&#xFF09;">PM2&#xFF08;Process Manager 2&#xFF09;</h1>
-<blockquote>
-<p>Node&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x7B80;&#x5316;Node App&#x7BA1;&#x7406;&#x7684;&#x7E41;&#x7410;&#x4EFB;&#x52A1;&#xFF0C;&#x5982;&#x6027;&#x80FD;&#x76D1;&#x63A7;&#x3001;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x3001;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7B49;&#x3002;</p>
-</blockquote>
-<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x542F;&#x52A8;app</span>
-pm2 start yarn --name AppName -- start
+                                <h1 id="git&#x5E38;&#x7528;&#x547D;&#x4EE4;">Git&#x5E38;&#x7528;&#x547D;&#x4EE4;</h1>
+<h4 id="&#x5207;&#x6362;&#x5206;&#x652F;">&#x5207;&#x6362;&#x5206;&#x652F;</h4>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x663E;&#x793A;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span>
+git branch -h
 
-<span class="hljs-comment"># &#x67E5;&#x770B;&#x6240;&#x6709;app</span>
-pm2 list
-<span class="hljs-comment"># or</span>
-pm2 ls
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;&#xFF0C;&#x53C2;&#x6570;v&#x663E;&#x793A;&#x7248;&#x672C;&#x53F7;&#x6CE8;&#x91CA;&#x7B49;&#x9644;&#x52A0;&#x4FE1;&#x606F;&#xFF0C;a&#x663E;&#x793A;&#x6240;&#x6709;</span>
+git branch -va
+<span class="hljs-comment"># * &#x5F00;&#x5934;&#x7684;&#x4E3A;&#x5F53;&#x524D;&#x672C;&#x5730;&#x5206;&#x652F;&#xFF0C;origin&#x4E3A;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</span>
+<span class="hljs-comment">#   gh-pages                5c3cbe8 Create CNAME</span>
+<span class="hljs-comment"># * master                  20575cc shouye</span>
+<span class="hljs-comment">#   remotes/origin/HEAD     -&gt; origin/master</span>
+<span class="hljs-comment">#   remotes/origin/gh-pages 5c3cbe8 Create CNAME</span>
+<span class="hljs-comment">#   remotes/origin/master   20575cc shouye</span>
+<span class="hljs-comment">#   remotes/origin/test     20575cc shouye</span>
 
-<span class="hljs-comment"># &#x542F;&#x52A8;&#xFF0C;all&#x8868;&#x793A;&#x5168;&#x90E8;app&#xFF0C;CMD&#x8868;&#x793A;&#x547D;&#x4EE4;&#xFF08;&#x5982;&#xFF1A;yarn&#xFF09;&#xFF0C;-i max &#x8868;&#x793A;cluster&#x6A21;&#x5F0F;&#xFF0C;&#x6570;&#x91CF;&#x4E3A;&#x6700;&#x5927;cpu&#x6838;&#x6570;&#xFF0C;--watch&#x8868;&#x793A;&#x5F53;&#x6587;&#x4EF6;&#x53D8;&#x5316;&#x65F6;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x5E94;&#x7528;&#xFF0C;args&#x8868;&#x793A;&#x53C2;&#x6570;</span>
-pm2 start [id | AppName | all | CMD] --name [AppName] -i max --watch -- [args]
+<span class="hljs-comment"># &#x5207;&#x6362;&#x5206;&#x652F;</span>
+git checkout gh-pages
 
-<span class="hljs-comment"># &#x505C;&#x6B62;&#xFF0C;all&#x8868;&#x793A;&#x5168;&#x90E8;app</span>
-pm2 stop [id | AppName | all]
-
-<span class="hljs-comment"># &#x91CD;&#x542F;&#xFF0C;all&#x8868;&#x793A;&#x5168;&#x90E8;app</span>
-pm2 restart [id | AppName | all]
-
-<span class="hljs-comment"># &#x5220;&#x9664;&#xFF0C;all&#x8868;&#x793A;&#x5168;&#x90E8;app</span>
-pm2 delete [id | AppName | all]
-
-<span class="hljs-comment"># &#x76D1;&#x63A7;</span>
-pm2 monit [id | AppName]
-
-<span class="hljs-comment"># &#x65E5;&#x5FD7;</span>
-pm2 logs
-</code></pre>
-<h4 id="&#x5E38;&#x89C1;&#x9519;&#x8BEF;">&#x5E38;&#x89C1;&#x9519;&#x8BEF;</h4>
-<blockquote>
-<p>windows&#x7CFB;&#x7EDF;&#x5E38;&#x89C1;&#x9519;&#x8BEF;&#xFF08;1&#xFF09;</p>
-</blockquote>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x62A5;&#x9519;&#x4FE1;&#x606F;</span>
-C:\USERS\&lt;username&gt;\APPDATA\ROAMING\NPM\YARN.CMD:1
-(<span class="hljs-keyword">function</span> (exports, require, module, __filename, __dirname) { @IF EXIST <span class="hljs-string">&quot;%~dp0\node.exe&quot;</span> (
-                                                              ^
-SyntaxError: Invalid or unexpected token
-    at new Script (vm.js:79:7)
-    at createScript (vm.js:251:10)
-    at Object.runInThisContext (vm.js:303:10)
-    at Module._compile (internal/modules/cjs/loader.js:656:28)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:699:10)
-    at Module.load (internal/modules/cjs/loader.js:598:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:537:12)
-    at Function.Module._load (internal/modules/cjs/loader.js:529:3)
-    at Object.&lt;anonymous&gt; (C:\Users\wangdg\AppData\Local\Yarn\Data\global\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
-    at Module._compile (internal/modules/cjs/loader.js:688:30)
-C:\USERS\&lt;username&gt;\APPDATA\ROAMING\NPM\YARN.CMD:1
-(<span class="hljs-keyword">function</span> (exports, require, module, __filename, __dirname) { @IF EXIST <span class="hljs-string">&quot;%~dp0\node.exe&quot;</span> (
-
-<span class="hljs-comment"># &#x9519;&#x8BEF;&#x5206;&#x6790;</span>
-&#x5728;Windows&#x4E0A;&#xFF0C;yarn.cmd&#x5B83;&#x4E0D;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x76F4;&#x63A5;&#x8FD0;&#x884C;Node.js&#x547D;&#x4EE4;
-
-<span class="hljs-comment"># &#x89E3;&#x51B3;&#x65B9;&#x6CD5;</span>
-pm2 start C:\Users\&lt;username&gt;\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js --name nuxt -- start
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5E76;&#x5207;&#x6362;&#x5206;&#x652F;</span>
+git checkout -b dev
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-20 09:13:18
+2019-02-20 09:35:15
 </span></footer>
                                 
                                 </section>
@@ -498,12 +460,12 @@ pm2 start C:\Users\&lt;username&gt;\AppData\Roaming\npm\node_modules\yarn\bin\ya
 
             
                 
-                <a href="../index/nodejs.html" class="navigation navigation-prev " aria-label="Previous page: Nodejs">
+                <a href="../frontend/editorconfig.html" class="navigation navigation-prev " aria-label="Previous page: EditorConfig">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="http-server.html" class="navigation navigation-next " aria-label="Next page: Http-Server">
+                <a href="../git/git.html" class="navigation navigation-next " aria-label="Next page: Git">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -514,7 +476,7 @@ pm2 start C:\Users\&lt;username&gt;\AppData\Roaming\npm\node_modules\yarn\bin\ya
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PM2","level":"1.2.1","depth":2,"next":{"title":"Http-Server","level":"1.2.2","depth":2,"path":"nodejs/http-server.md","ref":"nodejs/http-server.md","articles":[]},"previous":{"title":"Nodejs","level":"1.2","depth":1,"path":"index/nodejs.md","ref":"index/nodejs.md","articles":[{"title":"PM2","level":"1.2.1","depth":2,"path":"nodejs/process-manager.md","ref":"nodejs/process-manager.md","articles":[]},{"title":"Http-Server","level":"1.2.2","depth":2,"path":"nodejs/http-server.md","ref":"nodejs/http-server.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"nodejs/process-manager.md","mtime":"2019-02-20T01:13:18.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-20T01:35:43.955Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.4","depth":1,"next":{"title":"Git","level":"1.4.1","depth":2,"path":"git/git.md","ref":"git/git.md","articles":[]},"previous":{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"index/git.md","mtime":"2019-02-20T01:35:15.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-20T01:35:43.955Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
