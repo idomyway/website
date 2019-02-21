@@ -11,7 +11,7 @@
 #### 在Reactjs脚手架create-react-app@1.5.2中使用ESLint
 
 ```javascript
-/*
+/**
  * 由于CRA中默认支持ESLint，只需添加相关依赖和配置即可
  */
 
@@ -56,7 +56,7 @@ yarn add babel-eslint eslint eslint-config-standard eslint-plugin-import eslint-
 #### 在Vuejs脚手架vue-cli@2.9.x中使用ESLint
 
 ```javascript
-/*
+/**
  * 只需在构建项目时根据提示操作即可
  */
 

@@ -119,7 +119,7 @@
                 <a href="../index/nodejs.html">
             
                     
-                    Nodejs
+                    Node.js
             
                 </a>
             
@@ -425,10 +425,83 @@
                                 
                                 <h1 id="axios">Axios</h1>
 <blockquote>
-<p>Axios &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; promise &#x7684; HTTP &#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x548C; node.js &#x4E2D;&#x3002;</p>
+<p>Axios &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;promise&#x7684;HTTP&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x548C;node.js&#x4E2D;&#x3002;</p>
 </blockquote>
+<h4 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h4>
+<pre><code class="lang-bash">yarn add axios
+
+<span class="hljs-comment"># or</span>
+npm i axios -S
+</code></pre>
+<h4 id="&#x57FA;&#x672C;&#x4F7F;&#x7528;">&#x57FA;&#x672C;&#x4F7F;&#x7528;</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * 1&#x3001;&#x57FA;&#x7840;&#x4F7F;&#x7528;1
+ * axios(config)
+ * 2&#x3001;&#x57FA;&#x7840;&#x4F7F;&#x7528;2&#xFF0C;url&#x4E0D;&#x5728;&#x914D;&#x7F6E;&#x4E2D;&#x6307;&#x5B9A;
+ * axios(url[, config])
+ * 3&#x3001;&#x9ED8;&#x8BA4;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x522B;&#x540D;
+ * &#x4F7F;&#x7528;&#x522B;&#x540D;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C; url&#x3001;method&#x3001;data &#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x90FD;&#x4E0D;&#x5FC5;&#x5728;&#x914D;&#x7F6E;&#x4E2D;&#x6307;&#x5B9A;&#x3002;
+ * axios.request(config)
+ * axios.get(url[, config])
+ * axios.delete(url[, config])
+ * axios.head(url[, config])
+ * axios.post(url[, data[, config]])
+ * axios.put(url[, data[, config]])
+ * axios.patch(url[, data[, config]])
+ * 4&#x3001;&#x5E76;&#x53D1;
+ * axios.all(iterable)
+ * axios.spread(callback)
+ * &#x4F8B;&#xFF1A;
+ * let axiosList=[
+ *    axios.get(&apos;url1&apos;, { params: &apos;xxx&apos; }),
+ *    axios.get(&apos;url2&apos;, { params: &apos;xxx&apos; })
+ * ]
+ * axios.all(axiosList).then(axios.spread((res1,res2) =&gt; {
+ *   console.log(res1,res2) // &#x5206;&#x522B;&#x662F;&#x4E24;&#x4E2A;&#x8BF7;&#x6C42;&#x7684;&#x8FD4;&#x56DE;&#x503C;
+ * })
+ * 5&#x3001;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;
+ * axios.create([config])
+ */</span>
+
+<span class="hljs-comment">/**
+ * promise&#x65B9;&#x5F0F;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span> (<span class="hljs-params"></span>) </span>{
+  axios.get(<span class="hljs-string">&apos;/user?ID=12345&apos;</span>)
+    .then(res =&gt; {
+      <span class="hljs-built_in">console</span>.log(res)
+    })
+    .catch(err =&gt; {
+      <span class="hljs-built_in">console</span>.log(err)
+    })
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">post</span> (<span class="hljs-params"></span>) </span>{
+  axios.post(<span class="hljs-string">&apos;/user&apos;</span>, {
+      firstName: <span class="hljs-string">&apos;Fred&apos;</span>,
+      lastName: <span class="hljs-string">&apos;Flintstone&apos;</span>
+    })
+    .then(res =&gt; {
+      <span class="hljs-built_in">console</span>.log(res)
+    })
+    .catch(err =&gt; {
+      <span class="hljs-built_in">console</span>.log(err)
+    })
+}
+<span class="hljs-comment">/**
+ * async/await&#x65B9;&#x5F0F;
+ */</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">gets</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">let</span> data1 = <span class="hljs-keyword">await</span> axios.get(<span class="hljs-string">&apos;url1&apos;</span>, { params: <span class="hljs-string">&apos;xxx&apos;</span> })
+    <span class="hljs-keyword">let</span> data2 = <span class="hljs-keyword">await</span> axios.get(<span class="hljs-string">&apos;url2&apos;</span>, { params: <span class="hljs-string">&apos;xxx&apos;</span> })
+    <span class="hljs-built_in">console</span>.log(data1, data2)
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  }
+}
+</code></pre>
 <h4 id="&#x5E38;&#x7528;&#x914D;&#x7F6E;">&#x5E38;&#x7528;&#x914D;&#x7F6E;</h4>
-<pre><code class="lang-js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;axios&apos;</span>
 <span class="hljs-keyword">import</span> qs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;qs&apos;</span>
 
 <span class="hljs-comment">/**
@@ -436,6 +509,8 @@
  */</span>
 <span class="hljs-comment">// url &#x524D;&#x7F00;</span>
 axios.defaults.baseURL = process.env.NODE_ENV === <span class="hljs-string">&apos;production&apos;</span> ? <span class="hljs-string">&apos;/web/&apos;</span> : <span class="hljs-string">&apos;/api/&apos;</span>
+<span class="hljs-comment">// &#x8DE8;&#x57DF;&#x8BF7;&#x6C42;&#x65F6;&#x643A;&#x5E26;cookie</span>
+axios.defaults.withCredentials = <span class="hljs-literal">true</span>
 <span class="hljs-comment">/**
  * axios &#x9ED8;&#x8BA4; Content-Type: application/json;charset=UTF-8
  * &#x8BF7;&#x6C42;&#x6B63;&#x6587;&#x4E3A;Request Payload&#xFF0C;&#x683C;&#x5F0F;&#x662F;json&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;
@@ -445,7 +520,6 @@ axios.defaults.baseURL = process.env.NODE_ENV === <span class="hljs-string">&apo
  * &#x8BF7;&#x6C42;&#x6B63;&#x6587;&#x4E3A;Form Data&#xFF0C;&#x683C;&#x5F0F;&#x662F;key=value&amp;key1=value2
  * &#x5BF9;&#x4E8E; Form Data &#x8BF7;&#x6C42;&#xFF0C;&#x540E;&#x53F0;&#x65E0;&#x9700;&#x4EFB;&#x4F55;&#x6CE8;&#x89E3;&#xFF0C;&#x5373;&#x53EF;&#x89E3;&#x6790;&#x53C2;&#x6570;
  */</span>
-axios.defaults.withCredentials = <span class="hljs-literal">true</span>
 <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x6570;&#x636E;&#x8F6C;json&#x5B57;&#x7B26;&#x4E32;&#xFF08;JSON.stringify()&#x4E0D;&#x884C;&#xFF09;</span>
 axios.defaults.transformRequest = [params =&gt; qs.stringify(params)]
 <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x7EDF;&#x4E00;&#x989D;&#x5916;&#x53C2;&#x6570;</span>
@@ -468,8 +542,51 @@ axios.interceptors.response.use(response =&gt; {
   <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(error)
 })
 </code></pre>
+<h4 id="&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF0C;&#x7279;&#x6B8A;&#x4F7F;&#x7528;&#x65F6;&#x914D;&#x7F6E;">&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF0C;&#x7279;&#x6B8A;&#x4F7F;&#x7528;&#x65F6;&#x914D;&#x7F6E;</h4>
+<blockquote>
+<p>&#x4F7F;&#x7528;&#x4E86;&#x4E0A;&#x8FF0;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x4E4B;&#x540E;&#xFF0C;&#x8BF7;&#x6C42;&#x5934;Content-Type&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;: application/x-www-form-urlencoded
+&#x5982;&#x679C;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5C06;Content-Type&#x8BBE;&#x7F6E;&#x4E3A;multipart/form-data&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+</blockquote>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * &#x4F7F;&#x7528;axios&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#xFF0C;ajax&#x6587;&#x4EF6;&#x4E0A;&#x4F20;
+ */</span>
+<span class="hljs-comment">// input(type=&quot;file&quot; onchange=&quot;fileChange&quot; multiple=&quot;multiple&quot;)</span>
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;multiple&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x591A;&#x4E2A;&#x6587;&#x4EF6;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fileChange</span> (<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x5BF9;&#x8C61;&#x6570;&#x7EC4;</span>
+  <span class="hljs-keyword">let</span> files = e.target.files
+  <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;FormData&#xFF0C;&#x5B58;&#x50A8;&#x9700;&#x8981;&#x63D0;&#x4EA4;&#x7684;&#x8868;&#x5355;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x901A;&#x8FC7;ajax&#x65B9;&#x5F0F;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;FormData</span>
+  <span class="hljs-keyword">let</span> formData = <span class="hljs-keyword">new</span> FormData()
+  <span class="hljs-comment">// &#x666E;&#x901A;&#x8868;&#x5355;&#x6570;&#x636E;</span>
+  formData.append(<span class="hljs-string">&apos;num&apos;</span>, <span class="hljs-number">123</span>)
+  formData.append(<span class="hljs-string">&apos;name&apos;</span>, <span class="hljs-string">&apos;aa&apos;</span>)
+  <span class="hljs-comment">// &#x6587;&#x4EF6;&#x6570;&#x636E;</span>
+  formData.append(<span class="hljs-string">&apos;file&apos;</span>, files[<span class="hljs-number">0</span>])
+  <span class="hljs-comment">// &#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x9700;&#x8981;&#x904D;&#x5386;&#x653E;&#x5165;</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> f <span class="hljs-keyword">of</span> files) {
+    formData.append(<span class="hljs-string">&apos;files&apos;</span>, f)
+  }
+  <span class="hljs-comment">// &#x4E0A;&#x4F20;data&#x5FC5;&#x987B;&#x8F6C;&#x4E3A;formData</span>
+  axios.post(<span class="hljs-string">&apos;/upload&apos;</span>, formData, {
+    <span class="hljs-comment">// &#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E2D;&#x7684;transformRequest&#x8BBE;&#x7F6E;</span>
+    transformRequest: [(params, headers) =&gt; {
+      <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x5934;Content-Type &#x4E3A;multipart/form-data</span>
+      headers = {
+        <span class="hljs-string">&apos;Content-Type&apos;</span>: <span class="hljs-string">&apos;multipart/form-data&apos;</span>
+      }
+      <span class="hljs-comment">// &#x53D6;&#x6D88;qs&#x53C2;&#x6570;&#x8F6C;&#x6362;</span>
+      <span class="hljs-keyword">return</span> params
+    }],
+    <span class="hljs-comment">// &#x4E0A;&#x4F20;&#x8FDB;&#x5EA6;</span>
+    onUploadProgress ({ loaded, total }) {
+      <span class="hljs-keyword">let</span> p = (loaded / total * <span class="hljs-number">100</span>).toFixed(<span class="hljs-number">0</span>) + <span class="hljs-string">&apos;%&apos;</span>
+      <span class="hljs-built_in">console</span>.log(p)
+    }
+  }).then(res =&gt; <span class="hljs-built_in">console</span>.log(res))
+}
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-20 10:11:30
+2019-02-21 10:35:47
 </span></footer>
                                 
                                 </section>
@@ -513,7 +630,7 @@ axios.interceptors.response.use(response =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Axios","level":"1.3.1","depth":2,"next":{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},"previous":{"title":"前端","level":"1.3","depth":1,"path":"index/frontend.md","ref":"index/frontend.md","articles":[{"title":"Axios","level":"1.3.1","depth":2,"path":"frontend/axios.md","ref":"frontend/axios.md","articles":[]},{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},{"title":"ESLint","level":"1.3.3","depth":2,"path":"frontend/eslint.md","ref":"frontend/eslint.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/axios.md","mtime":"2019-02-20T02:11:30.981Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-20T08:13:42.345Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Axios","level":"1.3.1","depth":2,"next":{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},"previous":{"title":"前端","level":"1.3","depth":1,"path":"index/frontend.md","ref":"index/frontend.md","articles":[{"title":"Axios","level":"1.3.1","depth":2,"path":"frontend/axios.md","ref":"frontend/axios.md","articles":[]},{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},{"title":"ESLint","level":"1.3.3","depth":2,"path":"frontend/eslint.md","ref":"frontend/eslint.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/axios.md","mtime":"2019-02-21T02:35:47.228Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-21T02:52:33.736Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
