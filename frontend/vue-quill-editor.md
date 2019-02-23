@@ -1,9 +1,9 @@
 # Vue-Quill-Editor（自定义使用）
 
-> 基于Vue的Quill富文本编辑器自定义toolbar
-> 1、图片拖拽上传服务器后，在文本区域内添加图片
-> 2、图片弹窗上传选择，在文本区域内添加图片
-> 3、将样式默认使用class的替换为内联样式
+> 基于Vue的Quill富文本编辑器自定义toolbar  
+> 1、图片拖拽上传服务器后，在文本区域内添加图片  
+> 2、图片弹窗上传选择，在文本区域内添加图片  
+> 3、将样式默认使用class的替换为内联样式  
 
 ```pug
 <template lang="pug">
@@ -236,6 +236,8 @@
         Button(type="primary" @click="insertImg") 确认
         Button(@click="imgModal = false") 取消
 </template>
+```
+```javascript
 <script>
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
@@ -361,6 +363,8 @@ export default {
   }
 }
 </script>
+```
+```stylus
 <style lang="stylus">
 .ql-container
   font-size 14px

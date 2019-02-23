@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
@@ -30,10 +34,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -470,427 +470,426 @@
                                 
                                 <h1 id="vue-quill-editor&#xFF08;&#x81EA;&#x5B9A;&#x4E49;&#x4F7F;&#x7528;&#xFF09;">Vue-Quill-Editor&#xFF08;&#x81EA;&#x5B9A;&#x4E49;&#x4F7F;&#x7528;&#xFF09;</h1>
 <blockquote>
-<p>&#x57FA;&#x4E8E;Vue&#x7684;Quill&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x81EA;&#x5B9A;&#x4E49;toolbar
-1&#x3001;&#x56FE;&#x7247;&#x62D6;&#x62FD;&#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x5668;&#x540E;&#xFF0C;&#x5728;&#x6587;&#x672C;&#x533A;&#x57DF;&#x5185;&#x6DFB;&#x52A0;&#x56FE;&#x7247;
-2&#x3001;&#x56FE;&#x7247;&#x5F39;&#x7A97;&#x4E0A;&#x4F20;&#x9009;&#x62E9;&#xFF0C;&#x5728;&#x6587;&#x672C;&#x533A;&#x57DF;&#x5185;&#x6DFB;&#x52A0;&#x56FE;&#x7247;
-3&#x3001;&#x5C06;&#x6837;&#x5F0F;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;class&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x8054;&#x6837;&#x5F0F;</p>
+<p>&#x57FA;&#x4E8E;Vue&#x7684;Quill&#x5BCC;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x81EA;&#x5B9A;&#x4E49;toolbar<br>1&#x3001;&#x56FE;&#x7247;&#x62D6;&#x62FD;&#x4E0A;&#x4F20;&#x670D;&#x52A1;&#x5668;&#x540E;&#xFF0C;&#x5728;&#x6587;&#x672C;&#x533A;&#x57DF;&#x5185;&#x6DFB;&#x52A0;&#x56FE;&#x7247;<br>2&#x3001;&#x56FE;&#x7247;&#x5F39;&#x7A97;&#x4E0A;&#x4F20;&#x9009;&#x62E9;&#xFF0C;&#x5728;&#x6587;&#x672C;&#x533A;&#x57DF;&#x5185;&#x6DFB;&#x52A0;&#x56FE;&#x7247;<br>3&#x3001;&#x5C06;&#x6837;&#x5F0F;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;class&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x8054;&#x6837;&#x5F0F;  </p>
 </blockquote>
-<pre><code class="lang-pug">&lt;template lang=&quot;pug&quot;&gt;
-  div
-    quillEditor(
-      ref=&quot;editorRef&quot;
-      v-model=&quot;content&quot;
-      :options=&quot;editorOption&quot;
-      @change=&quot;onContentChange&quot;)
-      div(:id=&quot;[toolbar]&quot; slot=&quot;toolbar&quot;)
-        span.ql-formats
-          button.ql-bold(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-italic(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-underline(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-strike(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-blockquote(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-code-block(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-header(value=&quot;1&quot; type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-header(value=&quot;2&quot; type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-list(value=&quot;ordered&quot; type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-list(value=&quot;bullet&quot; type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-script(value=&quot;sub&quot; type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-script(value=&quot;super&quot; type=&quot;button&quot;)
-        //- &#x7F29;&#x8FDB;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x5185;&#x8054;&#x6837;&#x5F0F;&#x4EE3;&#x66FF;class&#x6837;&#x5F0F;
-        //span.ql-formats
-          button.ql-indent(value=&quot;-1&quot; type=&quot;button&quot;)
-        //span.ql-formats
-          button.ql-indent(value=&quot;+1&quot; type=&quot;button&quot;)
-        //span.ql-formats
-          button.ql-direction(value=&quot;rtl&quot; type=&quot;button&quot;)
-        span.ql-formats
-          //- &#x9ED8;&#x8BA4;&#x5B57;&#x4F53;&#x5927;&#x5C0F;
-          //select.ql-size
+<pre class="language-"><code class="lang-pug"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pug<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></span>
+  <span class="token tag">div</span>
+    <span class="token tag">quillEditor<span class="token attributes"><span class="token punctuation">(</span>
+      <span class="token attr-name">ref</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;editorRef&quot;</span></span>
+      <span class="token attr-name">v-model</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;content&quot;</span></span>
+      :<span class="token attr-name">options</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;editorOption&quot;</span></span>
+      @<span class="token attr-name">change</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;onContentChange&quot;</span></span><span class="token punctuation">)</span></span></span>
+      <span class="token tag">div<span class="token attributes"><span class="token punctuation">(</span>:<span class="token attr-name">id</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;[toolbar]&quot;</span> slot<span class="token operator">=</span><span class="token string">&quot;toolbar&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-bold<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-italic<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-underline<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-strike<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-blockquote<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-code-block<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-header<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;1&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-header<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;2&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-list<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;ordered&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-list<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;bullet&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-script<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;sub&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-script<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;super&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token comment">//- &#x7F29;&#x8FDB;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x5185;&#x8054;&#x6837;&#x5F0F;&#x4EE3;&#x66FF;class&#x6837;&#x5F0F;</span>
+        <span class="token comment">//span.ql-formats
+          button.ql-indent(value=&quot;-1&quot; type=&quot;button&quot;)</span>
+        <span class="token comment">//span.ql-formats
+          button.ql-indent(value=&quot;+1&quot; type=&quot;button&quot;)</span>
+        <span class="token comment">//span.ql-formats
+          button.ql-direction(value=&quot;rtl&quot; type=&quot;button&quot;)</span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token comment">//- &#x9ED8;&#x8BA4;&#x5B57;&#x4F53;&#x5927;&#x5C0F;</span>
+          <span class="token comment">//select.ql-size
             option(value=&quot;small&quot;)
             option(selected)
             option(value=&quot;large&quot;)
-            option(value=&quot;huge&quot;)
-          //- &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;js&#x4E2D;SizeStyle.whitelist&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;
-          select.ql-size
-            option(value=&quot;12px&quot;) 12px
-            option(selected) 14px
-            option(value=&quot;16px&quot;) 16px
-            option(value=&quot;18px&quot;) 18px
-            option(value=&quot;20px&quot;) 20px
-            option(value=&quot;22px&quot;) 22px
-            option(value=&quot;24px&quot;) 24px
-            option(value=&quot;26px&quot;) 26px
-            option(value=&quot;28px&quot;) 28px
-            option(value=&quot;30px&quot;) 30px
-            option(value=&quot;32px&quot;) 32px
-        span.ql-formats
-          select.ql-header
-            option(value=&quot;1&quot;)
-            option(value=&quot;2&quot;)
-            option(value=&quot;3&quot;)
-            option(value=&quot;4&quot;)
-            option(value=&quot;5&quot;)
-            option(value=&quot;6&quot;)
-            option(selected=&quot;selected&quot;)
-        span.ql-formats
-          select.ql-color
-            option(selected=&quot;selected&quot;)
-            option(value=&quot;#e60000&quot;)
-            option(value=&quot;#ff9900&quot;)
-            option(value=&quot;#ffff00&quot;)
-            option(value=&quot;#008a00&quot;)
-            option(value=&quot;#0066cc&quot;)
-            option(value=&quot;#9933ff&quot;)
-            option(value=&quot;#ffffff&quot;)
-            option(value=&quot;#facccc&quot;)
-            option(value=&quot;#ffebcc&quot;)
-            option(value=&quot;#ffffcc&quot;)
-            option(value=&quot;#cce8cc&quot;)
-            option(value=&quot;#cce0f5&quot;)
-            option(value=&quot;#ebd6ff&quot;)
-            option(value=&quot;#bbbbbb&quot;)
-            option(value=&quot;#f06666&quot;)
-            option(value=&quot;#ffc266&quot;)
-            option(value=&quot;#ffff66&quot;)
-            option(value=&quot;#66b966&quot;)
-            option(value=&quot;#66a3e0&quot;)
-            option(value=&quot;#c285ff&quot;)
-            option(value=&quot;#888888&quot;)
-            option(value=&quot;#a10000&quot;)
-            option(value=&quot;#b26b00&quot;)
-            option(value=&quot;#b2b200&quot;)
-            option(value=&quot;#006100&quot;)
-            option(value=&quot;#0047b2&quot;)
-            option(value=&quot;#6b24b2&quot;)
-            option(value=&quot;#444444&quot;)
-            option(value=&quot;#5c0000&quot;)
-            option(value=&quot;#663d00&quot;)
-            option(value=&quot;#666600&quot;)
-            option(value=&quot;#003700&quot;)
-            option(value=&quot;#002966&quot;)
-            option(value=&quot;#3d1466&quot;)
-        span.ql-formats
-          select.ql-background
-            option(value=&quot;#000000&quot;)
-            option(value=&quot;#e60000&quot;)
-            option(value=&quot;#ff9900&quot;)
-            option(value=&quot;#ffff00&quot;)
-            option(value=&quot;#008a00&quot;)
-            option(value=&quot;#0066cc&quot;)
-            option(value=&quot;#9933ff&quot;)
-            option(selected=&quot;selected&quot;)
-            option(value=&quot;#facccc&quot;)
-            option(value=&quot;#ffebcc&quot;)
-            option(value=&quot;#ffffcc&quot;)
-            option(value=&quot;#cce8cc&quot;)
-            option(value=&quot;#cce0f5&quot;)
-            option(value=&quot;#ebd6ff&quot;)
-            option(value=&quot;#bbbbbb&quot;)
-            option(value=&quot;#f06666&quot;)
-            option(value=&quot;#ffc266&quot;)
-            option(value=&quot;#ffff66&quot;)
-            option(value=&quot;#66b966&quot;)
-            option(value=&quot;#66a3e0&quot;)
-            option(value=&quot;#c285ff&quot;)
-            option(value=&quot;#888888&quot;)
-            option(value=&quot;#a10000&quot;)
-            option(value=&quot;#b26b00&quot;)
-            option(value=&quot;#b2b200&quot;)
-            option(value=&quot;#006100&quot;)
-            option(value=&quot;#0047b2&quot;)
-            option(value=&quot;#6b24b2&quot;)
-            option(value=&quot;#444444&quot;)
-            option(value=&quot;#5c0000&quot;)
-            option(value=&quot;#663d00&quot;)
-            option(value=&quot;#666600&quot;)
-            option(value=&quot;#003700&quot;)
-            option(value=&quot;#002966&quot;)
-            option(value=&quot;#3d1466&quot;)
-        span.ql-formats
-          //- &#x9ED8;&#x8BA4;&#x5B57;&#x4F53;
-          //select.ql-font
+            option(value=&quot;huge&quot;)</span>
+          <span class="token comment">//- &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;js&#x4E2D;SizeStyle.whitelist&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;</span>
+          <span class="token tag">select.ql-size</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;12px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">12px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">)</span></span></span> <span class="token plain-text">14px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;16px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">16px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;18px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">18px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;20px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">20px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;22px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">22px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;24px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">24px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;26px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">26px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;28px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">28px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;30px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">30px</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;32px&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">32px</span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">select.ql-header</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;1&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;2&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;3&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;4&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;5&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;6&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;selected&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">select.ql-color</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;selected&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#e60000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ff9900&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffff00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#008a00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#0066cc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#9933ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffffff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#facccc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffebcc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffffcc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#cce8cc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#cce0f5&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ebd6ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#bbbbbb&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#f06666&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffc266&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffff66&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#66b966&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#66a3e0&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#c285ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#888888&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#a10000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#b26b00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#b2b200&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#006100&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#0047b2&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#6b24b2&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#444444&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#5c0000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#663d00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#666600&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#003700&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#002966&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#3d1466&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">select.ql-background</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#000000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#e60000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ff9900&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffff00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#008a00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#0066cc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#9933ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;selected&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#facccc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffebcc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffffcc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#cce8cc&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#cce0f5&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ebd6ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#bbbbbb&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#f06666&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffc266&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#ffff66&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#66b966&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#66a3e0&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#c285ff&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#888888&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#a10000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#b26b00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#b2b200&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#006100&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#0047b2&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#6b24b2&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#444444&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#5c0000&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#663d00&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#666600&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#003700&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#002966&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;#3d1466&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token comment">//- &#x9ED8;&#x8BA4;&#x5B57;&#x4F53;</span>
+          <span class="token comment">//select.ql-font
             option(selected=&quot;selected&quot;)
             option(value=&quot;serif&quot;)
-            option(value=&quot;monospace&quot;)
-          //- &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;js&#x4E2D;FontStyle.whitelist&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;
-          select.ql-font
-            option(selected=&quot;selected&quot;)
-            option(value=&quot;&#x5B8B;&#x4F53;&quot;) &#x5B8B;&#x4F53;
-            option(value=&quot;&#x9ED1;&#x4F53;&quot;) &#x9ED1;&#x4F53;
-            option(value=&quot;&#x6977;&#x4F53;&quot;) &#x6977;&#x4F53;
-            option(value=&quot;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&quot;) &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;
-            option(value=&quot;Arial&quot;) Arial
-            option(value=&quot;Verdana&quot;) Verdana
-            option(value=&quot;Georgia&quot;) Georgia
-            option(value=&quot;Times New Roman&quot;) Times New Roman
-            option(value=&quot;Microsoft JhengHei&quot;) Microsoft JhengHei
-            option(value=&quot;Trebuchet MS&quot;) Trebuchet MS
-            option(value=&quot;Courier New&quot;) Courier New
-            option(value=&quot;Impact&quot;) Impact
-            option(value=&quot;Comic Sans MS&quot;) Comic Sans MS
-            option(value=&quot;Consolas&quot;) Consolas
-        span.ql-formats
-          select.ql-align
-            option(selected=&quot;selected&quot;)
-            option(value=&quot;center&quot;)
-            option(value=&quot;right&quot;)
-            option(value=&quot;justify&quot;)
-        span.ql-formats
-          button.ql-clean(type=&quot;button&quot;)
-        span.ql-formats
-          button.ql-link(type=&quot;button&quot;)
-        span.ql-formats
-          //- &#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x9009;&#x62E9;&#x5668;
-          button(type=&quot;button&quot; @click=&quot;imgModal = true&quot;)
-            svg(viewBox=&quot;0 0 18 18&quot;)
-              rect.ql-stroke(height=&quot;10&quot; width=&quot;12&quot; x=&quot;3&quot; y=&quot;4&quot;)
-              circle.ql-fill(cx=&quot;6&quot; cy=&quot;7&quot; r=&quot;1&quot;)
-              polyline.ql-even.ql-fill(points=&quot;5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12&quot;)
-        span.ql-formats
-          button.ql-video(type=&quot;button&quot;)
-    //- &#x4F7F;&#x7528;iview modal
-    Modal(
-      v-model=&quot;imgModal&quot;
-      title=&quot;&#x9009;&#x62E9;&#x56FE;&#x7247;&quot;
-      :mask-closable=&quot;false&quot;)
-      div
-        div(style=&quot;text-align: center&quot;)
-          input(
-            ref=&quot;imgFileRef&quot;
-            type=&quot;file&quot;
-            style=&quot;display: none !important&quot;
-            :accept=&quot;accept&quot;
-            @change=&quot;fileChange&quot;)
-          div(
-            ref=&quot;imgRef&quot;
-            :style=&quot;`display: inline-block; width: 300px; height: 180px; border: 2px dashed; position: relative; border-color: ${ isDropImgOver ? &apos;#666&apos; : &apos;#CCC&apos; }`&quot;
-            @click=&quot;$refs.imgFileRef.click()&quot;)
-            Progress(
-              v-if=&quot;percent &gt; 0 &amp;&amp; percent &lt; 100&quot;
-              style=&quot;position: absolute; top: 75px&quot;
-              :percent=&quot;percent&quot;
-              hide-info)
-            img(
-              v-if=&quot;imgUrl&quot;
-              style=&quot;width: 100%; height: 100%&quot;
-              :src=&quot;imgUrl&quot;)
-            img(
+            option(value=&quot;monospace&quot;)</span>
+          <span class="token comment">//- &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;js&#x4E2D;FontStyle.whitelist&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;</span>
+          <span class="token tag">select.ql-font</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;selected&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x5B8B;&#x4F53;&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x5B8B;&#x4F53;</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x9ED1;&#x4F53;&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x9ED1;&#x4F53;</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x6977;&#x4F53;&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x6977;&#x4F53;</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Arial&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Arial</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Verdana&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Verdana</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Georgia&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Georgia</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Times New Roman&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Times New Roman</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Microsoft JhengHei&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Microsoft JhengHei</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Trebuchet MS&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Trebuchet MS</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Courier New&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Courier New</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Impact&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Impact</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Comic Sans MS&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Comic Sans MS</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;Consolas&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Consolas</span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">select.ql-align</span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">selected</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;selected&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;center&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;right&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">option<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">value</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;justify&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-clean<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-link<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token comment">//- &#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x7247;&#x9009;&#x62E9;&#x5668;</span>
+          <span class="token tag">button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;imgModal = true&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">svg<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">viewBox</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;0 0 18 18&quot;</span></span><span class="token punctuation">)</span></span></span>
+              <span class="token tag">rect.ql-stroke<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">height</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;10&quot;</span> width<span class="token operator">=</span><span class="token string">&quot;12&quot;</span> x<span class="token operator">=</span><span class="token string">&quot;3&quot;</span> y<span class="token operator">=</span><span class="token string">&quot;4&quot;</span></span><span class="token punctuation">)</span></span></span>
+              <span class="token tag">circle.ql-fill<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">cx</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;6&quot;</span> cy<span class="token operator">=</span><span class="token string">&quot;7&quot;</span> r<span class="token operator">=</span><span class="token string">&quot;1&quot;</span></span><span class="token punctuation">)</span></span></span>
+              <span class="token tag">polyline.ql-even.ql-fill<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">points</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">span.ql-formats</span>
+          <span class="token tag">button.ql-video<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;button&quot;</span></span><span class="token punctuation">)</span></span></span>
+    <span class="token comment">//- &#x4F7F;&#x7528;iview modal</span>
+    <span class="token tag">Modal<span class="token attributes"><span class="token punctuation">(</span>
+      <span class="token attr-name">v-model</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgModal&quot;</span></span>
+      <span class="token attr-name">title</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x9009;&#x62E9;&#x56FE;&#x7247;&quot;</span></span>
+      :<span class="token attr-name">mask-closable</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;false&quot;</span></span><span class="token punctuation">)</span></span></span>
+      <span class="token tag">div</span>
+        <span class="token tag">div<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;text-align: center&quot;</span></span><span class="token punctuation">)</span></span></span>
+          <span class="token tag">input<span class="token attributes"><span class="token punctuation">(</span>
+            <span class="token attr-name">ref</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgFileRef&quot;</span></span>
+            <span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;file&quot;</span></span>
+            <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;display: none !important&quot;</span></span>
+            :<span class="token attr-name">accept</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;accept&quot;</span></span>
+            @<span class="token attr-name">change</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;fileChange&quot;</span></span><span class="token punctuation">)</span></span></span>
+          <span class="token tag">div<span class="token attributes"><span class="token punctuation">(</span>
+            <span class="token attr-name">ref</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgRef&quot;</span></span>
+            :<span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;`display: inline-block; width: 300px; height: 180px; border: 2px dashed; position: relative; border-color: ${ isDropImgOver ? &apos;#666&apos; : &apos;#CCC&apos; }`&quot;</span></span>
+            @<span class="token attr-name">click</span><span class="token punctuation">=</span><span class="token attr-value">&quot;$refs<span class="token punctuation">.</span>imgFileRef<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span></span><span class="token punctuation">)</span></span></span>&quot;)
+            <span class="token tag">Progress<span class="token attributes"><span class="token punctuation">(</span>
+              <span class="token attr-name">v-if</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;percent &gt; 0 &amp;&amp; percent &lt; 100&quot;</span></span>
+              <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;position: absolute; top: 75px&quot;</span></span>
+              :<span class="token attr-name">percent</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;percent&quot;</span></span>
+              <span class="token attr-name">hide-info</span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">img<span class="token attributes"><span class="token punctuation">(</span>
+              <span class="token attr-name">v-if</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgUrl&quot;</span></span>
+              <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;width: 100%; height: 100%&quot;</span></span>
+              :<span class="token attr-name">src</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgUrl&quot;</span></span><span class="token punctuation">)</span></span></span>
+            <span class="token tag">img<span class="token attributes"><span class="token punctuation">(</span>
               v-else
-              style=&quot;width: 100%; height: 100%&quot;
-              src=&quot;@images/img.png&quot;)
-          p(style=&quot;padding: 6px 0; color: #777&quot;) &#x70B9;&#x51FB;&#x6216;&#x62D6;&#x62FD;&#x56FE;&#x7247;&#x5230;&#x4E0A;&#x65B9;&#x533A;&#x57DF;&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4E0B;&#x65B9;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x4E0A;&#x4F20;&#x56FE;&#x7247;
-        div
-          Input(
-            v-model=&quot;netImgUrl&quot;
-            style=&quot;width: 80%&quot;
-            placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&quot;)
-          Button(
-            type=&quot;info&quot;
-            icon=&quot;earth&quot;
-            @click=&quot;imgUrl = netImgUrl&quot;
-            style=&quot;float: right&quot;
-            :disabled=&quot;!netImgUrl&quot;) &#x7F51;&#x7EDC;&#x83B7;&#x53D6;
-      div(slot=&quot;footer&quot;)
-        Button(type=&quot;primary&quot; @click=&quot;insertImg&quot;) &#x786E;&#x8BA4;
-        Button(@click=&quot;imgModal = false&quot;) &#x53D6;&#x6D88;
-&lt;/template&gt;
-&lt;script&gt;
-import &apos;quill/dist/quill.core.css&apos;
-import &apos;quill/dist/quill.snow.css&apos;
-import &apos;quill/dist/quill.bubble.css&apos;
-import _Quill from &apos;quill&apos;
-import { quillEditor } from &apos;vue-quill-editor&apos;
+              <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;width: 100%; height: 100%&quot;</span></span>
+              <span class="token attr-name">src</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;@images/img.png&quot;</span></span><span class="token punctuation">)</span></span></span>
+          <span class="token tag">p<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;padding: 6px 0; color: #777&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x70B9;&#x51FB;&#x6216;&#x62D6;&#x62FD;&#x56FE;&#x7247;&#x5230;&#x4E0A;&#x65B9;&#x533A;&#x57DF;&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4E0B;&#x65B9;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x4E0A;&#x4F20;&#x56FE;&#x7247;</span>
+        <span class="token tag">div</span>
+          <span class="token tag">Input<span class="token attributes"><span class="token punctuation">(</span>
+            <span class="token attr-name">v-model</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;netImgUrl&quot;</span></span>
+            <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;width: 80%&quot;</span></span>
+            <span class="token attr-name">placeholder</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x56FE;&#x7247;&#x94FE;&#x63A5;&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x56FE;&#x7247;&quot;</span></span><span class="token punctuation">)</span></span></span>
+          <span class="token tag">Button<span class="token attributes"><span class="token punctuation">(</span>
+            <span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;info&quot;</span></span>
+            <span class="token attr-name">icon</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;earth&quot;</span></span>
+            @<span class="token attr-name">click</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgUrl = netImgUrl&quot;</span></span>
+            <span class="token attr-name">style</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;float: right&quot;</span></span>
+            :<span class="token attr-name">disabled</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;!netImgUrl&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x7F51;&#x7EDC;&#x83B7;&#x53D6;</span>
+      <span class="token tag">div<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">slot</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;footer&quot;</span></span><span class="token punctuation">)</span></span></span>
+        <span class="token tag">Button<span class="token attributes"><span class="token punctuation">(</span><span class="token attr-name">type</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;primary&quot;</span> @click<span class="token operator">=</span><span class="token string">&quot;insertImg&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x786E;&#x8BA4;</span>
+        <span class="token tag">Button<span class="token attributes"><span class="token punctuation">(</span>@<span class="token attr-name">click</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;imgModal = false&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">&#x53D6;&#x6D88;</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre>
+<pre class="language-"><code class="lang-javascript"><span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;quill/dist/quill.core.css&apos;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;quill/dist/quill.snow.css&apos;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;quill/dist/quill.bubble.css&apos;</span>
+<span class="token keyword">import</span> _Quill <span class="token keyword">from</span> <span class="token string">&apos;quill&apos;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> quillEditor <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;vue-quill-editor&apos;</span>
 
-// &#x9ED8;&#x8BA4;&#x56FE;&#x7247;&#x7C7B;&#x578B;
-const allowType = {
-  &apos;.png&apos;: &apos;image/png&apos;,
-  &apos;.jpg&apos;: &apos;image/jpeg&apos;/* ,
+<span class="token comment">// &#x9ED8;&#x8BA4;&#x56FE;&#x7247;&#x7C7B;&#x578B;</span>
+<span class="token keyword">const</span> allowType <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">&apos;.png&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;image/png&apos;</span><span class="token punctuation">,</span>
+  <span class="token string">&apos;.jpg&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;image/jpeg&apos;</span><span class="token comment">/* ,
   &apos;.jpeg&apos;: &apos;image/jpeg&apos;,
   &apos;.bmp&apos;: &apos;image/bmp&apos;,
   &apos;.gif&apos;: &apos;image/gif&apos;,
   &apos;.svg&apos;: &apos;image/svg+xml&apos;,
-  &apos;.tif&apos;: &apos;image/tiff&apos; */
-}
+  &apos;.tif&apos;: &apos;image/tiff&apos; */</span>
+<span class="token punctuation">}</span>
 
-/**
+<span class="token comment">/**
  * &#x5BF9;Quill&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x4FEE;&#x6539;
- */
-const Quill = window.Quill || _Quill
-// &#x5C06;&#x6837;&#x5F0F;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;class&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x8054;&#x6837;&#x5F0F;
-let SizeStyle = Quill.import(&apos;attributors/style/size&apos;)
-let FontStyle = Quill.import(&apos;attributors/style/font&apos;)
-let AlignStyle = Quill.import(&apos;attributors/style/align&apos;)
-// &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x5C3A;&#x5BF8;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;html&#x4E2D;&#x4E0B;&#x62C9;&#x6846;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;
-SizeStyle.whitelist = [&apos;12px&apos;, &apos;16px&apos;, &apos;18px&apos;, &apos;20px&apos;, &apos;22px&apos;, &apos;24px&apos;, &apos;26px&apos;, &apos;28px&apos;, &apos;30px&apos;, &apos;32px&apos;]
-// &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;html&#x4E2D;&#x4E0B;&#x62C9;&#x6846;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;
-FontStyle.whitelist = [&apos;&#x5B8B;&#x4F53;&apos;, &apos;&#x9ED1;&#x4F53;&apos;, &apos;&#x6977;&#x4F53;&apos;, &apos;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&apos;, &apos;Arial&apos;, &apos;Verdana&apos;, &apos;Georgia&apos;, &apos;Times New Roman&apos;, &apos;Microsoft JhengHei&apos;, &apos;Trebuchet MS&apos;, &apos;Courier New&apos;, &apos;Impact&apos;, &apos;Comic Sans MS&apos;, &apos;Consolas&apos;]
-Quill.register(SizeStyle, true)
-Quill.register(FontStyle, true)
-Quill.register(AlignStyle, true)
+ */</span>
+<span class="token keyword">const</span> Quill <span class="token operator">=</span> window<span class="token punctuation">.</span>Quill <span class="token operator">||</span> _Quill
+<span class="token comment">// &#x5C06;&#x6837;&#x5F0F;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;class&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x5185;&#x8054;&#x6837;&#x5F0F;</span>
+<span class="token keyword">let</span> SizeStyle <span class="token operator">=</span> Quill<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;attributors/style/size&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> FontStyle <span class="token operator">=</span> Quill<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;attributors/style/font&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> AlignStyle <span class="token operator">=</span> Quill<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">&apos;attributors/style/align&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x5927;&#x5C0F;&#x5C3A;&#x5BF8;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;html&#x4E2D;&#x4E0B;&#x62C9;&#x6846;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;</span>
+SizeStyle<span class="token punctuation">.</span>whitelist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;12px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;16px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;18px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;20px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;22px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;24px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;26px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;28px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;30px&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;32px&apos;</span><span class="token punctuation">]</span>
+<span class="token comment">// &#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x4F53;&#x7C7B;&#x578B;&#xFF0C;&#x9700;&#x5BF9;&#x5E94;&#x4FEE;&#x6539;html&#x4E2D;&#x4E0B;&#x62C9;&#x6846;&#xFF0C;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x6837;&#x5F0F;</span>
+FontStyle<span class="token punctuation">.</span>whitelist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;&#x5B8B;&#x4F53;&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x9ED1;&#x4F53;&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x6977;&#x4F53;&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Arial&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Verdana&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Georgia&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Times New Roman&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Microsoft JhengHei&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Trebuchet MS&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Courier New&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Impact&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Comic Sans MS&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Consolas&apos;</span><span class="token punctuation">]</span>
+Quill<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>SizeStyle<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+Quill<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>FontStyle<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+Quill<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span>AlignStyle<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
 
-export default {
-  name: &apos;Editor&apos;,
-  components: { quillEditor },
-  props: { value: String, placeholder: String },
-  data () {
-    return {
-      content: this.value,
-      toolbar: &apos;&apos;,
-      imgModal: false,
-      imgUrl: &apos;&apos;,
-      netImgUrl: &apos;&apos;,
-      isDropImgOver: false
-    }
-  },
-  computed: {
-    editor () { return this.$refs.editorRef.quill },
-    accept () { return Object.keys(allowType).join(&apos;,&apos;) },
-    editorOption () {
-      // &#x89E3;&#x51B3;&#x540C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#x51FA;&#x73B0;&#x591A;&#x4E2A;&#x5BCC;&#x6587;&#x672C;id&#x51B2;&#x7A81;&#x7684;&#x95EE;&#x9898;
-      let id = &apos;toolbar-&apos; + Math.random().toString(16).substring(2)
-      this.toolbar = id // eslint-disable-line
-      return {
-        placeholder: this.placeholder,
-        modules: {
-          toolbar: &apos;#&apos; + id
-        }
-      }
-    }
-  },
-  watch: {
-    value (val) {
-      if (this.editor &amp;&amp; val !== this.content) this.content = val
-    },
-    modal (val) {
-      if (!val) {
-        this.imgUrl = &apos;&apos;
-        this.netImgUrl = &apos;&apos;
-      }
-    }
-  },
-  mounted () {
-    this.$nextTick(() =&gt; {
-      /**
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span> <span class="token string">&apos;Editor&apos;</span><span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span> quillEditor <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> String<span class="token punctuation">,</span> placeholder<span class="token punctuation">:</span> String <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      content<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+      toolbar<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+      imgModal<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      imgUrl<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+      netImgUrl<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+      isDropImgOver<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">editor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>editorRef<span class="token punctuation">.</span>quill <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">accept</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>allowType<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos;,&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">editorOption</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x89E3;&#x51B3;&#x540C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E2D;&#x51FA;&#x73B0;&#x591A;&#x4E2A;&#x5BCC;&#x6587;&#x672C;id&#x51B2;&#x7A81;&#x7684;&#x95EE;&#x9898;</span>
+      <span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token string">&apos;toolbar-&apos;</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>toolbar <span class="token operator">=</span> id <span class="token comment">// eslint-disable-line</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        placeholder<span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>placeholder<span class="token punctuation">,</span>
+        modules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          toolbar<span class="token punctuation">:</span> <span class="token string">&apos;#&apos;</span> <span class="token operator">+</span> id
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  watch<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">value</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>editor <span class="token operator">&amp;&amp;</span> val <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span>content<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>content <span class="token operator">=</span> val
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">modal</span> <span class="token punctuation">(</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>imgUrl <span class="token operator">=</span> <span class="token string">&apos;&apos;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>netImgUrl <span class="token operator">=</span> <span class="token string">&apos;&apos;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
        * &#x62D6;&#x62FD;&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x5E76;&#x63D2;&#x5165;&#x5BCC;&#x6587;&#x672C;
-       */
-      // &#x83B7;&#x53D6;quillEditor&#x4E2D;&#x7684;editor
-      let editor = this.$refs.editorRef.$refs.editor
-      editor.ondragenter = e =&gt; this.dropInsertHandler(e)
-      editor.ondragover = e =&gt; this.dropInsertHandler(e)
-      editor.ondragleave = e =&gt; this.dropInsertHandler(e)
-      editor.ondrop = e =&gt; {
-        const files = e.dataTransfer.files
-        if (files &amp;&amp; files.length &gt; 0) {
-          this.fileUpload(files[0], this.insertImg)
-        }
-        this.dropInsertHandler(e, false)
-      }
-    })
-  },
-  methods: {
-    fileUpload (file, callback) {
-      // &#x5224;&#x65AD;&#x683C;&#x5F0F;
-      // &#x5224;&#x65AD;&#x5927;&#x5C0F;
-      // ...
+       */</span>
+      <span class="token comment">// &#x83B7;&#x53D6;quillEditor&#x4E2D;&#x7684;editor</span>
+      <span class="token keyword">let</span> editor <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>editorRef<span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>editor
+      editor<span class="token punctuation">.</span><span class="token function-variable function">ondragenter</span> <span class="token operator">=</span> e <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dropInsertHandler</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      editor<span class="token punctuation">.</span><span class="token function-variable function">ondragover</span> <span class="token operator">=</span> e <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dropInsertHandler</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      editor<span class="token punctuation">.</span><span class="token function-variable function">ondragleave</span> <span class="token operator">=</span> e <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dropInsertHandler</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+      editor<span class="token punctuation">.</span><span class="token function-variable function">ondrop</span> <span class="token operator">=</span> e <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> files <span class="token operator">=</span> e<span class="token punctuation">.</span>dataTransfer<span class="token punctuation">.</span>files
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>files <span class="token operator">&amp;&amp;</span> files<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fileUpload</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>insertImg<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">dropInsertHandler</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">fileUpload</span> <span class="token punctuation">(</span>file<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// &#x5224;&#x65AD;&#x683C;&#x5F0F;</span>
+      <span class="token comment">// &#x5224;&#x65AD;&#x5927;&#x5C0F;</span>
+      <span class="token comment">// ...</span>
 
-      // &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x5E76;&#x8FD4;&#x56DE;&#x56FE;&#x7247;&#x8BBF;&#x95EE;url
-      // this.imgUrl = imgUrl
-      // callback &amp;&amp; callback()
-    },
-    insertImg () {
-      if (this.imgUrl) {
-        this.editor.focus()
-        this.editor.insertEmbed(this.editor.getSelection().index, &apos;image&apos;, this.imgUrl)
-        this.modal = false
-      } else alert(&apos;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684;&#x56FE;&#x7247;&#xFF01;&apos;)
-    },
-    onContentChange () {
-      this.$emit(&apos;input&apos;, this.content)
-    },
-    fileChange ({ target: { files } }) {
-      if (files &amp;&amp; files.length &gt; 0) {
-        this.fileUpload(files[0])
-      }
-    },
-    dropInsertHandler (e) {
-      e.preventDefault() // &#x963B;&#x6B62;&#x79BB;&#x5F00;&#x65F6;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;
-      e.stopPropagation() // &#x963B;&#x6B62;&#x5192;&#x6CE1;
-    }
-  }
-}
-&lt;/script&gt;
-&lt;style lang=&quot;stylus&quot;&gt;
-.ql-container
-  font-size 14px
-.ql-snow
-  .ql-picker
-    &amp;.ql-size
-      .ql-picker-item
-        &amp;[data-value=&quot;12px&quot;]::before
-          font-size 12px
-        &amp;[data-value=&quot;16px&quot;]::before
-          font-size 16px
-        &amp;[data-value=&quot;18px&quot;]::before
-          font-size 18px
-        &amp;[data-value=&quot;20px&quot;]::before
-          font-size 20px
-        &amp;[data-value=&quot;22px&quot;]::before
-          font-size 22px
-        &amp;[data-value=&quot;24px&quot;]::before
-          font-size 24px
-        &amp;[data-value=&quot;26px&quot;]::before
-          font-size 26px
-        &amp;[data-value=&quot;28px&quot;]::before
-          font-size 28px
-        &amp;[data-value=&quot;30px&quot;]::before
-          font-size 30px
-        &amp;[data-value=&quot;32px&quot;]::before
-          font-size 32px
-    &amp;.ql-font
-      .ql-picker-item
-        &amp;[data-value=&quot;&#x5B8B;&#x4F53;&quot;]::before
-          font-family &apos;&#x5B8B;&#x4F53;&apos;
-        &amp;[data-value=&quot;&#x9ED1;&#x4F53;&quot;]::before
-          font-family &apos;&#x9ED1;&#x4F53;&apos;
-        &amp;[data-value=&quot;&#x6977;&#x4F53;&quot;]::before
-          font-family &apos;&#x6977;&#x4F53;&apos;
-        &amp;[data-value=&quot;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&quot;]::before
-          font-family &apos;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&apos;
-        &amp;[data-value=&quot;Arial&quot;]::before
-          font-family &apos;Arial&apos;
-        &amp;[data-value=&quot;Verdana&quot;]::before
-          font-family &apos;Verdana&apos;
-        &amp;[data-value=&quot;Georgia&quot;]::before
-          font-family &apos;Georgia&apos;
-        &amp;[data-value=&quot;Times New Roman&quot;]::before
-          font-family &apos;Times New Roman&apos;
-        &amp;[data-value=&quot;Microsoft JhengHei&quot;]::before
-          font-family &apos;Microsoft JhengHei&apos;
-        &amp;[data-value=&quot;Trebuchet MS&quot;]::before
-          font-family &apos;Trebuchet MS&apos;
-        &amp;[data-value=&quot;Courier New&quot;]::before
-          font-family &apos;Courier New&apos;
-        &amp;[data-value=&quot;Impact&quot;]::before
-          font-family &apos;Impact&apos;
-        &amp;[data-value=&quot;Comic Sans MS&quot;]::before
-          font-family &apos;Comic Sans MS&apos;
-        &amp;[data-value=&quot;Consolas&quot;]::before
-          font-family &apos;Consolas&apos;
+      <span class="token comment">// &#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x5E76;&#x8FD4;&#x56DE;&#x56FE;&#x7247;&#x8BBF;&#x95EE;url</span>
+      <span class="token comment">// this.imgUrl = imgUrl</span>
+      <span class="token comment">// callback &amp;&amp; callback()</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">insertImg</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>imgUrl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>editor<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>editor<span class="token punctuation">.</span><span class="token function">insertEmbed</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>editor<span class="token punctuation">.</span><span class="token function">getSelection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>index<span class="token punctuation">,</span> <span class="token string">&apos;image&apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>imgUrl<span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>modal <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">&apos;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684;&#x56FE;&#x7247;&#xFF01;&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onContentChange</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">&apos;input&apos;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">fileChange</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> target<span class="token punctuation">:</span> <span class="token punctuation">{</span> files <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>files <span class="token operator">&amp;&amp;</span> files<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fileUpload</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">dropInsertHandler</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#x963B;&#x6B62;&#x79BB;&#x5F00;&#x65F6;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;</span>
+      e<span class="token punctuation">.</span><span class="token function">stopPropagation</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// &#x963B;&#x6B62;&#x5192;&#x6CE1;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre>
+<pre class="language-"><code class="lang-stylus"><span class="token selector">&lt;style lang=&quot;stylus&quot;&gt;
+.ql-container</span>
+  <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">14</span>px</span>
+<span class="token selector">.ql-snow</span>
+  <span class="token selector">.ql-picker</span>
+    <span class="token selector">&amp;.ql-size</span>
+      <span class="token selector">.ql-picker-item</span>
+        <span class="token selector">&amp;[data-value=&quot;12px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">12</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;16px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">16</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;18px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">18</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;20px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">20</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;22px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">22</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;24px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">24</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;26px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">26</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;28px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">28</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;30px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">30</span>px</span>
+        <span class="token selector">&amp;[data-value=&quot;32px&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-size</span> <span class="token number">32</span>px</span>
+    <span class="token selector">&amp;.ql-font</span>
+      <span class="token selector">.ql-picker-item</span>
+        <span class="token selector">&amp;[data-value=&quot;&#x5B8B;&#x4F53;&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;&#x5B8B;&#x4F53;&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;&#x9ED1;&#x4F53;&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;&#x9ED1;&#x4F53;&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;&#x6977;&#x4F53;&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;&#x6977;&#x4F53;&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;&#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Arial&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Arial&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Verdana&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Verdana&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Georgia&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Georgia&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Times New Roman&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Times New Roman&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Microsoft JhengHei&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Microsoft JhengHei&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Trebuchet MS&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Trebuchet MS&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Courier New&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Courier New&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Impact&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Impact&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Comic Sans MS&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Comic Sans MS&apos;</span></span>
+        <span class="token selector">&amp;[data-value=&quot;Consolas&quot;]::before</span>
+          <span class="token property-declaration"><span class="token property">font-family</span> <span class="token string">&apos;Consolas&apos;</span></span>
 &lt;/style&gt;
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-23 14:29:36
+2019-02-23 14:42:13
 </span></footer>
                                 
                                 </section>
@@ -934,7 +933,7 @@ export default {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VueQuillEditor","level":"1.3.4","depth":2,"next":{"title":"Git","level":"1.4","depth":1,"path":"index/git.md","ref":"index/git.md","articles":[{"title":"Git","level":"1.4.1","depth":2,"path":"git/git.md","ref":"git/git.md","articles":[]}]},"previous":{"title":"ESLint","level":"1.3.3","depth":2,"path":"frontend/eslint.md","ref":"frontend/eslint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/vue-quill-editor.md","mtime":"2019-02-23T06:29:36.353Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T06:30:22.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VueQuillEditor","level":"1.3.4","depth":2,"next":{"title":"Git","level":"1.4","depth":1,"path":"index/git.md","ref":"index/git.md","articles":[{"title":"Git","level":"1.4.1","depth":2,"path":"git/git.md","ref":"git/git.md","articles":[]}]},"previous":{"title":"ESLint","level":"1.3.3","depth":2,"path":"frontend/eslint.md","ref":"frontend/eslint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/vue-quill-editor.md","mtime":"2019-02-23T06:42:13.605Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T06:42:50.825Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

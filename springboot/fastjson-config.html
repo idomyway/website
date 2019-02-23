@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
                 
             
@@ -30,10 +34,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -472,42 +472,42 @@
 <blockquote>
 <p>SpringBoot&#x4E2D;&#x4F7F;&#x7528;FastJson&#x5C06;&#x54CD;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x6210;json&#x76F8;&#x5173;&#x914D;&#x7F6E;</p>
 </blockquote>
-<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span>
-<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebMvcConfig</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebMvcConfigurationSupport</span> </span>{
-    <span class="hljs-comment">/**
+<pre class="language-"><code class="lang-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebMvcConfig</span> <span class="token keyword">extends</span> <span class="token class-name">WebMvcConfigurationSupport</span> <span class="token punctuation">{</span>
+    <span class="token comment">/**
      * FastJson&#x5BF9;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;
      */</span>
-    <span class="hljs-meta">@Override</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configureMessageConverters</span><span class="hljs-params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> </span>{
-        FastJsonHttpMessageConverter fastConverter = <span class="hljs-keyword">new</span> FastJsonHttpMessageConverter();
-        FastJsonConfig fastJsonConfig = <span class="hljs-keyword">new</span> FastJsonConfig();
-        <span class="hljs-comment">// &#x5E8F;&#x5217;&#x5316;</span>
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
-        <span class="hljs-comment">// &#x65F6;&#x95F4;&#x6233;&#x683C;&#x5F0F;</span>
-        fastJsonConfig.setDateFormat(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);
-        <span class="hljs-comment">// &#x5904;&#x7406;&#x4E2D;&#x6587;&#x4E71;&#x7801;&#x95EE;&#x9898;</span>
-        List&lt;MediaType&gt; fastMediaTypes = <span class="hljs-keyword">new</span> ArrayList&lt;MediaType&gt;();
-        fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-        fastConverter.setSupportedMediaTypes(fastMediaTypes);
-        <span class="hljs-comment">// &#x4E3A;&#x7A7A;&#x8FD4;&#x56DE;&#x503C;&#x8F6C;&#x6362;</span>
-        ValueFilter valueFilter = <span class="hljs-keyword">new</span> ValueFilter() {
-            <span class="hljs-comment">/**
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configureMessageConverters</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>HttpMessageConverter<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;&gt;</span> converters<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        FastJsonHttpMessageConverter fastConverter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FastJsonHttpMessageConverter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        FastJsonConfig fastJsonConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FastJsonConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5E8F;&#x5217;&#x5316;</span>
+        fastJsonConfig<span class="token punctuation">.</span><span class="token function">setSerializerFeatures</span><span class="token punctuation">(</span>SerializerFeature<span class="token punctuation">.</span>PrettyFormat<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x65F6;&#x95F4;&#x6233;&#x683C;&#x5F0F;</span>
+        fastJsonConfig<span class="token punctuation">.</span><span class="token function">setDateFormat</span><span class="token punctuation">(</span><span class="token string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5904;&#x7406;&#x4E2D;&#x6587;&#x4E71;&#x7801;&#x95EE;&#x9898;</span>
+        List<span class="token generics function"><span class="token punctuation">&lt;</span>MediaType<span class="token punctuation">&gt;</span></span> fastMediaTypes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics function"><span class="token punctuation">&lt;</span>MediaType<span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fastMediaTypes<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>MediaType<span class="token punctuation">.</span>APPLICATION_JSON_UTF8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fastConverter<span class="token punctuation">.</span><span class="token function">setSupportedMediaTypes</span><span class="token punctuation">(</span>fastMediaTypes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x4E3A;&#x7A7A;&#x8FD4;&#x56DE;&#x503C;&#x8F6C;&#x6362;</span>
+        ValueFilter valueFilter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ValueFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">/**
              * Object cls &#x662F;class
              * String key &#x662F;key&#x503C;
              * Object val &#x662F;value&#x503C;
              */</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">process</span><span class="hljs-params">(Object cls, String key, Object val)</span> </span>{
-                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == val)
-                    val = <span class="hljs-string">&quot;&quot;</span>;
-                <span class="hljs-keyword">return</span> val;
-            }
-        };
-        fastJsonConfig.setSerializeFilters(valueFilter);
+            <span class="token keyword">public</span> Object <span class="token function">process</span><span class="token punctuation">(</span>Object cls<span class="token punctuation">,</span> String key<span class="token punctuation">,</span> Object val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>null <span class="token operator">==</span> val<span class="token punctuation">)</span>
+                    val <span class="token operator">=</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        fastJsonConfig<span class="token punctuation">.</span><span class="token function">setSerializeFilters</span><span class="token punctuation">(</span>valueFilter<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        fastConverter.setFastJsonConfig(fastJsonConfig);
-        converters.add(fastConverter);
-    }
-}
+        fastConverter<span class="token punctuation">.</span><span class="token function">setFastJsonConfig</span><span class="token punctuation">(</span>fastJsonConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        converters<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fastConverter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2019-02-20 10:11:30
@@ -554,7 +554,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FastJson配置","level":"1.7.2","depth":2,"next":{"title":"跨域配置","level":"1.7.3","depth":2,"path":"springboot/cors-config.md","ref":"springboot/cors-config.md","articles":[]},"previous":{"title":"Put请求配置","level":"1.7.1","depth":2,"path":"springboot/put-config.md","ref":"springboot/put-config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"springboot/fastjson-config.md","mtime":"2019-02-20T02:11:30.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T06:30:22.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FastJson配置","level":"1.7.2","depth":2,"next":{"title":"跨域配置","level":"1.7.3","depth":2,"path":"springboot/cors-config.md","ref":"springboot/cors-config.md","articles":[]},"previous":{"title":"Put请求配置","level":"1.7.1","depth":2,"path":"springboot/put-config.md","ref":"springboot/put-config.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"springboot/fastjson-config.md","mtime":"2019-02-20T02:11:30.987Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T06:42:50.825Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
