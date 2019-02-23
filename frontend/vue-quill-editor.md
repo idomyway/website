@@ -202,7 +202,7 @@
             type="file"
             style="display: none !important"
             :accept="accept"
-            @change="fileChange")
+            @change="imgFileChange")
           div(
             ref="imgRef"
             :style="`display: inline-block; width: 300px; height: 180px; border: 2px dashed; position: relative; border-color: ${ isDropImgOver ? '#666' : '#CCC' }`"
@@ -327,7 +327,21 @@ export default {
         if (files && files.length > 0) {
           this.fileUpload(files[0], this.insertImg)
         }
-        this.dropInsertHandler(e, false)
+        this.dropInsertHandler(e)
+      }
+      /**
+       * 图片选择器拖拽上传
+       */
+      let imgRef = this.$refs.imgRef
+      imgRef.ondragenter = e => this.imgDropHandler(e)
+      imgRef.ondragover = e => this.imgDropHandler(e)
+      imgRef.ondragleave = e => this.imgDropHandler(e, false)
+      imgRef.ondrop = (e) => {
+        const files = e.dataTransfer.files
+        if (files && files.length > 0) {
+          this.fileUpload(files[0])
+        }
+        this.imgDropHandler(e, false)
       }
     })
   },
@@ -351,11 +365,15 @@ export default {
     onContentChange () {
       this.$emit('input', this.content)
     },
-    fileChange ({ target: { files } }) {
+    imgFileChange ({ target: { files } }) {
       if (files && files.length > 0) {
         this.fileUpload(files[0])
       }
     },
+    imgDropHandler (e, isOver = true) {
+      this.dropInsertHandler()
+      this.isDropImgOver = isOver
+    }
     dropInsertHandler (e) {
       e.preventDefault() // 阻止离开时的浏览器默认行为
       e.stopPropagation() // 阻止冒泡
