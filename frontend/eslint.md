@@ -1,12 +1,9 @@
 # ESLint
 
-> ESLint是一个语法规则和代码风格的检查工具。
-
-> 项目中使用ESLint可以避免一些低级错误、格式错误，统一项目代码风格，更有利于团队协作等。
-
-> 开发工具中需添加ESLint扩展，如：VSCode中ESLint插件。
-
-> 个人更倾向于使用standard规范，以standard规范为例。
+> ESLint是一个语法规则和代码风格的检查工具。  
+> 项目中使用ESLint可以避免一些低级错误、格式错误，统一项目代码风格，更有利于团队协作等。  
+> 开发工具中需添加ESLint扩展，如：VSCode中ESLint插件。  
+> 个人更倾向于使用standard规范，以standard规范为例。  
 
 #### 在Reactjs脚手架create-react-app@1.5.2中使用ESLint
 
