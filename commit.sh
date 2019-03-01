@@ -7,7 +7,7 @@ set -e
 gitbook build
 
 # 部署到自定义域域名
-echo 'blog.wdg.pub' > _book/CNAME
+echo "blog.wdg.pub" > _book/CNAME
 
 git add .
 
@@ -24,3 +24,5 @@ git push origin --delete gh-pages
 
 # 重新提交gh-pages分支
 git subtree push --prefix _book origin gh-pages
+
+echo "确认Enforce HTTPS选项被勾选"
