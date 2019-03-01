@@ -15,4 +15,4 @@ read -p "comment: " comment
 
 git commit -m "$comment"
 
-git push
+git push && git push origin --delete gh-pages && git subtree push --prefix _book origin gh-pages
