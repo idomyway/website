@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ESLint · jekorx's blog</title>
+        <title>WebPack · jekorx's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="webpack.html" />
+    <link rel="next" href="vue-quill-editor.html" />
     
     
-    <link rel="prev" href="editorconfig.html" />
+    <link rel="prev" href="eslint.html" />
     
 
     </head>
@@ -199,7 +199,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="eslint.html">
+        <li class="chapter " data-level="1.3.3" data-path="eslint.html">
             
                 <a href="eslint.html">
             
@@ -212,7 +212,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="webpack.html">
+        <li class="chapter active" data-level="1.3.4" data-path="webpack.html">
             
                 <a href="webpack.html">
             
@@ -505,7 +505,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ESLint</a>
+        <a href=".." >WebPack</a>
     </h1>
 </div>
 
@@ -520,100 +520,119 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="eslint">ESLint</h1>
+                                <h1 id="webpack">webpack</h1>
 <blockquote>
-<p>ESLint&#x662F;&#x4E00;&#x4E2A;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x548C;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x7684;&#x68C0;&#x67E5;&#x5DE5;&#x5177;&#x3002;<br>&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;ESLint&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E00;&#x4E9B;&#x4F4E;&#x7EA7;&#x9519;&#x8BEF;&#x3001;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&#xFF0C;&#x7EDF;&#x4E00;&#x9879;&#x76EE;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#xFF0C;&#x66F4;&#x6709;&#x5229;&#x4E8E;&#x56E2;&#x961F;&#x534F;&#x4F5C;&#x7B49;&#x3002;<br>&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x4E2D;&#x9700;&#x6DFB;&#x52A0;ESLint&#x6269;&#x5C55;&#xFF0C;&#x5982;&#xFF1A;VSCode&#x4E2D;ESLint&#x63D2;&#x4EF6;&#x3002;<br>&#x4E2A;&#x4EBA;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x4F7F;&#x7528;standard&#x89C4;&#x8303;&#xFF0C;&#x4EE5;standard&#x89C4;&#x8303;&#x4E3A;&#x4F8B;&#x3002;  </p>
+<p>webpack@^4.29.6&#x4E3A;&#x4F8B;&#xFF0C;&#x8BE6;&#x7EC6;&#x6587;&#x6863;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://www.webpackjs.com/concepts/" target="_blank">webpack&#x4E2D;&#x6587;&#x6587;&#x6863;</a>  </p>
 </blockquote>
-<h4 id="&#x5728;reactjs&#x811A;&#x624B;&#x67B6;create-react-app152&#x4E2D;&#x4F7F;&#x7528;eslint">&#x5728;Reactjs&#x811A;&#x624B;&#x67B6;create-react-app@1.5.2&#x4E2D;&#x4F7F;&#x7528;ESLint</h4>
-<pre class="language-"><code class="lang-javascript"><span class="token comment">/**
- * &#x7531;&#x4E8E;CRA&#x4E2D;&#x9ED8;&#x8BA4;&#x652F;&#x6301;ESLint&#xFF0C;&#x53EA;&#x9700;&#x6DFB;&#x52A0;&#x76F8;&#x5173;&#x4F9D;&#x8D56;&#x548C;&#x914D;&#x7F6E;&#x5373;&#x53EF;
- */</span>
-
-<span class="token comment">// 1&#x3001;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</span>
-yarn add babel<span class="token operator">-</span>eslint eslint eslint<span class="token operator">-</span>config<span class="token operator">-</span>standard eslint<span class="token operator">-</span>plugin<span class="token operator">-</span><span class="token keyword">import</span> eslint<span class="token operator">-</span>plugin<span class="token operator">-</span>node eslint<span class="token operator">-</span>plugin<span class="token operator">-</span>promise eslint<span class="token operator">-</span>plugin<span class="token operator">-</span>react eslint<span class="token operator">-</span>plugin<span class="token operator">-</span>standard <span class="token operator">-</span><span class="token constant">D</span>
-
-<span class="token comment">// 2&#x3001;eslint&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x6DFB;&#x52A0;.eslintrc&#x6587;&#x4EF6;</span>
-<span class="token punctuation">{</span>
-  <span class="token string">&quot;extends&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">&quot;standard&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;plugin:react/recommended&quot;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;env&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;browser&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;commonjs&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;node&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;es6&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;parser&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;babel-eslint&quot;</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;parserOptions&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;ecmaVersion&quot;</span><span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;sourceType&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;module&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;ecmaFeatures&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      <span class="token string">&quot;jsx&quot;</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;plugins&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">&quot;react&quot;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">&quot;rules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;arrow-parens&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;error&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;as-needed&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;object-curly-spacing&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token comment">// 3&#x3001;eslint&#x6821;&#x9A8C;&#x5FFD;&#x7565;&#xFF0C;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x6DFB;&#x52A0;.eslintignore&#x6587;&#x4EF6;</span>
-<span class="token operator">/</span>build<span class="token operator">/</span>
-<span class="token regex">/public/</span>
-<span class="token comment">/*.js
-</span></code></pre>
-<h4 id="&#x5728;vuejs&#x811A;&#x624B;&#x67B6;vue-cli29x&#x4E2D;&#x4F7F;&#x7528;eslint">&#x5728;Vuejs&#x811A;&#x624B;&#x67B6;vue-cli@2.9.x&#x4E2D;&#x4F7F;&#x7528;ESLint</h4>
-<pre class="language-"><code class="lang-javascript"><span class="token comment">/**
- * &#x53EA;&#x9700;&#x5728;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x65F6;&#x6839;&#x636E;&#x63D0;&#x793A;&#x64CD;&#x4F5C;&#x5373;&#x53EF;
- */</span>
-
-<span class="token comment">// 1&#x3001;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x65F6;&#xFF0C;Use ESLint to lint your code? Y</span>
-
-<span class="token comment">// 2&#x3001;Pick an ESLint preset&#xFF0C;&#x9009;&#x62E9;&#x4E0A;&#x4E0B;&#x7BAD;&#x5934;&#x9009;&#x62E9;Standard (https://github.com/standard/standard)</span>
+<h4 id="&#x4F9D;&#x8D56;">&#x4F9D;&#x8D56;</h4>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># babel&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B0;&#x7248;&#x8BED;&#x6CD5;</span>
+@babel/core@^7.3.4
+babel-loader@^8.0.5
+html-webpack-plugin@^3.2.0
+<span class="token comment"># webpack</span>
+webpack@^4.29.6
+<span class="token comment"># webpack4&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;webpack-cli&#x5728;webpack&#x91CC;&#x9762;&#xFF0C;4&#x5F00;&#x59CB;&#xFF0C;&#x5355;&#x72EC;&#x4E00;&#x4E2A;&#x6A21;&#x5757;</span>
+webpack-cli@^3.2.3
+<span class="token comment"># &#x5F00;&#x53D1;&#xFF0C;&#x7528;&#x4E8E;&#x9875;&#x9762;&#x81EA;&#x52A8;&#x5237;&#x65B0;</span>
+webpack-dev-server@^3.2.1
+<span class="token comment"># webpack&#x914D;&#x7F6E;&#x8986;&#x76D6;&#x5408;&#x5E76;</span>
+webpack-merge@^4.2.1
 </code></pre>
-<h4 id="&#x5728;nuxtjs&#x811A;&#x624B;&#x67B6;create-nuxt-app240&#x4E2D;&#x4F7F;&#x7528;eslint">&#x5728;Nuxtjs&#x811A;&#x624B;&#x67B6;create-nuxt-app@2.4.0&#x4E2D;&#x4F7F;&#x7528;ESLint</h4>
-<pre class="language-"><code class="lang-javascript"><span class="token comment">// 1&#x3001;&#x6784;&#x5EFA;&#x9879;&#x76EE;&#x65F6;&#xFF0C;Choose features to install&#xFF0C;&#x4E0A;&#x4E0B;&#x7BAD;&#x5934;+&#x7A7A;&#x683C;&#x52FE;&#x9009;Linter / Formatter&#x8FD9;&#x4E00;&#x9879;</span>
-
-<span class="token comment">// 2&#x3001;&#x53BB;&#x9664;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x4F9D;&#x8D56;</span>
-yarn remove @nuxtjs<span class="token operator">/</span>eslint<span class="token operator">-</span>config <span class="token operator">-</span><span class="token constant">D</span>
-
-<span class="token comment">// 3&#x3001;&#x4FEE;&#x6539;.eslintrc.js</span>
+<h4 id="webpack&#x914D;&#x7F6E;&#x6587;&#x4EF6;">webpack&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> HTMLWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;html-webpack-plugin&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// &#x8DEF;&#x5F84;&#x8F6C;&#x6362;</span>
+<span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">,</span> dir<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// webpack&#x914D;&#x7F6E;</span>
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  root<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  env<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    browser<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    node<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token comment">// webpack4&#x5FC5;&#x987B;&#x5236;&#x5B9A;&#x6A21;&#x5F0F;</span>
+  <span class="token comment">// &#x4F1A;&#x5C06; process.env.NODE_ENV &#x7684;&#x503C;&#x8BBE;&#x4E3A; development&#x3002;</span>
+  <span class="token comment">// &#x542F;&#x7528; NamedChunksPlugin &#x548C; NamedModulesPlugin</span>
+  mode<span class="token punctuation">:</span> <span class="token string">&apos;development&apos;</span><span class="token punctuation">,</span>
+  <span class="token comment">// &#x4F1A;&#x5C06; process.env.NODE_ENV &#x7684;&#x503C;&#x8BBE;&#x4E3A; production&#x3002;</span>
+  <span class="token comment">// &#x542F;&#x7528; FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, </span>
+  <span class="token comment">// NoEmitOnErrorsPlugin, OccurrenceOrderPlugin, SideEffectsFlagPlugin &#x548C; UglifyJsPlugin</span>
+  <span class="token comment">// mode: &apos;production&apos;,</span>
+  <span class="token comment">// &#x5165;&#x53E3;&#x6587;&#x4EF6;</span>
+  entry<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;src/index.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">// &#x8F93;&#x51FA;&#x6587;&#x4EF6;</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x6587;&#x4EF6;&#x540D;</span>
+    filename<span class="token punctuation">:</span> <span class="token string">&apos;[name].js&apos;</span><span class="token punctuation">,</span>
+    <span class="token comment">// &#x6587;&#x4EF6;&#x76EE;&#x5F55;</span>
+    path<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  parserOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    parser<span class="token punctuation">:</span> <span class="token string">&apos;babel-eslint&apos;</span>
+  <span class="token comment">// &#x6A21;&#x5757;</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5904;&#x7406;&#x89C4;&#x5219;</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token comment">// &#x5339;&#x914D;js&#x6587;&#x4EF6;</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        <span class="token comment">// &#x4F7F;&#x7528;babel&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5199;&#x65B0;&#x7248;js&#x8BED;&#x6CD5;</span>
+        use<span class="token punctuation">:</span> <span class="token string">&apos;babel-loader&apos;</span><span class="token punctuation">,</span>
+        <span class="token comment">// &#x5339;&#x914D;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x5339;&#x914D;&#x6839;&#x76EE;&#x5F55;&#x4E0B;src&#x76EE;&#x5F55;</span>
+        include<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;src&apos;</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token keyword">extends</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token comment">// &apos;@nuxtjs&apos;</span>
-    <span class="token comment">// https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention</span>
-    <span class="token comment">// consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.</span>
-    <span class="token string">&apos;plugin:vue/essential&apos;</span><span class="token punctuation">,</span>
-    <span class="token comment">// https://github.com/standard/standard/blob/master/docs/RULES-en.md</span>
-    <span class="token string">&apos;standard&apos;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token comment">// required to lint *.vue files</span>
+  <span class="token comment">// &#x63D2;&#x4EF6;</span>
   plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-    <span class="token string">&apos;vue&apos;</span>
+    <span class="token comment">// &#x7528;&#x4E8E;&#x5904;&#x7406;html&#xFF0C;&#x5C06;&#x6253;&#x5305;&#x7684;js&#x548C;css&#x5F15;&#x7528;&#x63D2;&#x5165;&#x5230;index.html</span>
+    <span class="token keyword">new</span> <span class="token class-name">HTMLWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// &#x6807;&#x9898;</span>
+      title<span class="token punctuation">:</span> <span class="token string">&apos;Webpack&apos;</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x6A21;&#x7248;</span>
+      template<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;src/index.html&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// &#x7ED9;&#x5B9A;&#x7684;&#x56FE;&#x6807;&#x8DEF;&#x5F84;&#xFF0C;&#x53EF;&#x5C06;&#x5176;&#x6DFB;&#x52A0;&#x5230;&#x8F93;&#x51FA;html&#x4E2D;</span>
+      favicon<span class="token punctuation">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;src/assets/favicon.ico&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token comment">// add your custom rules here</span>
-  rules<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">// allow async-await</span>
-    <span class="token string">&apos;generator-star-spacing&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;off&apos;</span><span class="token punctuation">,</span>
-    <span class="token comment">// allow debugger during development</span>
-    <span class="token string">&apos;no-debugger&apos;</span><span class="token punctuation">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">&apos;production&apos;</span> <span class="token operator">?</span> <span class="token string">&apos;error&apos;</span> <span class="token punctuation">:</span> <span class="token string">&apos;off&apos;</span>
+  <span class="token comment">// webpack dev server &#x914D;&#x7F6E;</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x70ED;&#x66FF;&#x6362;</span>
+    hot<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; host&#x3002;&#x9ED8;&#x8BA4;&#x662F; localhost</span>
+    <span class="token comment">// &#x5982;&#x679C;&#x5E0C;&#x671B;&#x670D;&#x52A1;&#x5668;&#x5916;&#x90E8;&#x53EF;&#x8BBF;&#x95EE;&quot;0.0.0.0&quot;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F1A;&#x81EA;&#x52A8;&#x6253;&#x5F00;http://0.0.0.0:7890/</span>
+    host<span class="token punctuation">:</span> <span class="token string">&apos;127.0.0.1&apos;</span><span class="token punctuation">,</span>
+    <span class="token comment">// &#x7AEF;&#x53E3;</span>
+    port<span class="token punctuation">:</span> <span class="token number">7890</span><span class="token punctuation">,</span>
+    <span class="token comment">// &#x542F;&#x52A8;&#x540E;&#x81EA;&#x52A8;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00;</span>
+    open<span class="token punctuation">:</span> <span class="token boolean">true</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+</code></pre>
+<h4 id="packagejson&#x4E2D;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x547D;&#x4EE4;">package.json&#x4E2D;&#x914D;&#x7F6E;&#x76F8;&#x5173;&#x547D;&#x4EE4;</h4>
+<pre class="language-"><code class="lang-json">// --progress&#x663E;&#x793A;&#x6253;&#x5305;&#x8FDB;&#x5EA6; --colors&#x989C;&#x8272;&#x9AD8;&#x4EAE; --config&#x5236;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+<span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  // &#x6253;&#x5305;
+  <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack --progress --colors --config webpack.prod.conf.js&quot;</span><span class="token punctuation">,</span>
+  // &#x5F00;&#x53D1;
+  <span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack-dev-server --progress --colors --config webpack.dev.conf.js&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<h4 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h4>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5B89;&#x88C5;&#x4F9D;&#x8D56;</span>
+<span class="token function">npm</span> i
+<span class="token comment"># or</span>
+cnpm i
+<span class="token comment"># or fast</span>
+yarn
+
+<span class="token comment"># &#x5F00;&#x53D1;&#x8FD0;&#x884C;</span>
+<span class="token function">npm</span> run dev
+<span class="token comment"># or</span>
+yarn dev
+
+<span class="token comment"># &#x751F;&#x4EA7;&#x6253;&#x5305;</span>
+<span class="token function">npm</span> run build
+<span class="token comment"># or</span>
+yarn build
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-23 14:59:03
+2019-03-06 15:11:58
 </span></footer>
                                 
                                 </section>
@@ -641,12 +660,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 
             
                 
-                <a href="editorconfig.html" class="navigation navigation-prev " aria-label="Previous page: EditorConfig">
+                <a href="eslint.html" class="navigation navigation-prev " aria-label="Previous page: ESLint">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="webpack.html" class="navigation navigation-next " aria-label="Next page: WebPack">
+                <a href="vue-quill-editor.html" class="navigation navigation-next " aria-label="Next page: VueQuillEditor">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -657,7 +676,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ESLint","level":"1.3.3","depth":2,"next":{"title":"WebPack","level":"1.3.4","depth":2,"path":"frontend/webpack.md","ref":"frontend/webpack.md","articles":[]},"previous":{"title":"EditorConfig","level":"1.3.2","depth":2,"path":"frontend/editorconfig.md","ref":"frontend/editorconfig.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/eslint.md","mtime":"2019-02-23T06:59:03.209Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T07:12:33.069Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WebPack","level":"1.3.4","depth":2,"next":{"title":"VueQuillEditor","level":"1.3.5","depth":2,"path":"frontend/vue-quill-editor.md","ref":"frontend/vue-quill-editor.md","articles":[]},"previous":{"title":"ESLint","level":"1.3.3","depth":2,"path":"frontend/eslint.md","ref":"frontend/eslint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/webpack.md","mtime":"2019-03-06T07:11:58.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T07:12:33.069Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
