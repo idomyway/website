@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Git · jekorx's blog</title>
+        <title>GitLab · jekorx's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../index/linux.html" />
+    <link rel="next" href="svn.html" />
     
     
-    <link rel="prev" href="../index/git.html" />
+    <link rel="prev" href="git.html" />
     
 
     </head>
@@ -282,12 +282,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../index/git.html">
+        <li class="chapter " data-level="1.4" data-path="../index/git-svn.html">
             
-                <a href="../index/git.html">
+                <a href="../index/git-svn.html">
             
                     
-                    Git
+                    Git/Svn
             
                 </a>
             
@@ -296,12 +296,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="git.html">
+        <li class="chapter " data-level="1.4.1" data-path="git.html">
             
                 <a href="git.html">
             
                     
                     Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="gitlab.html">
+            
+                <a href="gitlab.html">
+            
+                    
+                    GitLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="svn.html">
+            
+                <a href="svn.html">
+            
+                    
+                    Svn
             
                 </a>
             
@@ -505,7 +531,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Git</a>
+        <a href=".." >GitLab</a>
     </h1>
 </div>
 
@@ -520,33 +546,83 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git&#x5E38;&#x7528;&#x547D;&#x4EE4;">Git&#x5E38;&#x7528;&#x547D;&#x4EE4;</h1>
-<h4 id="&#x63D0;&#x4EA4;gh-pages&#x5206;&#x652F;&#x4EE5;&#x4F9B;&#x5C55;&#x793A;">&#x63D0;&#x4EA4;gh-pages&#x5206;&#x652F;&#x4EE5;&#x4F9B;&#x5C55;&#x793A;</h4>
-<pre class="language-"><code class="lang-bash"><span class="token comment"># _book&#x4E3A;&#x6253;&#x5305;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</span>
-<span class="token function">git</span> subtree push --prefix _book origin gh-pages
+                                <h1 id="gitlab">GitLab</h1>
+<blockquote>
+<p>&#x4EE5;Centos 7.4&#xFF0C;GitLab 11.8.1 (ce&#x793E;&#x533A;&#x7248;) &#x4E3A;&#x4F8B;  </p>
+</blockquote>
+<h4 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h4>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4F9D;&#x8D56;&#xFF0C;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#xFF0C;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x8BE5;&#x6B65;</span>
+<span class="token comment">#sudo yum install -y curl policycoreutils-python openssh-server</span>
+<span class="token comment"># &#x5728;&#x9632;&#x706B;&#x5899;&#x6253;&#x5F00;http&#x548C;ssh&#x8BBF;&#x95EE;</span>
+<span class="token comment">#sudo systemctl enable sshd</span>
+<span class="token comment">#sudo systemctl start sshd</span>
+<span class="token comment">#sudo firewall-cmd --permanent --add-service=http</span>
+<span class="token comment">#sudo systemctl reload firewalld</span>
+
+<span class="token comment"># &#x6DFB;&#x52A0;GitLab&#x5305;&#x5B58;&#x50A8;&#x5E93;</span>
+<span class="token comment"># gitlab-ee&#x4F01;&#x4E1A;&#x7248;</span>
+<span class="token comment"># gitlab-ce&#x793E;&#x533A;&#x7248;</span>
+<span class="token function">curl</span> https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+
+<span class="token comment"># &#x5B89;&#x88C5;GitLab&#x5305;</span>
+yum <span class="token function">install</span> -y gitlab-ce
 </code></pre>
-<h4 id="&#x5207;&#x6362;&#x5206;&#x652F;">&#x5207;&#x6362;&#x5206;&#x652F;</h4>
-<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x663E;&#x793A;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span>
-<span class="token function">git</span> branch -h
+<h4 id="&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+vim /etc/gitlab/gitlab.rb
 
-<span class="token comment"># &#x67E5;&#x770B;&#x6240;&#x6709;&#x5206;&#x652F;&#xFF0C;&#x53C2;&#x6570;v&#x663E;&#x793A;&#x7248;&#x672C;&#x53F7;&#x6CE8;&#x91CA;&#x7B49;&#x9644;&#x52A0;&#x4FE1;&#x606F;&#xFF0C;a&#x663E;&#x793A;&#x6240;&#x6709;</span>
-<span class="token function">git</span> branch -va
-<span class="token comment"># * &#x5F00;&#x5934;&#x7684;&#x4E3A;&#x5F53;&#x524D;&#x672C;&#x5730;&#x5206;&#x652F;&#xFF0C;origin&#x4E3A;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</span>
-<span class="token comment">#   gh-pages                5c3cbe8 Create CNAME</span>
-<span class="token comment"># * master                  20575cc shouye</span>
-<span class="token comment">#   remotes/origin/HEAD     -&gt; origin/master</span>
-<span class="token comment">#   remotes/origin/gh-pages 5c3cbe8 Create CNAME</span>
-<span class="token comment">#   remotes/origin/master   20575cc shouye</span>
-<span class="token comment">#   remotes/origin/test     20575cc shouye</span>
+<span class="token comment"># &#x4E91;&#x670D;&#x52A1;&#x5668;&#x8BB0;&#x5F97;&#x5F00;&#x653E;&#x7AEF;&#x53E3;</span>
+<span class="token comment"># line.13&#xFF0C;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;IP&#x6216;&#x57DF;&#x540D;</span>
+external_url <span class="token string">&apos;http://gitlab.example.com:9876&apos;</span>
+<span class="token comment"># line.1021&#xFF0C;&#x9ED8;&#x8BA4;nginx&#x662F;80&#x7AEF;&#x53E3;&#xFF0C;&#x9632;&#x6B62;&#x51B2;&#x7A81;&#xFF0C;&#x548C;&#x4E0A;&#x9762;&#x7AEF;&#x53E3;&#x76F8;&#x540C;</span>
+nginx<span class="token punctuation">[</span><span class="token string">&apos;listen_port&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> 9876
+<span class="token comment"># line.677&#xFF0C;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;8080&#xFF0C;&#x9632;&#x6B62;&#x51B2;&#x7A81;</span>
+unicorn<span class="token punctuation">[</span><span class="token string">&apos;port&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> 9875
 
-<span class="token comment"># &#x5207;&#x6362;&#x5206;&#x652F;</span>
-<span class="token function">git</span> checkout gh-pages
+<span class="token comment"># &#x53D1;&#x9001;&#x90AE;&#x4EF6;</span>
+<span class="token comment"># line.53 - 54</span>
+<span class="token comment"># &#x53D1;&#x4EF6;&#x7BB1;&#x90AE;&#x7BB1;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;gitlab_email_from&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;youemail@163.com&apos;</span>
+<span class="token comment"># &#x53D1;&#x4EF6;&#x7BB1;&#x53D1;&#x4EF6;&#x4EBA;&#x59D3;&#x540D;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;gitlab_email_display_name&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&apos;GitLab&apos;</span>
+<span class="token comment"># line.508 - 516&#xFF0C;&#x4EE5;163&#x90AE;&#x7BB1;&#x4E3A;&#x4F8B;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_enable&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_address&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;smtp.163.com&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_port&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> 465 <span class="token comment"># &#x4E91;&#x670D;&#x52A1;&#x5668;&#x8BB0;&#x5F97;&#x5F00;&#x653E;465&#x7AEF;&#x53E3;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_user_name&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;youemail@163.com&quot;</span> <span class="token comment"># &#x53D1;&#x4EF6;&#x7BB1;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_password&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;stmp password&quot;</span> <span class="token comment"># stmp&#x5BC6;&#x7801;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_domain&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;163.com&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_authentication&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;login&quot;</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_enable_starttls_auto&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+gitlab_rails<span class="token punctuation">[</span><span class="token string">&apos;smtp_tls&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+</code></pre>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4FEE;&#x6539;&#x5B8C;&#x914D;&#x7F6E;&#x540E;</span>
+<span class="token comment"># &#x91CD;&#x65B0;&#x88C5;&#x914D;</span>
+gitlab-ctl reconfigure
+<span class="token comment"># &#x91CD;&#x542F;&#x670D;&#x52A1;</span>
+gitlab-ctl restart
 
-<span class="token comment"># &#x521B;&#x5EFA;&#x5E76;&#x5207;&#x6362;&#x5206;&#x652F;</span>
-<span class="token function">git</span> checkout -b dev
+<span class="token comment"># &#x6D4B;&#x8BD5;&#x53D1;&#x9001;&#x90AE;&#x4EF6;</span>
+<span class="token comment"># &#x8FDB;&#x5165;gitlab&#x63A7;&#x5236;&#x53F0;</span>
+gitlab-rails console
+<span class="token comment"># &#x53D1;&#x9001;&#x6D4B;&#x8BD5;&#x90AE;&#x4EF6;</span>
+Notify.test_email<span class="token punctuation">(</span><span class="token string">&apos;&#x6536;&#x4EF6;&#x7BB1;&apos;</span>, <span class="token string">&apos;&#x6807;&#x9898;&apos;</span>, <span class="token string">&apos;&#x5185;&#x5BB9;&apos;</span><span class="token punctuation">)</span>.deliver_now
+</code></pre>
+<h4 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h4>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x91CD;&#x65B0;&#x88C5;&#x914D;</span>
+gitlab-ctl reconfigure
+
+<span class="token comment"># &#x542F;&#x52A8;&#x670D;&#x52A1;</span>
+gitlab-ctl start
+
+<span class="token comment"># &#x91CD;&#x542F;&#x670D;&#x52A1;</span>
+gitlab-ctl restart
+
+<span class="token comment"># &#x505C;&#x6B62;&#x670D;&#x52A1;</span>
+gitlab-ctl stop
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-02-20 10:11:30
+2019-03-07 09:44:45
 </span></footer>
                                 
                                 </section>
@@ -574,12 +650,12 @@
 
             
                 
-                <a href="../index/git.html" class="navigation navigation-prev " aria-label="Previous page: Git">
+                <a href="git.html" class="navigation navigation-prev " aria-label="Previous page: Git">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../index/linux.html" class="navigation navigation-next " aria-label="Next page: Linux">
+                <a href="svn.html" class="navigation navigation-next " aria-label="Next page: Svn">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -590,7 +666,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.4.1","depth":2,"next":{"title":"Linux","level":"1.5","depth":1,"path":"index/linux.md","ref":"index/linux.md","articles":[{"title":"JDK","level":"1.5.1","depth":2,"path":"linux/jdk.md","ref":"linux/jdk.md","articles":[]},{"title":"MySQL","level":"1.5.2","depth":2,"path":"linux/mysql.md","ref":"linux/mysql.md","articles":[]},{"title":"挂载硬盘","level":"1.5.3","depth":2,"path":"linux/mount.md","ref":"linux/mount.md","articles":[]},{"title":"Nginx","level":"1.5.4","depth":2,"path":"linux/nginx.md","ref":"linux/nginx.md","articles":[]}]},"previous":{"title":"Git","level":"1.4","depth":1,"path":"index/git.md","ref":"index/git.md","articles":[{"title":"Git","level":"1.4.1","depth":2,"path":"git/git.md","ref":"git/git.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"git/git.md","mtime":"2019-02-20T02:11:30.982Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-06T07:12:33.069Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GitLab","level":"1.4.2","depth":2,"next":{"title":"Svn","level":"1.4.3","depth":2,"path":"git-svn/svn.md","ref":"git-svn/svn.md","articles":[]},"previous":{"title":"Git","level":"1.4.1","depth":2,"path":"git-svn/git.md","ref":"git-svn/git.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"git-svn/gitlab.md","mtime":"2019-03-07T01:44:45.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-07T02:24:30.890Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
