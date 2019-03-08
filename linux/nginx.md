@@ -21,6 +21,7 @@ useradd -s /bin/false -M nginx
 cd nginx-1.15.8
 # 生成makefile，指定用户、组、安装路径、相关模块
 ./configure --user=nginx --group=nginx --prefix=/home/nginx-1.15.8-01/ --with-http_v2_module --with-http_ssl_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-pcre
+
 # 6、安装
 make && make install
 
