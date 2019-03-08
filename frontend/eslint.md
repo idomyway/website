@@ -5,15 +5,11 @@
 > 开发工具中需添加ESLint扩展，如：VSCode中ESLint插件。  
 > 个人更倾向于使用standard规范，以standard规范为例。  
 
-#### 在Reactjs脚手架create-react-app@1.5.2中使用ESLint
+#### 在Reactjs脚手架create-react-app@2.1.8中使用ESLint
 
 ```javascript
-/**
- * 由于CRA中默认支持ESLint，只需添加相关依赖和配置即可
- */
-
 // 1、安装依赖
-yarn add babel-eslint eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-react eslint-plugin-standard -D
+yarn add eslint@5.12.0 eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard -D
 
 // 2、eslint相关配置，项目根目录中添加.eslintrc文件
 {
@@ -32,15 +28,27 @@ yarn add babel-eslint eslint eslint-config-standard eslint-plugin-import eslint-
     "ecmaVersion": 7,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "legacyDecorators": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     }
   },
   "plugins": [
     "react"
   ],
   "rules": {
-    "arrow-parens": ["error", "as-needed"],
-    "object-curly-spacing": [1, "always"]
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "object-curly-spacing": [
+      1,
+      "always"
+    ]
   }
 }
 
