@@ -30,7 +30,7 @@ function resolve(dir) {
 }
 // webpack配置
 module.exports = {
-  // webpack4必须制定模式
+  // webpack4必须指定模式
   // 会将 process.env.NODE_ENV 的值设为 development。
   // 启用 NamedChunksPlugin 和 NamedModulesPlugin
   mode: 'development',
