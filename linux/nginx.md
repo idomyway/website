@@ -21,9 +21,10 @@ useradd -s /bin/false -M nginx
 cd nginx-1.15.8
 # 生成makefile，指定用户、组、安装路径、相关模块
 ./configure --user=nginx --group=nginx --prefix=/home/nginx-1.15.8-01/ --with-http_v2_module --with-http_ssl_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-pcre
+# 6、安装
 make && make install
 
-# 6、创建nginx命令软链接到环境变量
+# 7、创建nginx命令软链接到环境变量
 ln -s /home/nginx-1.15.8-01/sbin/* /usr/local/sbin/
 ```
 
@@ -69,6 +70,17 @@ http {
             proxy_pass   http://admin;
         } 
     }
+}
+```
+
+#### HTML5 History模式
+
+```bash
+# 访问路径 / 为根目录，如果非根目录则为 /具体路径
+location /path {
+    root html; # webapp的根目录，如果有具体访问路径，也写根目录
+    index index.html index.htm; # 默认首页
+    try_files $uri $uri/ /path/; # 此处解决刷新404，如果找不到资源会callback 到/path/
 }
 ```
 
