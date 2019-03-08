@@ -52,7 +52,18 @@ yarn add eslint@5.12.0 eslint-config-standard eslint-plugin-import eslint-plugin
   }
 }
 
-// 3、eslint校验忽略，项目根目录中添加.eslintignore文件
+// 3、config-overrides.js（react-app-rewired customize-cra）中配置使用自定义eslint规则文件
+const {
+  useEslintRc
+} = require('customize-cra')
+module.exports = function (config, env) {
+  // 使用自定义.eslintrc
+  useEslintRc('./.eslintrc')(config)
+  // 返回config
+  return config
+}
+
+// 4、eslint校验忽略，项目根目录中添加.eslintignore文件
 /build/
 /public/
 /*.js
