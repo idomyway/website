@@ -40,6 +40,8 @@ C:\Users\<%用户名%>\AppData\Local\Yarn\bin
 
 #### 常用命令
 
+> 以安装react和http-server为例  
+
 |npm|yarn|
 |--:|:---|
 | npm i | yarn |
@@ -50,4 +52,4 @@ C:\Users\<%用户名%>\AppData\Local\Yarn\bin
 | npm i -g http-server | yarn global add http-server |
 | npm update -g http-server | yarn global upgrade http-server |
 
-> 注意：yarn全局安装关键字global必须跟在yarn关键字后面，否则会安装global模块  
+> 注意：yarn全局安装关键字global必须跟在yarn关键字后面，否则会安装global  
