@@ -1,6 +1,6 @@
 # Maven（Linux环境下）
 
-> 以Centos 7.4，Maven 3.6.0 为例
+> 以Centos 7.4，Maven 3.6.0 为例  
 
 ```bash
 # 下载二进制文件压缩包http://mirrors.shu.edu.cn/apache/maven/maven-3/
