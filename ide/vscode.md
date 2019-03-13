@@ -2,7 +2,7 @@
 
 #### 配置
 
-```js
+```javascript
 {
     // 取消提示js装饰器的错误提示
     "javascript.implicitProjectConfig.experimentalDecorators": true,
