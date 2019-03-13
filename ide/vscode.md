@@ -2,7 +2,7 @@
 
 #### 配置
 
-```json
+```js
 {
     // 取消提示js装饰器的错误提示
     "javascript.implicitProjectConfig.experimentalDecorators": true,
@@ -22,7 +22,7 @@
     "window.zoomLevel": 0,
     "breadcrumbs.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
-    //eslint 代码自动检查相关配置
+    // eslint 代码自动检查相关配置
     "eslint.enable": true,
     "eslint.run": "onType",
     "eslint.options": {
