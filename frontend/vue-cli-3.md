@@ -11,18 +11,28 @@
 ```javascript
 const path = require('path')
 
-function resolve (dir) {
+// 路径转换
+const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
+  // 项目部署路径
+  // 例如：https://www.foobar.com/my-app/
+  // 需要将它改为'/my-app/'
+  publicPath: process.env.NODE_ENV === 'production' ? '/my-app' : '/',
+  // 生产环境不需要source map，则设为false
+  productionSourceMap: false,
+  // devServer配置
   devServer: {
+    // 自动打开浏览器
+    open: false,
     // 端口
     port: 8520,
     // 跨域（本人使用vue-cli-3没有此配置也不会出现跨域问题，具体原因没有深入研究）
     proxy: {
-      '/api/': {
-        target: 'http://127.0.0.1/',
+      '/api': {
+        target: 'http://127.0.0.1:8081',
         changeOrigin: true
       }
     }

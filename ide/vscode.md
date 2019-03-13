@@ -10,6 +10,8 @@
     "editor.fontSize": 16,
     "terminal.integrated.fontSize": 17,
     "workbench.iconTheme": "vscode-icons",
+    // 命令行工具，以git为例
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "editor.tabSize": 2,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
@@ -20,15 +22,35 @@
     "window.zoomLevel": 0,
     "breadcrumbs.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
-    // 添加 vue 支持
+    //eslint 代码自动检查相关配置
+    "eslint.enable": true,
+    "eslint.run": "onType",
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue",
+            ".jsx"
+        ]
+    },
     "eslint.validate": [
-        "javascript",
         "javascriptreact",
+        "vue",
+        "javascript",
         {
             "language": "vue",
             "autoFix": true
+        },
+        "html",
+        {
+            "language": "html",
+            "autoFix": true
         }
-    ]
+    ],
+    // 不校验vue模版中的自定义标签使用闭合标签
+    "vetur.validation.template": false/* ,
+    // px转rem设置
+    "px2rem.rootFontSize": 50,
+    "px2rem.isNeedNotes": false */
 }
 ```
 
