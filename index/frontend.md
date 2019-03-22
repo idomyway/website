@@ -2,7 +2,6 @@
 
 前端相关使用总结。
 
-> 目录  
 > * [Axios](../frontend/axios.md)
 > * [EditorConfig](../frontend/editorconfig.md)
 > * [ESLint](../frontend/eslint.md)
