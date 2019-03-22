@@ -78,10 +78,11 @@ plugins: [
 import ResizeObserver from 'resize-observer-polyfill'
 
 const isServer = typeof window === 'undefined'
-const addResizeListener = (el, fn) => {
+const addResizeListener = el => {
   // 由于ResizeObserver中用到了document，此处直接跳过
   if (isServer) return
   el.__ro__ = new ResizeObserver(resizeHandler)
+}
 
 // 部分代码示例（2）
 if(process && process.browser){
