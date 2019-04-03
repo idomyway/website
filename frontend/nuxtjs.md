@@ -1,6 +1,10 @@
-# 常见问题
+# Nuxt.js
 
-#### 1、vue服务端渲，染服务器内容和客户端虚拟DOM不匹配
+> vue服务端渲染框架  
+
+## 相关问题
+
+#### 1、染服务器内容和客户端虚拟DOM不匹配
 
 > 使用Nuxtjs时遇到的问题
 
@@ -112,40 +116,46 @@ function addStyle (obj /* StyleObjectPart */) {
 > 优点：照样SSR  
 > 缺点：对dependencies的vue组件有特殊要求  
 
-#### 2、less@3.x.x之后的版本，less中使用javascript报错
+#### 2、组件命名冲突导致内存溢出
 
-> 升级less到3.x.x的版本之后报错  
-
-```
-// https://github.com/ant-design/ant-motion/issues/44
-.bezierEasingMixin();
-^
-Inline JavaScript is not enabled. Is it set in your options?
-      in D:\vscode\iview-admin\node_modules\iview\src\styles\color\bezierEasing.less (line 110, column 0)
-```
-
-> 解决方法：开启javascript即可  
-
-```json
-{
-  loader: "less-loader",
-  options: {
-    javascriptEnabled: true
-  }
-}
-```
+> 错误信息  
 
 ```javascript
-/**
- * vue-cli@3.x.x中解决方法，vue.config.js文件
- */
-module.exports = {
-  css: {
-    loaderOptions: {
-      less: {
-        javascriptEnabled: true
-      }
-    }
-  }
-}
+RangeError: Maximum call stack size exceeded
+    at RegExp.[Symbol.replace] (<anonymous>)
+    at String.replace (<anonymous>)
+    at classify (commons.app.js:13279)
+    at formatComponentName (commons.app.js:13317)
+    at VueComponent.Vue._init (commons.app.js:17610)
+    at new VueComponent (commons.app.js:17752)
+    at createComponentInstanceForVnode (commons.app.js:15923)
+    at init (commons.app.js:15754)
+    at createComponent (commons.app.js:18576)
+    at createElm (commons.app.js:18523)
 ```
+
+> 相关vue组件代码，nuxt.js pages目录（相当于路由）  
+
+```html
+<template>
+  <div>
+    <!-- （3）此处使用组件 -->
+    <List />
+  </div>
+</template>
+<script>
+// 引入组件
+import List from '~/views/course/list'
+
+export default {
+  name: 'List', // （1）该组件名称为List
+  components: { List } // （2）注册于该组件同名的组件
+}
+</script>
+```
+
+> 因为（1）为该组件名称，引入并注册（2）使用的组件与之同名，导致（3）处使用时，会默认获取当前组件，导致服务端渲染时内存溢出  
+
+> 解决方法：该组件name属性和引用组件注册名称不能重名  
+
+> tips: vue spa中不会导致内存溢出，如果注册组件和该组件name属性同名，优先调用该组件[vue文档-name属性](https://cn.vuejs.org/v2/api/#name)  
