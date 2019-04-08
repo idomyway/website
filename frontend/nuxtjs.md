@@ -59,7 +59,6 @@ import {
   CarouselCard,
   CarouselCardItem
 } from 'vue-carousel-card'
-import 'vue-carousel-card/styles/index.css'
 
 export default () => {
   Vue.component(CarouselCard.name, CarouselCard)
@@ -68,6 +67,10 @@ export default () => {
 /**
  * nuxt.config.js
  */
+css: [
+  // 引入样式
+  'vue-carousel-card/styles/index.css'
+],
 plugins: [
   '@/plugins/vue-carousel-card'
 ]
