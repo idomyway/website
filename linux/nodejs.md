@@ -1,4 +1,4 @@
-# Node.js（Linux安装）
+# Node.js（Linux环境下）
 
 > 以Centos 7.4，Node.js 10.15.3 二进制文件安装为例  
 
