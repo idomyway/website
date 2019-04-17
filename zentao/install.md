@@ -1,6 +1,8 @@
 # 禅道安装（Linux环境下）
 
-> 以Centos 7.4，ZenTaoPMS.11.4.1 为例
+> 以Centos 7.4，ZenTaoPMS.11.4.1 为例  
+> 需要提前安装以下依赖，可点击链接参考
+> [nginx](../linux/nginx.md)，[mysql](../linux/mysql.md)，[php](../linux/php.md)
 
 ```bash
 # nginx中新建项目根目录html_zen_tao（和html同级）
