@@ -40,7 +40,7 @@ chown mysql.mysql /home/mysql/data
 # 复制mysql data目录
 cp -a /var/lib/mysql /home/mysql/data/
 
-# 建立链接（如果更新data目录后无法启动适应链接的方式）
+# 建立链接（如果更新data目录后无法，使用链接的方式）
 #ln -s /home/mysql/data/mysql /usr/lib/mysql
 
 # 修改my.cfg
@@ -66,23 +66,10 @@ expire_logs_days=10
 log-error=/home/mysql/logs/mysqld.log
 
 # 启动mysql
-systemctl stop mysqld
+systemctl start mysqld
 
 # 开启自动启动
 systemctl enable mysqld
-```
-
-#### 创建用户、数据库，授权数据库权限，远程连接
-
-```sql
--- 1、创建用户名，%代表可以远程连接
-use mysql;
-CREATE USER 'username'@'%' IDENTIFIED BY 'password';
--- 2、创建数据库
-create database testdb;
--- 3、用户授权使用指定数据库的指定权限
-GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON testdb.* TO 'username'@'%' IDENTIFIED BY 'password';
-FLUSH PRIVILEGES;
 ```
 
 #### 修改root密码
@@ -121,6 +108,19 @@ mysql -uroot -p
 # 输入密码进入
 ```
 
+#### 创建用户、数据库，授权数据库权限，远程连接
+
+```sql
+-- 1、创建用户名，%代表可以远程连接
+use mysql;
+CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+-- 2、创建数据库
+create database testdb;
+-- 3、用户授权使用指定数据库的指定权限
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON testdb.* TO 'username'@'%' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+```
+
 #### 常见错误
 
 > ERROR 1820 \(HY000\): You must reset your password using ALTER USER statement before executin
@@ -128,14 +128,18 @@ mysql -uroot -p
 ```sql
 -- 解决方法
 -- 1、修改用户密码
-alter user 'root'@'localhost' identified by 'youpassword';
--- 或者
 set password=password("youpassword");
+-- 或者
+alter user 'root'@'localhost' identified by 'youpassword';
 
 -- 2、刷新权限
 flush privileges;
 help contents;
 ```
 
+> ERROR 1819 (HY000): Your password does not satisfy the current policy requirements
 
+```bash
+# 密码强度太弱，建议字母大小写+数字+符号
+```
 
