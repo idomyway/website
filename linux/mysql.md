@@ -1,6 +1,6 @@
 # MySQL（Linux环境下）
 
-> 以Centos 7.4，MySQL5.7.x为例
+> 以Centos 7.4，MySQL5.7.x为例  
 
 #### 安装
 

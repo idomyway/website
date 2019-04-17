@@ -27,6 +27,11 @@ make && make install
 
 # 7、创建nginx命令软链接到环境变量
 ln -s /home/nginx-1.15.8-01/sbin/* /usr/local/sbin/
+
+# 开机自动启动，/etc/rc.local中加入
+vim /etc/rc.local
+
+nginx
 ```
 
 #### 配置SSL（https）

@@ -51,6 +51,11 @@ realm = /opt/svn # 认证命名空间，subversion会在认证提示里显示，
 svnserve -d -r /opt/svn
 # --listen-port指定端口
 # vnserve -d -r /opt/svn --listen-port 3391
+
+# 开机自动启动，/etc/rc.local中加入
+vim /etc/rc.local
+
+svnserve -d -r /opt/svn
 ```
 
 #### Tips
