@@ -143,3 +143,14 @@ help contents;
 # 密码强度太弱，建议字母大小写+数字+符号
 ```
 
+> [Err] 1055 - Expression #1 of ORDER BY clause is not in GROUP BY clause and contains nonaggregated column 'information_schema.PROFILING.SEQ' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+
+```bash
+# 修改my.cnf
+vim my.cnf
+# 在[mysqld]添加以下配置
+sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+
+# 重启mysql服务
+systemctl restart mysqld
+```
