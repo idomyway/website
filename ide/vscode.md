@@ -7,9 +7,8 @@
     // 取消提示js装饰器的错误提示
     "javascript.implicitProjectConfig.experimentalDecorators": true,
     "explorer.autoReveal": false,
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "terminal.integrated.fontSize": 17,
-    "workbench.iconTheme": "vscode-icons",
     // 命令行工具，以git为例
     // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "editor.tabSize": 2,
@@ -21,7 +20,6 @@
     "workbench.sideBar.location": "left",
     "window.zoomLevel": 0,
     "breadcrumbs.enabled": false,
-    "vsicons.dontShowNewVersionMessage": true,
     // eslint 代码自动检查相关配置
     "eslint.enable": true,
     "eslint.run": "onType",
@@ -47,7 +45,8 @@
         }
     ],
     // 不校验vue模版中的自定义标签使用闭合标签
-    "vetur.validation.template": false/* ,
+    "vetur.validation.template": false,
+    "workbench.iconTheme": "vscode-icons" /* ,
     // px转rem设置
     "px2rem.rootFontSize": 50,
     "px2rem.isNeedNotes": false */
