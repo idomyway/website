@@ -6,6 +6,7 @@
 > * [EditorConfig](../frontend/editorconfig.md)
 > * [ESLint](../frontend/eslint.md)
 > * [Less](../frontend/less.md)
+> * [防抖节流](../frontend/debounce-throttle.md)
 > * [Webpack](../frontend/webpack.md)
 > * [Nuxt.js](../frontend/nuxtjs.md)
 > * [VueQuillEditor](../frontend/vue-quill-editor.md)

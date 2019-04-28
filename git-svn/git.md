@@ -1,5 +1,14 @@
 # Git常用命令
 
+#### 全局属性配置
+
+```bash
+# 全局配置用户名
+git config --global user.name "nameVal"
+# 全局配置邮箱
+git config --global user.email "eamil@qq.com"
+```
+
 #### 提交gh-pages分支以供展示
 
 ```bash
