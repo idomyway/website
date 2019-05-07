@@ -35,7 +35,7 @@ systemctl stop mysqld
 mkdir -p /home/mysql/data/
 
 # 修改属主和属组
-chown mysql.mysql /home/mysql/data
+chown -R mysql:mysql /home/mysql/data
 
 # 复制mysql data目录
 cp -a /var/lib/mysql /home/mysql/data/
@@ -54,7 +54,7 @@ datadir=/home/mysql/data/mysql
 mkdir -p /home/mysql/logs
 
 # 修改属主和属组
-chown mysql.mysql /home/mysql/logs
+chown -R mysql:mysql /home/mysql/logs
 
 # 移动log文件，-a带权限复制
 cp -a /var/log/mysqld.log /home/mysql/logs
@@ -119,6 +119,9 @@ create database testdb;
 -- 3、用户授权使用指定数据库的指定权限
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON testdb.* TO 'username'@'%' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
+
+-- 删除用户，无需FLUSH PRIVILEGES;
+drop user 'username'@'%';
 ```
 
 #### 常见错误
@@ -147,7 +150,7 @@ help contents;
 
 ```bash
 # 修改my.cnf
-vim my.cnf
+vim /etc/my.cnf
 # 在[mysqld]添加以下配置
 sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
 
