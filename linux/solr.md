@@ -20,13 +20,13 @@ mv _default <core name>
 # 创建软连接
 ln -s /opt/solr-8.1.0/bin/solr /usr/local/sbin/
 
-# 启动服务 start：启动服务；stop：停止服务；restart：重启服务 -p 自定义端口
-solr start -p 8398 -force
+# 启动服务 start：启动服务；stop：停止服务；restart：重启服务 -p 自定义端口 -m 内存
+solr start -p 8398 -force -m 1g
 
 # 开机自动启动，/etc/rc.local中加入
 vim /etc/rc.local
 
-solr start -p 8398 -force
+solr start -p 8398 -force -m 1g
 ```
 
 #### 使用
@@ -49,5 +49,5 @@ solr start -p 8398 -force
 #         Please consult the Reference Guide. To override this check, start with argument '-force'
 
 # 启动时后面加参数-force
-solr start -p 8398 -force
+solr start -p 8398 -force -m 1g
 ```
