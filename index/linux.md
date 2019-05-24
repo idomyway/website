@@ -9,3 +9,4 @@ Linux系统下常用环境的安装以及相关配置，安装、配置、使用
 > * [挂载硬盘](../linux/mount.md)
 > * [Nginx](../linux/nginx.md)
 > * [Redis](../linux/redis.md)
+> * [Solr](../linux/solr.md)
