@@ -31,12 +31,44 @@ solr start -p 8398 -force -m 1g
 
 #### 使用
 
+> 基本使用  
+
 ```bash
 # 访问 http://<ip>:8398/solr
 
 # 菜单 -> Core Admin
 
 # 添加core，名字为上一步文件夹名（core name）
+```
+
+> 添加hanlp-lucene-plugin插件，中文分词器，分词插件  
+
+```bash
+# https://github.com/hankcs/hanlp-lucene-plugin
+# 下载jar包hanlp-portable-1.7.3.jar、hanlp-lucene-plugin-1.1.6.jar
+
+# 添加jar包到
+cd /opt/solr-8.1.0/server/solr-webapp/webapp/WEB-INF/lib
+
+# 修改配置文件
+cd /opt/solr-8.1.0/server/solr/<core name>/conf
+vim managed-schema
+
+# 末尾<schema></schema>标签内增加相关配置
+<fieldType name="text_cn" class="solr.TextField">
+    <analyzer type="index">
+        <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="true"/>
+    </analyzer>
+    <analyzer type="query">
+        <!-- 切记不要在query中开启index模式 -->
+        <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="false"/>
+    </analyzer>
+</fieldType>
+<!-- 业务系统中需要分词的字段都需要指定type为text_cn -->
+<field name="my_field1" type="text_cn" indexed="true" stored="true"/>
+<field name="my_field2" type="text_cn" indexed="true" stored="true"/>
+
+# 重启solr服务
 ```
 
 #### 相关问题
