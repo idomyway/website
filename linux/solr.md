@@ -41,7 +41,7 @@ solr start -p 8398 -force -m 1g
 # 添加core，名字为上一步文件夹名（core name）
 ```
 
-> 添加hanlp-lucene-plugin插件，中文分词器，分词插件  
+> 添加hanlp中文分词器，分词插件  
 
 ```bash
 # https://github.com/hankcs/hanlp-lucene-plugin
@@ -55,13 +55,21 @@ cd /opt/solr-8.1.0/server/solr/<core name>/conf
 vim managed-schema
 
 # 末尾<schema></schema>标签内增加相关配置
-<fieldType name="text_cn" class="solr.TextField">
+<!-- text_cn字段类型: 指定使用HanLP分词器，同时开启索引模式。通过solr自带的停用词过滤器，使用"stopwords.txt"（默认空白）过滤。在搜索的时候，还支持solr自带的同义词词典。-->
+<fieldType name="text_cn" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
-        <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="true"/>
+    <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="true"/>
+    <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+    <!-- 取消注释可以启用索引期间的同义词词典
+    <filter class="solr.SynonymFilterFactory" synonyms="index_synonyms.txt" ignoreCase="true" expand="false"/>
+    -->
+    <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
     <analyzer type="query">
-        <!-- 切记不要在query中开启index模式 -->
-        <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="false"/>
+    <tokenizer class="com.hankcs.lucene.HanLPTokenizerFactory" enableIndexMode="false"/>
+    <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+    <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+    <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
 </fieldType>
 <!-- 业务系统中需要分词的字段都需要指定type为text_cn -->
