@@ -189,3 +189,36 @@ public String getClientIp(HttpServletRequest request) {
     return ip;
 }
 ```
+
+#### 修改nginx.conf、html位置
+
+```bash
+# 修改nginx.conf位置
+# 移动nginx.conf
+mv /home/nginx-1.15.8-01/conf/nginx.conf /home/
+
+# 创建软连接
+ln -s /home/nginx.conf /home/nginx-1.15.8-01/conf/nginx.conf/
+
+
+# 修改html位置
+# 创建目录
+mkdir /home/nginx-app
+
+# 修改配置文件
+vim /home/nginx.conf
+
+# 顶部加入
+user root;
+
+html {
+    server {
+        location / {
+            root /home/nginx-app;
+        }
+    }
+}
+
+# 重启服务
+nginx -s reload
+```
