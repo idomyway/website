@@ -62,9 +62,31 @@ systemctl enable vsftpd
 
 #### 相关问题
 
-> 云服务器设置安全组后需要开放相关接口
+> 云服务器设置安全组后需要开放相关接口 
 
 ```bash
 # 20 - 22
 # 被动端口 5500 - 5510
+```
+
+> 331 Please specify the password. 
+
+```bash
+# 可能性较大的原因是密码强度太低，不影响登录
+```
+
+> 500 OOPS: cannot change directory:/home/www/images 
+
+```bash
+# 原因，文件权限导致
+# 只设置了images目录的ftp的用户权限，需要设置www的用户权限
+
+cd /home
+
+chown -R ftpuser www/
+
+cd /home/www
+
+chown -R ftpuser images/
+
 ```
