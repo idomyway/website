@@ -89,4 +89,7 @@ cd /home/www
 
 chown -R ftpuser images/
 
+# 特殊情况！如果与ftpuser同一用户组用户test也需要访问/home/www，需要给www文件夹设置权限
+
+chmod 770 www
 ```
