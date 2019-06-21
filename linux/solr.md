@@ -77,7 +77,7 @@ vim managed-schema
 <field name="my_field2" type="text_cn" indexed="true" stored="true"/>
 
 # 重启solr服务
-solr start -p 8398 -force -m 1g
+solr restart -p 8398 -force -m 1g
 ```
 
 #### 相关问题
