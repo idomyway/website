@@ -27,6 +27,7 @@ cp -a /opt/redis-5.0.4/redis.conf /usr/local/redis
 vim /usr/local/redis/redis.conf
 
 bind 127.0.0.1              # line.69 注释掉
+port <port>                 # line.92 修改默认端口
 daemonize yes               # line.136 守护进程 yes
 requirepass <your password> # line.507 设置密码
 maxmemory <bytes>           # line.566 可使用最大内存，单位字节（bytes）

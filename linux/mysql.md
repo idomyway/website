@@ -108,6 +108,19 @@ mysql -uroot -p
 # 输入密码进入
 ```
 
+#### 修改mysql默认端口
+
+```bash
+# 1、修改配置文件
+vim /etc/my.cnf
+
+# 2、在[mysqld]下增加
+port=<port>
+
+# 3、重启mysql服务
+systemctl restart mysqld
+```
+
 #### 创建用户、数据库，授权数据库权限，远程连接
 
 ```sql
