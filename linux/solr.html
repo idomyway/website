@@ -471,7 +471,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="redis.html">
+        <li class="chapter " data-level="1.5.7" data-path="tomcat.html">
+            
+                <a href="tomcat.html">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="redis.html">
             
                 <a href="redis.html">
             
@@ -484,7 +497,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.8" data-path="solr.html">
+        <li class="chapter active" data-level="1.5.9" data-path="solr.html">
             
                 <a href="solr.html">
             
@@ -497,7 +510,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.9" data-path="ftp.html">
+        <li class="chapter " data-level="1.5.10" data-path="ftp.html">
             
                 <a href="ftp.html">
             
@@ -738,7 +751,7 @@
 solr start -p 8398 -force -m 1g
 
 <span class="token comment"># &#x5F00;&#x673A;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#xFF0C;/etc/rc.local&#x4E2D;&#x52A0;&#x5165;</span>
-vim /etc/rc.local
+<span class="token function">vim</span> /etc/rc.local
 
 solr start -p 8398 -force -m 1g
 </code></pre>
@@ -763,7 +776,7 @@ solr start -p 8398 -force -m 1g
 
 <span class="token comment"># &#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
 <span class="token function">cd</span> /opt/solr-8.1.0/server/solr/<span class="token operator">&lt;</span>core name<span class="token operator">&gt;</span>/conf
-vim managed-schema
+<span class="token function">vim</span> managed-schema
 
 <span class="token comment"># &#x672B;&#x5C3E;&lt;schema&gt;&lt;/schema&gt;&#x6807;&#x7B7E;&#x5185;&#x589E;&#x52A0;&#x76F8;&#x5173;&#x914D;&#x7F6E;</span>
 <span class="token operator">&lt;</span><span class="token operator">!</span>-- text_cn&#x5B57;&#x6BB5;&#x7C7B;&#x578B;: &#x6307;&#x5B9A;&#x4F7F;&#x7528;HanLP&#x5206;&#x8BCD;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x5F00;&#x542F;&#x7D22;&#x5F15;&#x6A21;&#x5F0F;&#x3002;&#x901A;&#x8FC7;solr&#x81EA;&#x5E26;&#x7684;&#x505C;&#x7528;&#x8BCD;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x4F7F;&#x7528;<span class="token string">&quot;stopwords.txt&quot;</span>&#xFF08;&#x9ED8;&#x8BA4;&#x7A7A;&#x767D;&#xFF09;&#x8FC7;&#x6EE4;&#x3002;&#x5728;&#x641C;&#x7D22;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x652F;&#x6301;solr&#x81EA;&#x5E26;&#x7684;&#x540C;&#x4E49;&#x8BCD;&#x8BCD;&#x5178;&#x3002;--<span class="token operator">&gt;</span>
@@ -801,7 +814,7 @@ solr restart -p 8398 -force -m 1g
 solr start -p 8398 -force -m 1g
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-06-21 18:18:56
+2019-07-28 17:26:10
 </span></footer>
                                 
                                 </section>
@@ -845,7 +858,7 @@ solr start -p 8398 -force -m 1g
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Solr","level":"1.5.8","depth":2,"next":{"title":"ftp服务器","level":"1.5.9","depth":2,"path":"linux/ftp.md","ref":"linux/ftp.md","articles":[]},"previous":{"title":"Redis","level":"1.5.7","depth":2,"path":"linux/redis.md","ref":"linux/redis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/solr.md","mtime":"2019-06-21T10:18:56.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-10T06:21:48.460Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Solr","level":"1.5.9","depth":2,"next":{"title":"ftp服务器","level":"1.5.10","depth":2,"path":"linux/ftp.md","ref":"linux/ftp.md","articles":[]},"previous":{"title":"Redis","level":"1.5.8","depth":2,"path":"linux/redis.md","ref":"linux/redis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/solr.md","mtime":"2019-07-28T09:26:10.168Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-28T09:56:23.766Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
