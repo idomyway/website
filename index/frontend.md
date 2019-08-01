@@ -9,6 +9,7 @@
 > * [防抖节流](../frontend/debounce-throttle.md)
 > * [Webpack](../frontend/webpack.md)
 > * [Nuxt.js](../frontend/nuxtjs.md)
+> * [高德vue地图选择器](../frontend/amap-selector.md)
 > * [VueQuillEditor](../frontend/vue-quill-editor.md)
 > * [Vue-Cli-3](../frontend/vue-cli-3.md)
 > * [React-Cli-2](../frontend/react-cli-2.md)
