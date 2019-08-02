@@ -192,7 +192,7 @@ export default {
 
 ```pug
 <template>
-  <MapSelector :addr="addr" @location-info="locationChange" />
+  <MapModal v-model="mapModal" :addr="addr" @location-confirm="locationSelect" />
 </template>
 <script>
 import { MapModal } from '@components/map-selector'
