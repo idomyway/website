@@ -53,7 +53,7 @@ SyntaxError: Invalid or unexpected token
     at Module.load (internal/modules/cjs/loader.js:598:32)
     at tryModuleLoad (internal/modules/cjs/loader.js:537:12)
     at Function.Module._load (internal/modules/cjs/loader.js:529:3)
-    at Object.<anonymous> (C:\Users\wangdg\AppData\Local\Yarn\Data\global\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
+    at Object.<anonymous> (C:\Users\<username>\AppData\Local\Yarn\Data\global\node_modules\pm2\lib\ProcessContainerFork.js:27:21)
     at Module._compile (internal/modules/cjs/loader.js:688:30)
 C:\USERS\<username>\APPDATA\ROAMING\NPM\YARN.CMD:1
 (function (exports, require, module, __filename, __dirname) { @IF EXIST "%~dp0\node.exe" (
