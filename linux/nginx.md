@@ -185,27 +185,6 @@ http  {
 }
 ```
 
-#### 负载均衡后获取客户端真实IP
-
-> nginx配置  
-
-```bash
-server {
-    # 在每一个 location 配置里都需要
-    location ^~ /api/ {
-        # host 修改为真实的域名和端口
-        proxy_set_header Host $http_host;
-        # 客户端真实ip
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        # 客户端真实协议(http/https)
-        proxy_set_header X-Forwarded-Proto $scheme;
-        # 负载均衡upstream
-        proxy_pass http://api;
-    }
-}
-```
-
 #### 修改nginx.conf、html位置
 
 ```bash
