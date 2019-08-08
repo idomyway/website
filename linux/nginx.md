@@ -110,7 +110,9 @@ location /path {
 
 #### 负载均衡
 
-> tomcat 为例
+> tomcat 为例  
+> 反向代理
+> 负载均衡后获取客户端真实IP
 
 ```bash
 html {
@@ -124,8 +126,46 @@ html {
         # 默认请求设置
         location / {
             proxy_pass http://tomcat_pool; # 转向tomcat处理
+            proxy_cookie_domain domino_server nginx_server; # 解决反向代理后Cookie不一致的问题
+        }
+        # 带有基础路径请求设置
+        location ^~ /api/ {
+            # host 修改为真实的域名和端口
+            proxy_set_header Host $http_host;
+            # 客户端真实ip
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            # 客户端真实协议(http/https)
+            proxy_set_header X-Forwarded-Proto $scheme;
+            # 负载均衡upstream
+            proxy_pass http://tomcat_pool/api/; # 转向tomcat处理
+            proxy_cookie_domain domino_server nginx_server; # 解决反向代理后Cookie不一致的问题
         }
     }
+}
+```
+
+> 负载均衡后获取客户端真实IP，java代码
+
+```java
+// 负载均衡后获取客户端真实IP地址
+public String getClientIp(HttpServletRequest request) {
+    String ip = request.getHeader("x-forwarded-for");
+    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        ip = request.getHeader("Proxy-Client-IP");
+    }
+    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        ip = request.getHeader("WL-Proxy-Client-IP");
+    }
+    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        ip = request.getRemoteAddr();
+    }
+    if(ip.trim().contains(",")){
+        //为什么会有这一步，因为经过多层代理后会有多个代理，取第一个ip地址就可以了
+        String [] ips = ip.split(",");
+        ip = ips[0];
+    }
+    return ip;
 }
 ```
 
@@ -163,30 +203,6 @@ server {
         # 负载均衡upstream
         proxy_pass http://api;
     }
-}
-```
-
-> java代码
-
-```java
-// 负载均衡后获取客户端真实IP地址
-public String getClientIp(HttpServletRequest request) {
-    String ip = request.getHeader("x-forwarded-for");
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getHeader("Proxy-Client-IP");
-    }
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getHeader("WL-Proxy-Client-IP");
-    }
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getRemoteAddr();
-    }
-    if(ip.trim().contains(",")){
-        //为什么会有这一步，因为经过多层代理后会有多个代理，取第一个ip地址就可以了
-        String [] ips = ip.split(",");
-        ip = ips[0];
-    }
-    return ip;
 }
 ```
 
