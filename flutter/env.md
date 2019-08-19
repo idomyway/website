@@ -16,13 +16,15 @@ export PATH
 
 > 2、安装 XCode，直接从 AppStore 下载安装  
 
-> 3、执行命令切换默认XCode  
-
 ```bash
+# 配置Xcode命令行工具以使用新安装的Xcode版本
 sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+
+# 确保之前打开过一次Xcode并签署通过了Xcode许可协议，可以从命令行运行sudo xcodebuild -license来确认
+sudo xcodebuild -license
 ```
 
-> 4、安装 brew  
+> 3、安装 brew  
 
 ```bash
 # 切换到下载目录
@@ -46,7 +48,7 @@ CORE_TAP_REPO = "https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core
 rm brew_install
 ```
 
-> 5、安装 cocoapods  
+> 4、安装 cocoapods  
 
 ```bash
 # brew install 安装前会 Updating Homebrew，速度很慢
@@ -70,7 +72,7 @@ git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 ```
 
-> 6、安装 IOS tools
+> 5、安装 IOS tools
 
 ```bash
 brew update
@@ -86,7 +88,7 @@ brew install ideviceinstaller
 brew install ios-deploy
 ```
 
-> 7、安装Android Studio，创建安装虚拟设备 AVD  
+> 6、安装Android Studio，创建安装虚拟设备 AVD  
 
 ```bash
 # 直接下载安装即可 Android Studio
@@ -107,4 +109,4 @@ export ANDROID_HOME
 flutter doctor --android-licenses
 ```
 
-> 8、如果使用 VS Code，需要安装 flutter 插件，自动安装 Dart 插件  
+> 7、如果使用 VS Code，需要安装 flutter 插件，自动安装 Dart 插件  
