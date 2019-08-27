@@ -80,3 +80,10 @@ git reset –soft <版本号>
 # 强制提交当前版本号，git push origin 分支名 –force
 git push origin master –force
 ```
+
+#### 统计贡献者代码行数
+
+```bash
+# --author="" 为贡献者用户名，$(git config --get user.name)表示当前用户
+git log --author="$(git config --get user.name)" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+```
