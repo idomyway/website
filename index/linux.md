@@ -4,6 +4,7 @@ Linux系统下常用环境的安装以及相关配置，安装、配置、使用
 
 > * [yum](../linux/yum.md)
 > * [JDK](../linux/jdk.md)
+> * [PHP](../linux/php.md)
 > * [Node.js](../linux/nodejs.md)
 > * [MySQL](../linux/mysql.md)
 > * [挂载硬盘](../linux/mount.md)
