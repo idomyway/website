@@ -104,7 +104,7 @@ http {
 location /path {
     root html; # webapp的根目录，如果有具体访问路径，也写根目录
     index index.html index.htm; # 默认首页
-    try_files $uri $uri/ /path/; # 此处解决刷新404，如果找不到资源会callback 到/path/
+    try_files $uri $uri/ /path; # 此处解决刷新404，如果找不到资源会callback 到/path/
 }
 ```
 
