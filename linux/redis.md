@@ -31,6 +31,7 @@ port <port>                 # line.92 修改默认端口
 daemonize yes               # line.136 守护进程 yes
 requirepass <your password> # line.507 设置密码
 maxmemory <bytes>           # line.566 可使用最大内存，单位字节（bytes）
+notify-keyspace-events Ex   # line.1066 键空间通知，过期事件的监听
 
 # 创建软连接
 ln -s /usr/local/redis/bin/* /usr/local/sbin/

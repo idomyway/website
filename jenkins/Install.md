@@ -31,7 +31,7 @@ vim /etc/init.d/jenkins
 
 # 大约75行，添加java目录
 candidates="
-/home/jdk1.8.0_191/bin/java
+/opt/jdk1.8.0_191/bin/java
 ...
 "
 

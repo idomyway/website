@@ -20,13 +20,13 @@ useradd -s /bin/false -M nginx
 # 5、编译
 cd nginx-1.15.8
 # 生成makefile，指定用户、组、安装路径、相关模块
-./configure --user=nginx --group=nginx --prefix=/home/nginx-1.15.8-01/ --with-http_v2_module --with-http_ssl_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-pcre
+./configure --user=nginx --group=nginx --prefix=/opt/nginx-1.15.8-01/ --with-http_v2_module --with-http_ssl_module --with-http_sub_module --with-http_stub_status_module --with-http_gzip_static_module --with-pcre
 
 # 6、编译安装
 make && make install
 
 # 7、创建nginx命令软链接到环境变量
-ln -s /home/nginx-1.15.8-01/sbin/* /usr/local/sbin/
+ln -s /opt/nginx-1.15.8-01/sbin/* /usr/local/sbin/
 
 # 开机自动启动，/etc/rc.local中加入
 vim /etc/rc.local
@@ -190,18 +190,18 @@ http  {
 ```bash
 # 修改nginx.conf位置
 # 移动nginx.conf
-mv /home/nginx-1.15.8-01/conf/nginx.conf /home/
+mv /opt/nginx-1.15.8-01/conf/nginx.conf /opt/
 
 # 创建软连接
-ln -s /home/nginx.conf /home/nginx-1.15.8-01/conf/nginx.conf/
+ln -s /opt/nginx.conf /opt/nginx-1.15.8-01/conf/nginx.conf/
 
 
 # 修改html位置
 # 创建目录
-mkdir /home/nginx-app
+mkdir /opt/nginx-app
 
 # 修改配置文件
-vim /home/nginx.conf
+vim /opt/nginx.conf
 
 # 顶部加入
 user root;
@@ -209,7 +209,7 @@ user root;
 html {
     server {
         location / {
-            root /home/nginx-app;
+            root /opt/nginx-app;
         }
     }
 }

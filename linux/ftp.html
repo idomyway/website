@@ -926,10 +926,10 @@ rpm -qa <span class="token operator">|</span> <span class="token function">grep<
 yum <span class="token function">install</span> -y vsftpd
 
 <span class="token comment"># &#x521B;&#x5EFA;ftp&#x4E3B;&#x76EE;&#x5F55;</span>
-<span class="token function">mkdir</span> /home/www
+<span class="token function">mkdir</span> /opt/www
 
 <span class="token comment"># &#x521B;&#x5EFA;ftp&#x7528;&#x6237;</span>
-<span class="token function">useradd</span> -d /home/www -m ftpuser
+<span class="token function">useradd</span> -d /opt/www -m ftpuser
 
 <span class="token comment"># &#x8BBE;&#x7F6E;&#x65B0;&#x7528;&#x6237;&#x5BC6;&#x7801;</span>
 <span class="token function">passwd</span> ftpuser
@@ -937,10 +937,10 @@ yum <span class="token function">install</span> -y vsftpd
 <span class="token comment"># &#x66F4;&#x6539;&#x7528;&#x6237;&#x6743;&#x9650;</span>
 <span class="token function">usermod</span> -s /sbin/nologin ftpuser <span class="token comment"># &#x9650;&#x5B9A;&#x7528;&#x6237;ftpuser&#x4E0D;&#x80FD;telnet&#xFF0C;&#x53EA;&#x80FD;ftp</span>
 <span class="token comment"># usermod -s /sbin/bash ftpuser # &#x7528;&#x6237;ftpuser&#x6062;&#x590D;&#x6B63;&#x5E38;</span>
-<span class="token comment"># usermod -d /home/www ftpuser # &#x66F4;&#x6539;&#x7528;&#x6237;ftpuser&#x7684;&#x4E3B;&#x76EE;&#x5F55;&#x4E3A;/home/www</span>
+<span class="token comment"># usermod -d /opt/www ftpuser # &#x66F4;&#x6539;&#x7528;&#x6237;ftpuser&#x7684;&#x4E3B;&#x76EE;&#x5F55;&#x4E3A;/opt/www</span>
 
 <span class="token comment"># &#x6587;&#x4EF6;&#x6388;&#x6743;&#x7ED9;ftp&#x7528;&#x6237;</span>
-<span class="token function">chown</span> -R ftpuser /home/www
+<span class="token function">chown</span> -R ftpuser /opt/www
 
 <span class="token comment"># &#x8FDB;&#x5165;vsftpd&#x76EE;&#x5F55;</span>
 <span class="token function">cd</span> /etc/vsftpd
@@ -962,7 +962,7 @@ listen<span class="token operator">=</span>YES <span class="token comment"># lin
 listen_ipv6<span class="token operator">=</span>NO <span class="token comment"># line.124 &#x4E0D;&#x76D1;&#x542C;ipv6</span>
 userlist_enable<span class="token operator">=</span>YES <span class="token comment"># line.127 &#x542F;&#x7528;&#x767D;&#x540D;&#x5355;</span>
 userlist_deny<span class="token operator">=</span>NO <span class="token comment"># line.128 &#x7981;&#x7528;&#x9ED1;&#x540D;&#x5355;</span>
-local_root<span class="token operator">=</span>/home/www <span class="token comment"># &#x65B0;&#x589E;&#xFF0C;ftp&#x6839;&#x76EE;&#x5F55;</span>
+local_root<span class="token operator">=</span>/opt/www <span class="token comment"># &#x65B0;&#x589E;&#xFF0C;ftp&#x6839;&#x76EE;&#x5F55;</span>
 pasv_max_port<span class="token operator">=</span>5510 <span class="token comment"># &#x65B0;&#x589E;&#xFF0C;&#x88AB;&#x52A8;&#x7AEF;&#x53E3;</span>
 pasv_min_port<span class="token operator">=</span>5500 <span class="token comment"># &#x65B0;&#x589E;&#xFF0C;&#x88AB;&#x52A8;&#x7AEF;&#x53E3;</span>
 allow_writeable_chroot<span class="token operator">=</span>YES <span class="token comment"># &#x65B0;&#x589E;&#xFF0C;&#x652F;&#x6301;chroot_list&#x4E2D;&#x7684;&#x7528;&#x6237;write&#x6743;&#x9650;</span>
@@ -986,25 +986,25 @@ systemctl <span class="token function">enable</span> vsftpd
 <pre class="language-"><code class="lang-bash"><span class="token comment"># &#x53EF;&#x80FD;&#x6027;&#x8F83;&#x5927;&#x7684;&#x539F;&#x56E0;&#x662F;&#x5BC6;&#x7801;&#x5F3A;&#x5EA6;&#x592A;&#x4F4E;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x767B;&#x5F55;</span>
 </code></pre>
 <blockquote>
-<p>500 OOPS: cannot change directory:/home/www/images </p>
+<p>500 OOPS: cannot change directory:/opt/www/images </p>
 </blockquote>
 <pre class="language-"><code class="lang-bash"><span class="token comment"># &#x539F;&#x56E0;&#xFF0C;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x5BFC;&#x81F4;</span>
 <span class="token comment"># &#x53EA;&#x8BBE;&#x7F6E;&#x4E86;images&#x76EE;&#x5F55;&#x7684;ftp&#x7684;&#x7528;&#x6237;&#x6743;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x7F6E;www&#x7684;&#x7528;&#x6237;&#x6743;&#x9650;</span>
 
-<span class="token function">cd</span> /home
+<span class="token function">cd</span> /opt
 
 <span class="token function">chown</span> -R ftpuser www/
 
-<span class="token function">cd</span> /home/www
+<span class="token function">cd</span> /opt/www
 
 <span class="token function">chown</span> -R ftpuser images/
 
-<span class="token comment"># &#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF01;&#x5982;&#x679C;&#x4E0E;ftpuser&#x540C;&#x4E00;&#x7528;&#x6237;&#x7EC4;&#x7528;&#x6237;test&#x4E5F;&#x9700;&#x8981;&#x8BBF;&#x95EE;/home/www&#xFF0C;&#x9700;&#x8981;&#x7ED9;www&#x6587;&#x4EF6;&#x5939;&#x8BBE;&#x7F6E;&#x6743;&#x9650;</span>
+<span class="token comment"># &#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF01;&#x5982;&#x679C;&#x4E0E;ftpuser&#x540C;&#x4E00;&#x7528;&#x6237;&#x7EC4;&#x7528;&#x6237;test&#x4E5F;&#x9700;&#x8981;&#x8BBF;&#x95EE;/opt/www&#xFF0C;&#x9700;&#x8981;&#x7ED9;www&#x6587;&#x4EF6;&#x5939;&#x8BBE;&#x7F6E;&#x6743;&#x9650;</span>
 
 <span class="token function">chmod</span> 770 www
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-06-21 19:07:08
+2020-01-10 14:16:28
 </span></footer>
                                 
                                 </section>
@@ -1048,7 +1048,7 @@ systemctl <span class="token function">enable</span> vsftpd
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ftp服务器","level":"1.9.11","depth":2,"next":{"title":"Jenkins","level":"1.10","depth":1,"path":"index/jenkins.md","ref":"index/jenkins.md","articles":[{"title":"安装","level":"1.10.1","depth":2,"path":"jenkins/install.md","ref":"jenkins/install.md","articles":[]}]},"previous":{"title":"Solr","level":"1.9.10","depth":2,"path":"linux/solr.md","ref":"linux/solr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/ftp.md","mtime":"2019-06-21T11:07:08.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T02:07:28.497Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ftp服务器","level":"1.9.11","depth":2,"next":{"title":"Jenkins","level":"1.10","depth":1,"path":"index/jenkins.md","ref":"index/jenkins.md","articles":[{"title":"安装","level":"1.10.1","depth":2,"path":"jenkins/install.md","ref":"jenkins/install.md","articles":[]}]},"previous":{"title":"Solr","level":"1.9.10","depth":2,"path":"linux/solr.md","ref":"linux/solr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/ftp.md","mtime":"2020-01-10T06:16:28.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T06:17:26.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

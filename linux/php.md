@@ -53,8 +53,8 @@ location ~* \.php$ {
 nginx -s reload
 
 # 测试
-rm /home/nginx/html/index.html
-echo "<?php phpinfo(); ?>" >> /home/nginx/html/index.php
+rm /opt/nginx/html/index.html
+echo "<?php phpinfo(); ?>" >> /opt/nginx/html/index.php
 
 # 使用浏览器打开，会显示 phpinfo() 
 ```

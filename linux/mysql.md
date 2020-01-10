@@ -14,12 +14,12 @@ yum -y remove 已安装的名称
 yum -y remove mysql-community-client-5.6.38-2.el7.x86_64
 
 # 3、更新源并安装
-cd /home
+cd /opt
 wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 yum -y install mysql-server
 
-# 4、启动服务
+# 4、启动服务，必要的，不然不会生成/var/run/mysqld/mysqld.pid，导致其他错误
 systemctl start mysqld
 ```
 
@@ -32,38 +32,38 @@ systemctl start mysqld
 systemctl stop mysqld
 
 # 创建目录
-mkdir -p /home/mysql/data/
+mkdir -p /opt/mysql/data/
 
 # 修改属主和属组
-chown -R mysql:mysql /home/mysql/data
+chown -R mysql:mysql /opt/mysql/data
 
 # 复制mysql data目录
-cp -a /var/lib/mysql /home/mysql/data/
+cp -a /var/lib/mysql /opt/mysql/data/
 
 # 建立链接（如果更新data目录后无法，使用链接的方式）
-#ln -s /home/mysql/data/mysql /usr/lib/mysql
+#ln -s /opt/mysql/data/mysql /usr/lib/mysql
 
 # 修改my.cfg
 vim /etc/my.cnf
-datadir=/home/mysql/data/mysql
+datadir=/opt/mysql/data/mysql
 
 # 复制mysql原有data目录可不修改此配置
-#socket=/home/mysql/data/mysql/mysql.sock
+#socket=/opt/mysql/data/mysql/mysql.sock
 
 # 创建目录
-mkdir -p /home/mysql/logs
+mkdir -p /opt/mysql/logs
 
 # 修改属主和属组
-chown -R mysql:mysql /home/mysql/logs
+chown -R mysql:mysql /opt/mysql/logs
 
 # 移动log文件，-a带权限复制
-cp -a /var/log/mysqld.log /home/mysql/logs
+cp -a /var/log/mysqld.log /opt/mysql/logs
 
 # 修改log目录
 vim /etc/my.cnf
 server_id=1
 expire_logs_days=10
-log-error=/home/mysql/logs/mysqld.log
+log-error=/opt/mysql/logs/mysqld.log
 
 # 启动mysql
 systemctl start mysqld
@@ -86,7 +86,7 @@ systemctl restart mysqld
 # 3、进入mysq命令行
 mysql -uroot
 # ERROR 2002 (HY000): Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock’ (2)
-#mysql -uroot -S /home/mysql/data/mysql/mysql.sock
+#mysql -uroot -S /opt/mysql/data/mysql/mysql.sock
 
 # 4、执行sql
 use mysql;

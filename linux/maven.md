@@ -12,7 +12,7 @@ tar -xzvf apache-maven-3.6.0-bin.tar.gz
 
 # 修改profile
 vim /etc/profile
-export M2_HOME=/home/apache-maven-3.6.0 # 最后面添加
+export M2_HOME=/opt/apache-maven-3.6.0 # 最后面添加
 export PATH=$PATH:$JAVA_HOME/bin:$M2_HOME/bin # 修改PATH
 
 # 重新初始化profile

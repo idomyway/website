@@ -15,10 +15,10 @@ fdisk /dev/vdb
 mkfs.ext4 /dev/vdb1
 
 # 5、挂载到指定目录
-mount /dev/vdb1 /home
+mount /dev/vdb1 /opt
 
 # 6、写入分区表（自动挂载）
-echo '/dev/vdb1  /home ext4 defaults 0  0' >> /etc/fstab
+echo '/dev/vdb1  /opt ext4 defaults 0  0' >> /etc/fstab
 
 # 7、查看挂载结果
 df -h

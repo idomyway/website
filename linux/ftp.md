@@ -12,10 +12,10 @@ rpm -qa | grep vsftpd
 yum install -y vsftpd
 
 # 创建ftp主目录
-mkdir /home/www
+mkdir /opt/www
 
 # 创建ftp用户
-useradd -d /home/www -m ftpuser
+useradd -d /opt/www -m ftpuser
 
 # 设置新用户密码
 passwd ftpuser
@@ -23,10 +23,10 @@ passwd ftpuser
 # 更改用户权限
 usermod -s /sbin/nologin ftpuser # 限定用户ftpuser不能telnet，只能ftp
 # usermod -s /sbin/bash ftpuser # 用户ftpuser恢复正常
-# usermod -d /home/www ftpuser # 更改用户ftpuser的主目录为/home/www
+# usermod -d /opt/www ftpuser # 更改用户ftpuser的主目录为/opt/www
 
 # 文件授权给ftp用户
-chown -R ftpuser /home/www
+chown -R ftpuser /opt/www
 
 # 进入vsftpd目录
 cd /etc/vsftpd
@@ -48,7 +48,7 @@ listen=YES # line.115 监听ipv4
 listen_ipv6=NO # line.124 不监听ipv6
 userlist_enable=YES # line.127 启用白名单
 userlist_deny=NO # line.128 禁用黑名单
-local_root=/home/www # 新增，ftp根目录
+local_root=/opt/www # 新增，ftp根目录
 pasv_max_port=5510 # 新增，被动端口
 pasv_min_port=5500 # 新增，被动端口
 allow_writeable_chroot=YES # 新增，支持chroot_list中的用户write权限
@@ -75,21 +75,21 @@ systemctl enable vsftpd
 # 可能性较大的原因是密码强度太低，不影响登录
 ```
 
-> 500 OOPS: cannot change directory:/home/www/images 
+> 500 OOPS: cannot change directory:/opt/www/images 
 
 ```bash
 # 原因，文件权限导致
 # 只设置了images目录的ftp的用户权限，需要设置www的用户权限
 
-cd /home
+cd /opt
 
 chown -R ftpuser www/
 
-cd /home/www
+cd /opt/www
 
 chown -R ftpuser images/
 
-# 特殊情况！如果与ftpuser同一用户组用户test也需要访问/home/www，需要给www文件夹设置权限
+# 特殊情况！如果与ftpuser同一用户组用户test也需要访问/opt/www，需要给www文件夹设置权限
 
 chmod 770 www
 ```

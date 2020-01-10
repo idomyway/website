@@ -928,12 +928,12 @@ yum -y remove &#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x540D;&#x79F0;
 yum -y remove mysql-community-client-5.6.38-2.el7.x86_64
 
 <span class="token comment"># 3&#x3001;&#x66F4;&#x65B0;&#x6E90;&#x5E76;&#x5B89;&#x88C5;</span>
-<span class="token function">cd</span> /home
+<span class="token function">cd</span> /opt
 <span class="token function">wget</span> https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 yum -y <span class="token function">install</span> mysql-server
 
-<span class="token comment"># 4&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;</span>
+<span class="token comment"># 4&#x3001;&#x542F;&#x52A8;&#x670D;&#x52A1;&#xFF0C;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x4E0D;&#x4F1A;&#x751F;&#x6210;/var/run/mysqld/mysqld.pid&#xFF0C;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x9519;&#x8BEF;</span>
 systemctl start mysqld
 </code></pre>
 <h4 id="&#x79FB;&#x52A8;&#x76F8;&#x5173;&#x76EE;&#x5F55;">&#x79FB;&#x52A8;&#x76F8;&#x5173;&#x76EE;&#x5F55;</h4>
@@ -944,38 +944,38 @@ systemctl start mysqld
 systemctl stop mysqld
 
 <span class="token comment"># &#x521B;&#x5EFA;&#x76EE;&#x5F55;</span>
-<span class="token function">mkdir</span> -p /home/mysql/data/
+<span class="token function">mkdir</span> -p /opt/mysql/data/
 
 <span class="token comment"># &#x4FEE;&#x6539;&#x5C5E;&#x4E3B;&#x548C;&#x5C5E;&#x7EC4;</span>
-<span class="token function">chown</span> -R mysql:mysql /home/mysql/data
+<span class="token function">chown</span> -R mysql:mysql /opt/mysql/data
 
 <span class="token comment"># &#x590D;&#x5236;mysql data&#x76EE;&#x5F55;</span>
-<span class="token function">cp</span> -a /var/lib/mysql /home/mysql/data/
+<span class="token function">cp</span> -a /var/lib/mysql /opt/mysql/data/
 
 <span class="token comment"># &#x5EFA;&#x7ACB;&#x94FE;&#x63A5;&#xFF08;&#x5982;&#x679C;&#x66F4;&#x65B0;data&#x76EE;&#x5F55;&#x540E;&#x65E0;&#x6CD5;&#xFF0C;&#x4F7F;&#x7528;&#x94FE;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#xFF09;</span>
-<span class="token comment">#ln -s /home/mysql/data/mysql /usr/lib/mysql</span>
+<span class="token comment">#ln -s /opt/mysql/data/mysql /usr/lib/mysql</span>
 
 <span class="token comment"># &#x4FEE;&#x6539;my.cfg</span>
 vim /etc/my.cnf
-datadir<span class="token operator">=</span>/home/mysql/data/mysql
+datadir<span class="token operator">=</span>/opt/mysql/data/mysql
 
 <span class="token comment"># &#x590D;&#x5236;mysql&#x539F;&#x6709;data&#x76EE;&#x5F55;&#x53EF;&#x4E0D;&#x4FEE;&#x6539;&#x6B64;&#x914D;&#x7F6E;</span>
-<span class="token comment">#socket=/home/mysql/data/mysql/mysql.sock</span>
+<span class="token comment">#socket=/opt/mysql/data/mysql/mysql.sock</span>
 
 <span class="token comment"># &#x521B;&#x5EFA;&#x76EE;&#x5F55;</span>
-<span class="token function">mkdir</span> -p /home/mysql/logs
+<span class="token function">mkdir</span> -p /opt/mysql/logs
 
 <span class="token comment"># &#x4FEE;&#x6539;&#x5C5E;&#x4E3B;&#x548C;&#x5C5E;&#x7EC4;</span>
-<span class="token function">chown</span> -R mysql:mysql /home/mysql/logs
+<span class="token function">chown</span> -R mysql:mysql /opt/mysql/logs
 
 <span class="token comment"># &#x79FB;&#x52A8;log&#x6587;&#x4EF6;&#xFF0C;-a&#x5E26;&#x6743;&#x9650;&#x590D;&#x5236;</span>
-<span class="token function">cp</span> -a /var/log/mysqld.log /home/mysql/logs
+<span class="token function">cp</span> -a /var/log/mysqld.log /opt/mysql/logs
 
 <span class="token comment"># &#x4FEE;&#x6539;log&#x76EE;&#x5F55;</span>
 vim /etc/my.cnf
 server_id<span class="token operator">=</span>1
 expire_logs_days<span class="token operator">=</span>10
-log-error<span class="token operator">=</span>/home/mysql/logs/mysqld.log
+log-error<span class="token operator">=</span>/opt/mysql/logs/mysqld.log
 
 <span class="token comment"># &#x542F;&#x52A8;mysql</span>
 systemctl start mysqld
@@ -995,7 +995,7 @@ systemctl restart mysqld
 <span class="token comment"># 3&#x3001;&#x8FDB;&#x5165;mysq&#x547D;&#x4EE4;&#x884C;</span>
 mysql -uroot
 <span class="token comment"># ERROR 2002 (HY000): Can&#x2019;t connect to local MySQL server through socket &#x2018;/var/lib/mysql/mysql.sock&#x2019; (2)</span>
-<span class="token comment">#mysql -uroot -S /home/mysql/data/mysql/mysql.sock</span>
+<span class="token comment">#mysql -uroot -S /opt/mysql/data/mysql/mysql.sock</span>
 
 <span class="token comment"># 4&#x3001;&#x6267;&#x884C;sql</span>
 use mysql<span class="token punctuation">;</span>
@@ -1070,7 +1070,7 @@ sql_mode<span class="token operator">=</span><span class="token string">&apos;ST
 systemctl restart mysqld
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-07-10 13:58:58
+2020-01-10 14:15:21
 </span></footer>
                                 
                                 </section>
@@ -1114,7 +1114,7 @@ systemctl restart mysqld
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"1.9.5","depth":2,"next":{"title":"挂载硬盘","level":"1.9.6","depth":2,"path":"linux/mount.md","ref":"linux/mount.md","articles":[]},"previous":{"title":"Node.js","level":"1.9.4","depth":2,"path":"linux/nodejs.md","ref":"linux/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/mysql.md","mtime":"2019-07-10T05:58:58.405Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T02:07:28.497Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"1.9.5","depth":2,"next":{"title":"挂载硬盘","level":"1.9.6","depth":2,"path":"linux/mount.md","ref":"linux/mount.md","articles":[]},"previous":{"title":"Node.js","level":"1.9.4","depth":2,"path":"linux/nodejs.md","ref":"linux/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"linux/mysql.md","mtime":"2020-01-10T06:15:21.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T06:17:26.523Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
