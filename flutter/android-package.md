@@ -207,7 +207,7 @@ android {
 
 使用命令行:
 
-1、```cd <app dir>``` (```<app dir>``` 为您的工程目录).  
-2、运行```flutter build apk``` (```flutter build``` 默认会包含 ```--release```选项).  
+1、```cd <app dir>``` (```<app dir>``` 为您的工程目录)；  
+2、运行```flutter build apk``` (```flutter build``` 默认会包含 ```--release```选项)。  
 
 打包好的发布APK位于```<app dir>/build/app/outputs/apk/app-release.apk```。
