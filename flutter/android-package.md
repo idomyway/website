@@ -41,25 +41,25 @@
 > 当一个新的Flutter应用程序被创建时，它有一个默认的启动器图标。要自定义此图标：
 
 1、图标尺寸：
-  drawable-mdpi-icon: 48 x 48
-  drawable-hdpi-icon: 72 x 72
-  drawable-xhdpi-icon: 96 x 96
-  drawable-xxhdpi-icon: 144 x 144
-  drawable-xxxhdpi-icon: 192 x 192。
-2、在```<app dir>/android/app/src/main/res/```目录中，将图标文件放入使用配置限定符命名的文件夹中。默认```mipmap-```文件夹演示正确的命名约定。
-3、在```AndroidManifest.xml```中，将```application```标记的```android:icon```属性更新为引用上一步中的图标（例如 ```<application android:icon="@mipmap/ic_launcher" ...```）。
-4、要验证图标是否已被替换，请运行您的应用程序并检查应用图标。
+  drawable-mdpi-icon: 48 x 48  
+  drawable-hdpi-icon: 72 x 72  
+  drawable-xhdpi-icon: 96 x 96  
+  drawable-xxhdpi-icon: 144 x 144  
+  drawable-xxxhdpi-icon: 192 x 192  
+2、在```<app dir>/android/app/src/main/res/```目录中，将图标文件放入使用配置限定符命名的文件夹中。默认```mipmap-```文件夹演示正确的命名约定。  
+3、在```AndroidManifest.xml```中，将```application```标记的```android:icon```属性更新为引用上一步中的图标（例如 ```<application android:icon="@mipmap/ic_launcher" ...```）。  
+4、要验证图标是否已被替换，请运行您的应用程序并检查应用图标。  
 
 ###### 启动页
 
 > 启动页配置(位于```<app dir>/android/app/src/main/res/drawable/```中的```launch_background.xml```文件)
 
-图片尺寸，竖屏：高 x 宽，横屏：宽 x 高
-drawable-port-mdpi-screen: 480 x 320
-drawable-port-hdpi-screen: 800 x 480
-drawable-port-xhdpi-screen: 1280 x 720
-drawable-port-xxhdpi-screen: 1600 x 960
-drawable-port-xxxhdpi-screen: 1920 x 1280
+图片尺寸，竖屏：高 x 宽，横屏：宽 x 高  
+drawable-port-mdpi-screen: 480 x 320  
+drawable-port-hdpi-screen: 800 x 480  
+drawable-port-xhdpi-screen: 1280 x 720  
+drawable-port-xxhdpi-screen: 1600 x 960  
+drawable-port-xxxhdpi-screen: 1920 x 1280  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -207,7 +207,7 @@ android {
 
 使用命令行:
 
-1、```cd <app dir>``` (```<app dir>``` 为您的工程目录).
-2、运行```flutter build apk``` (```flutter build``` 默认会包含 ```--release```选项).
+1、```cd <app dir>``` (```<app dir>``` 为您的工程目录).  
+2、运行```flutter build apk``` (```flutter build``` 默认会包含 ```--release```选项).  
 
 打包好的发布APK位于```<app dir>/build/app/outputs/apk/app-release.apk```。
