@@ -158,8 +158,13 @@ android {
 
         release {
             signingConfig signingConfigs.release
+            // 压缩，默认启用
             minifyEnabled true
-            useProguard true
+            // Gradle 3.4.0之后默认启用R8，3.2.0之前版本默认ProGuard
+            // useProguard true
+            // 启用资源压缩
+            shrinkResources true
+            // 压缩规则
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
