@@ -47,10 +47,6 @@ https://jrebel.qekang.com/<生成的GUID>
 Free Mybatis plugin
 ```
 
-搜索 Flutter
-install
-```
-
 #### 常用设置
 
 > 路径等配置

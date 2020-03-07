@@ -976,69 +976,67 @@ Port: <span class="token operator">&lt;</span>PORT<span class="token operator">&
 <h1 id="mybatis&#x6269;&#x5C55;&#x652F;&#x6301;">Mybatis&#x6269;&#x5C55;&#x652F;&#x6301;</h1>
 <p>Free Mybatis plugin</p>
 <pre class="language-"><code>
-&#x641C;&#x7D22; Flutter
-install
-</code></pre><h4 id="&#x5E38;&#x7528;&#x8BBE;&#x7F6E;">&#x5E38;&#x7528;&#x8BBE;&#x7F6E;</h4>
-<blockquote>
-<p>&#x8DEF;&#x5F84;&#x7B49;&#x914D;&#x7F6E;</p>
-</blockquote>
-<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5B57;&#x4F53;&#x53CA;&#x5927;&#x5C0F;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Editor -<span class="token operator">&gt;</span> Font
+#### &#x5E38;&#x7528;&#x8BBE;&#x7F6E;
+
+&gt; &#x8DEF;&#x5F84;&#x7B49;&#x914D;&#x7F6E;
+
+```bash
+# &#x5B57;&#x4F53;&#x53CA;&#x5927;&#x5C0F;
+File -&gt; Settings -&gt; Editor -&gt; Font
 Font: Consolas
-Size: <span class="token number">16</span>
-Line Spacing: <span class="token number">1.2</span>
+Size: 16
+Line Spacing: 1.2
 
-<span class="token comment"># Maven&#xFF0C;&#x4F7F;&#x7528;&#x672C;&#x5730;Maven</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Build, Execution, Deployment -<span class="token operator">&gt;</span> Build Tools -<span class="token operator">&gt;</span> Maven
-Maven home directory: <span class="token operator">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;Maven&#x6839;&#x76EE;&#x5F55;<span class="token operator">&gt;</span>
-User settings file: <span class="token operator">&lt;</span>&#x52FE;&#x9009; Override&#xFF0C;&#x9009;&#x62E9;&#x672C;&#x5730;Maven&#x4E2D;conf/setting.xml<span class="token operator">&gt;</span>
+# Maven&#xFF0C;&#x4F7F;&#x7528;&#x672C;&#x5730;Maven
+File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Build Tools -&gt; Maven
+Maven home directory: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;Maven&#x6839;&#x76EE;&#x5F55;</span><span class="token punctuation">&gt;</span></span>
+User settings file: &lt;&#x52FE;&#x9009; Override&#xFF0C;&#x9009;&#x62E9;&#x672C;&#x5730;Maven&#x4E2D;conf/setting.xml&gt;
 
-<span class="token comment"># JDK&#x8BBE;&#x7F6E;&#xFF0C;&#x4E00;&#x822C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#xFF0C;&#x65E0;&#x9700;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Build, Execution, Deployment -<span class="token operator">&gt;</span> Build Tools -<span class="token operator">&gt;</span> Maven -<span class="token operator">&gt;</span> Runner
-JRE: <span class="token operator">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;SDK<span class="token operator">&gt;</span>
+# JDK&#x8BBE;&#x7F6E;&#xFF0C;&#x4E00;&#x822C;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x8BBE;&#x7F6E;&#xFF0C;&#x65E0;&#x9700;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;
+File -&gt; Settings -&gt; Build, Execution, Deployment -&gt; Build Tools -&gt; Maven -&gt; Runner
+JRE: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;SDK</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment"># Flutter SDK&#x8DEF;&#x5F84;&#x8BBE;&#x7F6E;&#xFF0C;&#x914D;&#x7F6E;&#x540E;&#xFF0C;Dart&#x4F1A;&#x81EA;&#x52A8;&#x914D;&#x7F6E;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Languages <span class="token operator">&amp;</span> Frameworks -<span class="token operator">&gt;</span> Flutter
-Flutter SDK path: <span class="token operator">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;Flutter&#x6839;&#x76EE;&#x5F55;<span class="token operator">&gt;</span>
+# Flutter SDK&#x8DEF;&#x5F84;&#x8BBE;&#x7F6E;&#xFF0C;&#x914D;&#x7F6E;&#x540E;&#xFF0C;Dart&#x4F1A;&#x81EA;&#x52A8;&#x914D;&#x7F6E;
+File -&gt; Settings -&gt; Languages &amp; Frameworks -&gt; Flutter
+Flutter SDK path: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x9009;&#x62E9;&#x672C;&#x5730;Flutter&#x6839;&#x76EE;&#x5F55;</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment"># &#x5173;&#x95ED;Idea&#x7248;&#x672C;&#x81EA;&#x52A8;&#x66F4;&#x65B0;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Appearance <span class="token operator">&amp;</span> Behavior -<span class="token operator">&gt;</span> System Settings -<span class="token operator">&gt;</span> Updates
-<span class="token operator">&lt;</span>&#x53D6;&#x6D88;&#x9009;&#x4E2D; Automatically check updates <span class="token keyword">for</span> <span class="token punctuation">..</span>.<span class="token operator">&gt;</span>
+# &#x5173;&#x95ED;Idea&#x7248;&#x672C;&#x81EA;&#x52A8;&#x66F4;&#x65B0;
+File -&gt; Settings -&gt; Appearance &amp; Behavior -&gt; System Settings -&gt; Updates
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x53D6;&#x6D88;&#x9009;&#x4E2D;</span> <span class="token attr-name">Automatically</span> <span class="token attr-name">check</span> <span class="token attr-name">updates</span> <span class="token attr-name">for</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment"># &#x53D6;&#x6D88;&#x4EE3;&#x7801;&#x91CD;&#x590D;&#x63D0;&#x793A;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Editor -<span class="token operator">&gt;</span> Inspections -<span class="token operator">&gt;</span> General -<span class="token operator">&gt;</span> Duplicated Code
-<span class="token operator">&lt;</span>&#x53D6;&#x6D88;&#x9009;&#x4E2D;<span class="token operator">&gt;</span>
+# &#x53D6;&#x6D88;&#x4EE3;&#x7801;&#x91CD;&#x590D;&#x63D0;&#x793A;
+File -&gt; Settings -&gt; Editor -&gt; Inspections -&gt; General -&gt; Duplicated Code
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x53D6;&#x6D88;&#x9009;&#x4E2D;</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token comment"># &#x6CE8;&#x91CA;&#x6A21;&#x7248;&#xFF0C;java&#x65B9;&#x6CD5;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Editor -<span class="token operator">&gt;</span> Live Templates
-<span class="token number">1</span>&#x3001;&#x53F3;&#x4FA7; + &#x9009;&#x62E9; Template Group
-&#x586B;&#x5199;&#x540D;&#x5B57; <span class="token operator">&lt;</span>java comment template<span class="token operator">&gt;</span>
-<span class="token number">2</span>&#x3001;&#x53F3;&#x4FA7; + &#x9009;&#x62E9; Live Template
-<span class="token number">3</span>&#x3001;&#x8BBE;&#x7F6E;
-&#xFF08;1&#xFF09;Abbreviation: <span class="token operator">&lt;</span>method comment<span class="token operator">&gt;</span>
-&#xFF08;2&#xFF09;Description: <span class="token operator">&lt;</span>method comment<span class="token operator">&gt;</span>
+# &#x6CE8;&#x91CA;&#x6A21;&#x7248;&#xFF0C;java&#x65B9;&#x6CD5;
+File -&gt; Settings -&gt; Editor -&gt; Live Templates
+1&#x3001;&#x53F3;&#x4FA7; + &#x9009;&#x62E9; Template Group
+&#x586B;&#x5199;&#x540D;&#x5B57; <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java</span> <span class="token attr-name">comment</span> <span class="token attr-name">template</span><span class="token punctuation">&gt;</span></span>
+2&#x3001;&#x53F3;&#x4FA7; + &#x9009;&#x62E9; Live Template
+3&#x3001;&#x8BBE;&#x7F6E;
+&#xFF08;1&#xFF09;Abbreviation: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>method</span> <span class="token attr-name">comment</span><span class="token punctuation">&gt;</span></span>
+&#xFF08;2&#xFF09;Description: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>method</span> <span class="token attr-name">comment</span><span class="token punctuation">&gt;</span></span>
 &#xFF08;3&#xFF09;Template text:
 *
- * <span class="token variable">$target</span>$
- <span class="token variable">$param</span>$
- * @return <span class="token variable">$return</span>$
+ * $target$
+ $param$
+ * @return $return$
  */
-&#xFF08;4&#xFF09;Expand with: <span class="token operator">&lt;</span>&#x9009;&#x62E9;Enter<span class="token operator">&gt;</span>
+&#xFF08;4&#xFF09;Expand with: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x9009;&#x62E9;Enter</span><span class="token punctuation">&gt;</span></span>
 &#xFF08;5&#xFF09;Edit variables:
-param: groovyScript<span class="token punctuation">(</span><span class="token string">&quot;def result=&apos;&apos;; def params=<span class="token entity" title="\&quot;">\&quot;</span><span class="token variable">${_1}</span><span class="token entity" title="\&quot;">\&quot;</span>.replaceAll(&apos;[<span class="token entity" title="\\">\\</span><span class="token entity" title="\\">\\</span>[|<span class="token entity" title="\\">\\</span><span class="token entity" title="\\">\\</span>]|<span class="token entity" title="\\">\\</span><span class="token entity" title="\\">\\</span>s]&apos;, &apos;&apos;).split(&apos;,&apos;).toList(); for(i = 0; i &lt; params.size(); i++) {if(i==0){result =&apos;* @param &apos; + params[i] + ((i &lt; params.size() - 1) ? &apos;<span class="token entity" title="\\">\\</span>n&apos; : &apos;&apos;);}else{result +=&apos; * @param &apos; + params[i] + ((i &lt; params.size() - 1) ? &apos;<span class="token entity" title="\\">\\</span>n&apos; : &apos;&apos;);}}; return result&quot;</span>, methodParameters<span class="token punctuation">(</span><span class="token punctuation">))</span>
-return: methodReturnType<span class="token punctuation">(</span><span class="token punctuation">)</span>
+param: groovyScript(&quot;def result=&apos;&apos;; def params=\&quot;${_1}\&quot;.replaceAll(&apos;[\\\\[|\\\\]|\\\\s]&apos;, &apos;&apos;).split(&apos;,&apos;).toList(); for(i = 0; i &lt; params.size(); i++) {if(i==0){result =&apos;* @param &apos; + params[i] + ((i &lt; params.size() - 1) ? &apos;\\n&apos; : &apos;&apos;);}else{result +=&apos; * @param &apos; + params[i] + ((i &lt; params.size() - 1) ? &apos;\\n&apos; : &apos;&apos;);}}; return result&quot;, methodParameters())
+return: methodReturnType()
 
-<span class="token comment"># &#x6CE8;&#x91CA;&#x6A21;&#x7248;&#xFF0C;java&#x7C7B;</span>
-File -<span class="token operator">&gt;</span> Settings -<span class="token operator">&gt;</span> Editor -<span class="token operator">&gt;</span> File and Code Templates
-<span class="token number">1</span>&#x3001;&#x9009;&#x4E2D;Files -<span class="token operator">&gt;</span> Class
-<span class="token number">2</span>&#x3001;&#x9009;&#x62E9;Includes -<span class="token operator">&gt;</span> File Header
+# &#x6CE8;&#x91CA;&#x6A21;&#x7248;&#xFF0C;java&#x7C7B;
+File -&gt; Settings -&gt; Editor -&gt; File and Code Templates
+1&#x3001;&#x9009;&#x4E2D;Files -&gt; Class
+2&#x3001;&#x9009;&#x62E9;Includes -&gt; File Header
 /**
- * <span class="token variable">${ClassName}</span>
- * @author <span class="token operator">&lt;</span>&#x7528;&#x6237;&#x540D;<span class="token operator">&gt;</span>
- * @since <span class="token variable">${YEAR}</span>-<span class="token variable">${MONTH}</span>-<span class="token variable">${DAY}</span> <span class="token variable">${HOUR}</span><span class="token builtin class-name">:</span><span class="token variable">${MINUTE}</span>:00
+ * ${ClassName}
+ * @author <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>&#x7528;&#x6237;&#x540D;</span><span class="token punctuation">&gt;</span></span>
+ * @since ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:00
  */
-</code></pre>
-<blockquote>
+</code></pre><blockquote>
 <p>&#x5FEB;&#x6377;&#x952E;</p>
 </blockquote>
 <pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4EE3;&#x7801;&#x8865;&#x5168;&#xFF0C;Eclipse&#x4E2D;Alt + /</span>
@@ -1047,7 +1045,7 @@ Cyclic Expand Word: <span class="token operator">&lt;</span>&#x53F3;&#x952E;&#xF
 Basic: <span class="token operator">&lt;</span>Add Keyboard Shutcut Alt + /<span class="token operator">&gt;</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-03-07 17:07:03
+2020-03-07 17:38:42
 </span></footer>
                                 
                                 </section>
@@ -1087,7 +1085,7 @@ Basic: <span class="token operator">&lt;</span>Add Keyboard Shutcut Alt + /<span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDEA","level":"1.12.2","depth":2,"previous":{"title":"VSCode","level":"1.12.1","depth":2,"path":"ide/vscode.md","ref":"ide/vscode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"ide/idea.md","mtime":"2020-03-07T09:07:03.927Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T09:08:36.579Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"IDEA","level":"1.12.2","depth":2,"previous":{"title":"VSCode","level":"1.12.1","depth":2,"path":"ide/vscode.md","ref":"ide/vscode.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"ide/idea.md","mtime":"2020-03-07T09:38:42.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T09:39:13.399Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
