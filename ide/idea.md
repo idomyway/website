@@ -24,7 +24,6 @@ Port: <PORT>
 
 > File -> Settings -> Plugins
 
-> 
 ```bash
 # 社区版Spring支持
 Spring Assistant
