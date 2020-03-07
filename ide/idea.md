@@ -22,18 +22,31 @@ Port: <PORT>
 
 #### 常用插件
 
-> 社区版Spring支持
+> File -> Settings -> Plugins
 
+> 
 ```bash
-File -> Settings -> Plugins
-搜索 Spring Assistant
-install
+# 社区版Spring支持
+Spring Assistant
+
+# Flutter相关，自动安装Dart
+Flutter
+
+# JRebel IDEA上热部署
+JRebel and XRebel for IntelliJ
+# 破解
+# 1、生成GUID：https://www.guidgen.com/
+# 2、Help -> JRebel -> Activation -> Team URL分别填写
+https://jrebel.qekang.com/<生成的GUID>
+<邮箱>
+# 3、 勾选协议，Activate JRebel
+# 4、next enable JRebel -> I agree
+# 5、重启IDEA，JRebel setup guide按照提示操作
+
+# Mybatis扩展支持
+Free Mybatis plugin
 ```
 
-> Flutter相关，自动安装Dart
-
-```bash
-File -> Settings -> Plugins
 搜索 Flutter
 install
 ```
