@@ -6,6 +6,7 @@ Linux系统下常用环境的安装以及相关配置，安装、配置、使用
 > * [JDK](../linux/jdk.md)
 > * [PHP](../linux/php.md)
 > * [Node.js](../linux/nodejs.md)
+> * [Maven](../linux/maven.md)
 > * [MySQL](../linux/mysql.md)
 > * [PostgreSQL](../linux/pgsql.md)
 > * [挂载硬盘](../linux/mount.md)
