@@ -26,10 +26,13 @@ mvn -v
 
 #### 配置
 
-> 使用华为存储仓库，```<Maven安装目录>/conf/settings.xml```
+> ```<Maven安装目录>/conf/settings.xml```
 
 ```xml
-<!-- line.155 -->
+<!-- 修改本地maven存放路径，line.53 -->
+<localRepository>${user.home}/.m2/repository</localRepository>
+
+<!-- 使用华为存储仓库，line.155 -->
 <mirrors>
   <mirror>
     <id>huaweicloud</id>
