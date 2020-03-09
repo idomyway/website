@@ -975,20 +975,20 @@ react-scripts@2.1.5
   useEslintRc
 <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;customize-cra&apos;</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">dir</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">resolve</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>dir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;src&apos;</span><span class="token punctuation">,</span> dir<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">/**
  * `react-app-rewire-hot-loader` https://www.npmjs.com/package/react-app-rewire-hot-loader
  */</span>
-<span class="token keyword">const</span> <span class="token function-variable function">rewireHotLoader</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">,</span> env</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token keyword">const</span> <span class="token function-variable function">rewireHotLoader</span> <span class="token operator">=</span> <span class="token punctuation">(</span>config<span class="token punctuation">,</span> env<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>env <span class="token operator">===</span> <span class="token string">&apos;production&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> config
   <span class="token punctuation">}</span>
   <span class="token comment">// Find a rule which contains eslint-loader</span>
-  <span class="token keyword">const</span> <span class="token function-variable function">condition</span> <span class="token operator">=</span> <span class="token parameter">u</span> <span class="token operator">=&gt;</span> <span class="token keyword">typeof</span> u <span class="token operator">===</span> <span class="token string">&apos;object&apos;</span> <span class="token operator">&amp;&amp;</span> u<span class="token punctuation">.</span>loader <span class="token operator">&amp;&amp;</span> u<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;eslint-loader&apos;</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> rule <span class="token operator">=</span> config<span class="token punctuation">.</span>module<span class="token punctuation">.</span>rules<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token parameter">rule</span> <span class="token operator">=&gt;</span> rule<span class="token punctuation">.</span>use <span class="token operator">&amp;&amp;</span> rule<span class="token punctuation">.</span>use<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">condition</span> <span class="token operator">=</span> u <span class="token operator">=&gt;</span> <span class="token keyword">typeof</span> u <span class="token operator">===</span> <span class="token string">&apos;object&apos;</span> <span class="token operator">&amp;&amp;</span> u<span class="token punctuation">.</span>loader <span class="token operator">&amp;&amp;</span> u<span class="token punctuation">.</span>loader<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">&apos;eslint-loader&apos;</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> rule <span class="token operator">=</span> config<span class="token punctuation">.</span>module<span class="token punctuation">.</span>rules<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>rule <span class="token operator">=&gt;</span> rule<span class="token punctuation">.</span>use <span class="token operator">&amp;&amp;</span> rule<span class="token punctuation">.</span>use<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>rule<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> use <span class="token operator">=</span> rule<span class="token punctuation">.</span>use<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>use<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1003,7 +1003,7 @@ react-scripts@2.1.5
 <span class="token comment">/**
  * &#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;
  */</span>
-module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">,</span> env</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>config<span class="token punctuation">,</span> env<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// &#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x4F7F;&#x7528;react-hot-loader</span>
   <span class="token function">rewireHotLoader</span><span class="token punctuation">(</span>config<span class="token punctuation">,</span> env<span class="token punctuation">)</span>
 
@@ -1031,14 +1031,14 @@ module<span class="token punctuation">.</span><span class="token function-variab
 <span class="token punctuation">}</span>
 </code></pre>
 <h4 id="&#x4FEE;&#x6539;packagejson">&#x4FEE;&#x6539;package.json</h4>
-<pre class="language-"><code class="lang-bash">  <span class="token string">&quot;scripts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
--   <span class="token string">&quot;start&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-scripts start&quot;</span>,
-+   <span class="token string">&quot;start&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-app-rewired start&quot;</span>,
--   <span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-scripts build&quot;</span>,
-+   <span class="token string">&quot;build&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-app-rewired build&quot;</span>,
--   <span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-scripts test&quot;</span>,
-+   <span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-app-rewired test&quot;</span>,
-    <span class="token string">&quot;eject&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;react-scripts eject&quot;</span>
+<pre class="language-"><code class="lang-bash">  <span class="token string">&quot;scripts&quot;</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+-   <span class="token string">&quot;start&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-scripts start&quot;</span>,
++   <span class="token string">&quot;start&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-app-rewired start&quot;</span>,
+-   <span class="token string">&quot;build&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-scripts build&quot;</span>,
++   <span class="token string">&quot;build&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-app-rewired build&quot;</span>,
+-   <span class="token string">&quot;test&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-scripts test&quot;</span>,
++   <span class="token string">&quot;test&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-app-rewired test&quot;</span>,
+    <span class="token string">&quot;eject&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;react-scripts eject&quot;</span>
   <span class="token punctuation">}</span>
 </code></pre>
 <h4 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h4>
@@ -1047,7 +1047,7 @@ module<span class="token punctuation">.</span><span class="token function-variab
 </blockquote>
 <pre class="language-"><code class="lang-bash"><span class="token comment">## cra webpack&#x914D;&#x7F6E;&#x4E2D;&#x9ED8;&#x8BA4;&#x7684;&#x90E8;&#x5206;&#x53D8;&#x91CF;</span>
 <span class="token comment"># &#x53D6;&#x6D88;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;</span>
-<span class="token assign-left variable">BROWSER</span><span class="token operator">=</span>none
+BROWSER<span class="token operator">=</span>none
 </code></pre>
 <blockquote>
 <p>&#x751F;&#x4EA7;&#xFF0C;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;.env.production&#x6587;&#x4EF6;  </p>
@@ -1055,9 +1055,9 @@ module<span class="token punctuation">.</span><span class="token function-variab
 <pre class="language-"><code class="lang-bash"><span class="token comment">## cra webpack&#x914D;&#x7F6E;&#x4E2D;&#x9ED8;&#x8BA4;&#x7684;&#x90E8;&#x5206;&#x53D8;&#x91CF;</span>
 <span class="token comment"># public path&#xFF0C;&#x8D44;&#x6E90;&#x524D;&#x7F00;</span>
 <span class="token comment"># &#x5982;&lt;script src=&quot;/react-app/static/js/7.9a597b96.chunk.js&quot;&gt;</span>
-<span class="token assign-left variable">PUBLIC_URL</span><span class="token operator">=</span>/react-app
+PUBLIC_URL<span class="token operator">=</span>/react-app
 <span class="token comment"># sourcemap</span>
-<span class="token assign-left variable">GENERATE_SOURCEMAP</span><span class="token operator">=</span>false
+GENERATE_SOURCEMAP<span class="token operator">=</span>false
 </code></pre>
 <h4 id="&#x5173;&#x4E8E;&#x8DE8;&#x57DF;">&#x5173;&#x4E8E;&#x8DE8;&#x57DF;</h4>
 <blockquote>
@@ -1110,20 +1110,20 @@ module<span class="token punctuation">.</span><span class="token function-variab
 Warning: React version not specified <span class="token keyword">in</span> eslint-plugin-react settings. 
 
 <span class="token comment"># &#x5728;.eslintrc&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#xFF0C;&#x6307;&#x5B9A;react&#x7248;&#x672C;&#x5373;&#x53EF;</span>
-<span class="token string">&quot;settings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
-  <span class="token string">&quot;react&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
-    <span class="token string">&quot;version&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;detect&quot;</span>
+<span class="token string">&quot;settings&quot;</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;react&quot;</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;version&quot;</span><span class="token keyword">:</span> <span class="token string">&quot;detect&quot;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>,
 </code></pre>
 <pre class="language-"><code class="lang-bash"><span class="token comment"># &#x63A7;&#x5236;&#x53F0;&#x8B66;&#x544A;</span>
-React-Hot-Loader: react-&#x1F525;-dom patch is not detected. React <span class="token number">16.6</span>+ features may not work.
+React-Hot-Loader: react-&#x1F525;-dom patch is not detected. React 16.6+ features may not work.
 
 <span class="token comment"># &#x4E0D;&#x5F71;&#x54CD;&#x4F7F;&#x7528;&#xFF0C;&#x4F30;&#x8BA1;&#x5728;react-hot-loader 4.7.2&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x4F1A;&#x53BB;&#x6389;&#x8BE5;&#x63D0;&#x793A;</span>
 <span class="token comment"># https://github.com/gaearon/react-hot-loader/blob/f15b108cfac2aa6b8f98496b1e3103a4ad1c9e9c/src/reactHotLoader.js#L122</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-11-07 21:14:50
+2019-03-20 09:09:41
 </span></footer>
                                 
                                 </section>
@@ -1167,7 +1167,7 @@ React-Hot-Loader: react-&#x1F525;-dom patch is not detected. React <span class="
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React-Cli-2","level":"1.3.12","depth":2,"next":{"title":"Chrome图片下载","level":"1.3.13","depth":2,"path":"frontend/chrome-download-img.md","ref":"frontend/chrome-download-img.md","articles":[]},"previous":{"title":"Vue-Cli-3","level":"1.3.11","depth":2,"path":"frontend/vue-cli-3.md","ref":"frontend/vue-cli-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/react-cli-2.md","mtime":"2019-11-07T13:14:50.192Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-07T09:44:59.696Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React-Cli-2","level":"1.3.12","depth":2,"next":{"title":"Chrome图片下载","level":"1.3.13","depth":2,"path":"frontend/chrome-download-img.md","ref":"frontend/chrome-download-img.md","articles":[]},"previous":{"title":"Vue-Cli-3","level":"1.3.11","depth":2,"path":"frontend/vue-cli-3.md","ref":"frontend/vue-cli-3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"frontend/react-cli-2.md","mtime":"2019-03-20T01:09:41.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T03:41:51.589Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
