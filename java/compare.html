@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Yarn · jekorx's blog</title>
+        <title>compareTo 比较大小 · jekorx's blog</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="process-manager.html" />
+    <link rel="next" href="../index/springboot.html" />
     
     
-    <link rel="prev" href="../index/nodejs.html" />
+    <link rel="prev" href="fastjson.html" />
     
 
     </head>
@@ -128,9 +128,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="yarn.html">
+        <li class="chapter " data-level="1.2.1" data-path="../nodejs/yarn.html">
             
-                <a href="yarn.html">
+                <a href="../nodejs/yarn.html">
             
                     
                     Yarn
@@ -141,9 +141,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="process-manager.html">
+        <li class="chapter " data-level="1.2.2" data-path="../nodejs/process-manager.html">
             
-                <a href="process-manager.html">
+                <a href="../nodejs/process-manager.html">
             
                     
                     PM2
@@ -154,9 +154,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="http-server.html">
+        <li class="chapter " data-level="1.2.3" data-path="../nodejs/http-server.html">
             
-                <a href="http-server.html">
+                <a href="../nodejs/http-server.html">
             
                     
                     Http-Server
@@ -477,9 +477,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="../java/stream.html">
+        <li class="chapter " data-level="1.6.1" data-path="stream.html">
             
-                <a href="../java/stream.html">
+                <a href="stream.html">
             
                     
                     Java 8 Stream
@@ -490,9 +490,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="../java/fastjson.html">
+        <li class="chapter " data-level="1.6.2" data-path="fastjson.html">
             
-                <a href="../java/fastjson.html">
+                <a href="fastjson.html">
             
                     
                     FastJson
@@ -503,9 +503,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="../java/compare.html">
+        <li class="chapter active" data-level="1.6.3" data-path="compare.html">
             
-                <a href="../java/compare.html">
+                <a href="compare.html">
             
                     
                     compareTo 比较大小
@@ -964,7 +964,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Yarn</a>
+        <a href=".." >compareTo 比较大小</a>
     </h1>
 </div>
 
@@ -979,88 +979,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="yarn">yarn</h1>
+                                <h1 id="compareto-&#x6BD4;&#x8F83;&#x5927;&#x5C0F;">compareTo &#x6BD4;&#x8F83;&#x5927;&#x5C0F;</h1>
 <blockquote>
-<p>&#x5FEB;&#x901F;&#x3001;&#x53EF;&#x9760;&#x3001;&#x5B89;&#x5168;&#x7684;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x3002;<br>&#x6BD4;npm&#x597D;&#x7528; 0_0  </p>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#xFF0C;&#x6309;&#x5B57;&#x5178;&#x987A;&#x5E8F;&#x6BD4;&#x8F83;
+&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#xFF0C;&#x9700;&#x5B9E;&#x73B0;Comparable&#x63A5;&#x53E3;
+&#x53EF;&#x7406;&#x89E3;&#x4E3A;&#x6570;&#x5B57;&#x51CF;&#x6CD5;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5F00;&#x59CB;&#x6BD4;&#x8F83;
+&#x524D;&#x8005; &#x51CF; &#x540E;&#x8005;
+&#x76F8;&#x7B49; -&gt; 0
+&#x5927;&#x4E8E;0 -&gt; 1
+&#x5C0F;&#x4E8E;0 -&gt; -1</p>
 </blockquote>
-<h4 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h4>
-<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x4F7F;&#x7528;npm&#x5B89;&#x88C5;</span>
-<span class="token function">npm</span> i -g yarn
+<h4 id="date&#x7C7B;&#x578B;&#x6BD4;&#x8F83;">Date&#x7C7B;&#x578B;&#x6BD4;&#x8F83;</h4>
+<pre class="language-"><code class="lang-java"><span class="token comment">// &#x6B64;&#x5904;&#x4F8B;&#x4E3E;&#x4E24;&#x4E2A;Date&#x7C7B;&#x578B;&#x65F6;&#x95F4;</span>
+Date dateA
+Date dateB
 
-<span class="token comment"># &#x4F7F;&#x7528;npm&#x5347;&#x7EA7;yarn</span>
-<span class="token function">npm</span> update -g yarn
+<span class="token comment">// &#x6BD4;&#x8F83;</span>
+dateA<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>dateB<span class="token punctuation">)</span>
+
+<span class="token comment">// &#x7ED3;&#x679C;</span>
+<span class="token comment">// Date dateA = &lt;2020-03-17 09:33:08&gt;</span>
+<span class="token comment">// Date dateB = &lt;2020-03-17 09:33:08&gt;</span>
+<span class="token comment">// &#x8F93;&#x51FA; 0 -&gt; dateA &#x4E0E; dateB &#x4E3A;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#xFF0C;&#x4E24;&#x8005;&#x76F8;&#x7B49;</span>
+
+<span class="token comment">// Date dateA = &lt;2020-03-17 09:33:08&gt;</span>
+<span class="token comment">// Date dateB = &lt;2020-03-16 09:33:08&gt;</span>
+<span class="token comment">// &#x8F93;&#x51FA; 1 -&gt; dateA &#x665A;&#x4E8E; dateB&#xFF0C;&#x524D;&#x8005;&#x5927;</span>
+
+<span class="token comment">// Date dateA = &lt;2020-03-17 09:33:08&gt;</span>
+<span class="token comment">// Date dateB = &lt;2020-03-18 09:33:08&gt;</span>
+<span class="token comment">// &#x8F93;&#x51FA;-1 -&gt; dateA &#x65E9;&#x4E8E; dateB&#xFF0C;&#x540E;&#x8005;&#x5927;</span>
 </code></pre>
-<blockquote>
-<p> &#x76F8;&#x5173;&#x95EE;&#x9898;&#x53CA;&#x89E3;&#x51B3;&#x65B9;&#x6848;  </p>
-</blockquote>
-<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x53EF;&#x80FD;&#x4F1A;&#x5B89;&#x88C5;&#x5931;&#x8D25;&#xFF0C;&#x539F;&#x56E0;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x6743;&#x9650;&#x95EE;&#x9898;</span>
-<span class="token comment"># MacOS / Linux</span>
-<span class="token function">sudo</span> <span class="token function">npm</span> i -g yarn
-
-<span class="token comment"># windows&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x542F;&#x52A8;&#x7684;&#x547D;&#x4EE4;&#x884C;</span>
-
-<span class="token comment"># &#x68C0;&#x67E5;</span>
-yarn -v
-
-<span class="token comment"># &#x5982;&#x679C;&#x51FA;&#x73B0;&#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x547D;&#x4EE4;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x5168;&#x5C40;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span>
-<span class="token comment"># &#x8BE5;&#x95EE;&#x9898;&#x591A;&#x51FA;&#x73B0;&#x5728;windows&#x7CFB;&#x7EDF;</span>
-<span class="token comment"># &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x589E;&#x52A0;npm&#x5B89;&#x88C5;&#x7684;&#x5168;&#x5C40;&#x5DE5;&#x5177;&#x7684;&#x8DEF;&#x5F84;</span>
-<span class="token comment"># windows</span>
-C:\Users\<span class="token operator">&lt;</span>%&#x7528;&#x6237;&#x540D;%<span class="token operator">&gt;</span>\AppData\Roaming\npm
-
-<span class="token comment"># yarn&#x5B89;&#x88C5;&#x7684;&#x5168;&#x5C40;&#x5DE5;&#x5177;&#x4E0D;&#x80FD;&#x7528;&#x7684;&#x95EE;&#x9898;</span>
-<span class="token comment"># &#x8BE5;&#x95EE;&#x9898;&#x591A;&#x51FA;&#x73B0;&#x5728;windows&#x7CFB;&#x7EDF;</span>
-<span class="token comment"># &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x589E;&#x52A0;yarn&#x5B89;&#x88C5;&#x7684;&#x5168;&#x5C40;&#x5DE5;&#x5177;&#x7684;bin&#x8DEF;&#x5F84;</span>
-<span class="token comment"># windows</span>
-C:\Users\<span class="token operator">&lt;</span>%&#x7528;&#x6237;&#x540D;%<span class="token operator">&gt;</span>\AppData\Local\Yarn\bin
-</code></pre>
-<h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
-<blockquote>
-<p>&#x4EE5;&#x5B89;&#x88C5;react&#x548C;http-server&#x4E3A;&#x4F8B;  </p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">npm</th>
-<th style="text-align:left">yarn</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">npm i</td>
-<td style="text-align:left">yarn</td>
-</tr>
-<tr>
-<td style="text-align:right">npm i react -S</td>
-<td style="text-align:left">yarn add react</td>
-</tr>
-<tr>
-<td style="text-align:right">npm uninstall react -S</td>
-<td style="text-align:left">yarn remove react</td>
-</tr>
-<tr>
-<td style="text-align:right">npm i react -D</td>
-<td style="text-align:left">yarn add react -D</td>
-</tr>
-<tr>
-<td style="text-align:right">npm update react -S</td>
-<td style="text-align:left">yarn upgrade react</td>
-</tr>
-<tr>
-<td style="text-align:right">npm i -g http-server</td>
-<td style="text-align:left">yarn global add http-server</td>
-</tr>
-<tr>
-<td style="text-align:right">npm update -g http-server</td>
-<td style="text-align:left">yarn global upgrade http-server</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>&#x6CE8;&#x610F;&#xFF1A;yarn&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x5173;&#x952E;&#x5B57;global&#x5FC5;&#x987B;&#x8DDF;&#x5728;yarn&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5B89;&#x88C5;global   </p>
-</blockquote>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; blog.wdg.pub 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-03-20 09:09:41
+2020-03-17 10:12:41
 </span></footer>
                                 
                                 </section>
@@ -1088,12 +1039,12 @@ C:\Users\<span class="token operator">&lt;</span>%&#x7528;&#x6237;&#x540D;%<span
 
             
                 
-                <a href="../index/nodejs.html" class="navigation navigation-prev " aria-label="Previous page: Node.js">
+                <a href="fastjson.html" class="navigation navigation-prev " aria-label="Previous page: FastJson">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="process-manager.html" class="navigation navigation-next " aria-label="Next page: PM2">
+                <a href="../index/springboot.html" class="navigation navigation-next " aria-label="Next page: SpringBoot">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1104,7 +1055,7 @@ C:\Users\<span class="token operator">&lt;</span>%&#x7528;&#x6237;&#x540D;%<span
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Yarn","level":"1.2.1","depth":2,"next":{"title":"PM2","level":"1.2.2","depth":2,"path":"nodejs/process-manager.md","ref":"nodejs/process-manager.md","articles":[]},"previous":{"title":"Node.js","level":"1.2","depth":1,"path":"index/nodejs.md","ref":"index/nodejs.md","articles":[{"title":"Yarn","level":"1.2.1","depth":2,"path":"nodejs/yarn.md","ref":"nodejs/yarn.md","articles":[]},{"title":"PM2","level":"1.2.2","depth":2,"path":"nodejs/process-manager.md","ref":"nodejs/process-manager.md","articles":[]},{"title":"Http-Server","level":"1.2.3","depth":2,"path":"nodejs/http-server.md","ref":"nodejs/http-server.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"nodejs/yarn.md","mtime":"2019-03-20T01:09:41.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T02:17:20.405Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"compareTo 比较大小","level":"1.6.3","depth":2,"next":{"title":"SpringBoot","level":"1.7","depth":1,"path":"index/springboot.md","ref":"index/springboot.md","articles":[{"title":"Put请求配置","level":"1.7.1","depth":2,"path":"springboot/put-config.md","ref":"springboot/put-config.md","articles":[]},{"title":"FastJson配置","level":"1.7.2","depth":2,"path":"springboot/fastjson-config.md","ref":"springboot/fastjson-config.md","articles":[]},{"title":"跨域配置","level":"1.7.3","depth":2,"path":"springboot/cors-config.md","ref":"springboot/cors-config.md","articles":[]}]},"previous":{"title":"FastJson","level":"1.6.2","depth":2,"path":"java/fastjson.md","ref":"java/fastjson.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","-highlight","prism","github","search-pro","sharing-plus","tbfed-pagefooter","back-to-top-button","expandable-chapters-small"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © blog.wdg.pub 2019","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"github":{"url":"https://github.com/jekorx"},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["douban","facebook","google","linkedin","qq","qzone","twitter","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"whatsapp":false,"twitter":false,"google":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"jekorx","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"jekorx's blog","language":"zh-hans","gitbook":"*","description":"个人学习、工作经验的总结"},"file":{"path":"java/compare.md","mtime":"2020-03-17T02:12:41.335Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T02:17:20.405Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
