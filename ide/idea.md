@@ -4,7 +4,7 @@
 
 > jar包方式启动java项目，可以使用idea进行远程调试  
 > 1、远程服务器启动项目  
-> 2、IDEA run Debug \<REMOTE NAME>  
+> 2、IDEA run Debug &#60;REMOTE NAME&#62;  
 > 3、IDEA 断点调试  
 
 ```bash
